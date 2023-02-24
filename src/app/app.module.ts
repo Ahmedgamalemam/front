@@ -14,7 +14,8 @@ import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './component/register/register.component';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -32,13 +34,13 @@ import { RegisterComponent } from './component/register/register.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { 
+export class AppModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }
