@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+img{
+    width: 6rem;
+    height: 3rem; 
+}
+.nav{
+    box-shadow:0px 6px 4px rgba(238, 236, 216, 0.527);
+    color: rgb(245, 245, 230);
+    background-color: #f7e3ac;
+    margin-bottom: 30px;
+}
+.button{
+    margin-right: 10px;
+    min-width: 5rem;
+    color: #50402c;
+}
+.div{
+    background-color: #50402c;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+}
+.button:hover{
+    background-color: #daa06d;
+    color: #50402c;
+}
+.drob-style{
+    background-color: #f7e3ac;
+}
+.drob-style :hover{
+    background-color: white;
+}
+.inputsearch{
+    box-shadow:0px 6px 4px rgba(238, 236, 216, 0.527);
+}
+.search{
+    box-shadow:0px 6px 4px rgba(238, 236, 216, 0.527);
+    margin-left: 10px;
+    border: 1px solid #daa06d;
+    min-width: 5rem;
+}
+
+/* side bar */
+
+@keyframes show {
+    from {left: 0px;}
+    to {left: 15%;}
+}
+@keyframes hide {
+    from {left: 15%;}
+    to {left: -500px;}
+}
+
+.hide-side{
+display: none;
+animation: hide 300ms linear 1 alternate both;
+}
+
+
+.show-side{
+    background-color:#f7e3ac ;
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 40%;
+    margin-top: -30px;
+    margin-left: -15%;
+    animation: show 300ms linear 1 alternate both;
+}
+@media (min-width: 991.98px) {
+.show-side{
+    animation: hide 300ms linear 1 alternate both;
+}
+}
+.close-side-btn{
+    background-color:transparent;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    border: none;
+    margin-top: 3;
+    margin-right: 1.5rem;
+    position: absolute;
+    right: 0px;
+}
+.close-side-btn:hover{
+    background-color: #daa06d;
+}
+.side-btn-search{
+    width: 3rem;
+    margin: auto;
+    margin-top: 15px;
+}
+.search-side{
+width: 80%;
+margin-left: -10px;
+margin-top: 3rem;
+}
+hr{
+    color:#50402c;
+    margin:30px 0px 10px;
+}
+.side-drop-down{
+    min-width: 5rem;
+    margin: auto;
+    color: #50402c;
+}
+.side-drop-down:hover{
+    background-color: #daa06d;
+    color: #50402c;
+}
