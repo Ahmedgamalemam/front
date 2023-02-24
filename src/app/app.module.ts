@@ -13,12 +13,16 @@ import {MatSelectModule} from '@angular/material/select';
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

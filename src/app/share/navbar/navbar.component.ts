@@ -1,4 +1,5 @@
 import { Component,HostListener } from '@angular/core';
+import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,9 @@ import { Component,HostListener } from '@angular/core';
 })
 export class NavbarComponent {
 
+constructor(public nav:NavBarService) {
+
+}
 
   sidebar(){
   document.getElementById("side")?.classList.toggle("show-side")

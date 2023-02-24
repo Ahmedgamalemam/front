@@ -1,0 +1,68 @@
+<div class="container-login">
+    <form class="form-signin">
+      <h1 class="h4 mb-3 fw-bold text-center color-text">Login</h1>
+        <div class="container-img">
+          <img src="../../../assets/images/logo.png" alt="" width="200" height="100" />
+        </div>
+        <label htmlFor="inputEmail" class="fw-bold">
+          Email
+        </label>
+        <div class="mb-2 input-container">
+          <input
+            type="email"
+            id="inputEmail"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+            autofocus/>
+          <i class="fas fa-envelope icon"></i>
+        </div>
+        <label htmlFor="inputPassword" class="fw-bold">
+          Password
+        </label>
+        <div class="mb-2 input-container">
+          <input
+            type="password"
+            id="inputPassword"
+            class="form-control"
+            placeholder="Enter your password"
+            required />
+          <i class="fas fa-lock icon"></i>
+          <span
+            class="span-eye">
+            </span>
+        </div>
+
+        <div class="checkbox mb-3">
+          <label class="checkbox-label">
+            <input
+              class="rememberMe"
+              checked={rememberMe}
+              type="checkbox"
+              value="remember-me"
+            />
+            Remember me
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <a
+          href=""
+          class="mb-3 fw-bold color-text d-block text-center">
+          Forget your password?
+        </a>
+
+        <Button
+          class="mb-2 btn btn-lg btn-block fw-bold"
+           type="button"
+          >
+          Login
+       </Button>
+        <p class="para-center text-center ">
+          Create new account ?
+          <a href="" class="fw-bold color-text">
+            Sign Up
+          </a>
+        </p>
+    </form>
+  </div>
