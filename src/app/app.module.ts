@@ -15,6 +15,7 @@ import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ErrorComponent } from './component/error/error.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RegisterComponent } from './component/register/register.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
