@@ -18,6 +18,12 @@ import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
 import { Register2Component } from './component/register2/register2.component';
 
+import { RouterModule,Routes } from '@angular/router';
+import { ProfileComponent } from './component/profile/profile.component';
+import { FooterComponent } from './share/footer/footer.component';
+var route:Routes = [{path:"home",component:HomeComponent},
+{path:"profile",component:ProfileComponent}
+]
 
 @NgModule({
   declarations: [
@@ -28,6 +34,7 @@ import { Register2Component } from './component/register2/register2.component';
     RegisterComponent,
     ErrorComponent,
     Register2Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -49,3 +56,4 @@ export class AppModule {
     defineElement(lottie.loadAnimation);
   }
 }
+
