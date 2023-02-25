@@ -4,10 +4,10 @@ img{
   margin: auto;
   margin-top: 90px;
   transform: translate3d(1px,1px,20em);
-  box-shadow: 3px 3px 10px 10px white;
+  box-shadow: 3px 3px 10px 10px #f7e3ac;
 }
 body{
-  background-color: #ffeebf;
+  /* background-color: #ffeebf; */
   margin-top: -28px;
   text-align: center;
 
