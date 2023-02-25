@@ -1,5 +1,5 @@
 <div class="container-signup">
-  <form class="form-signup">
+  <form class="form-signup" [formGroup]="RegForm">
       <h1 class="h3 mb-0 fw-bold text-center color-text">SignUp</h1>
       <p class="fw-bold text-center mb-0">First Step</p>
       <div class="check">
@@ -9,10 +9,10 @@
       </div>
       <p class=" fw-bold text-center mb-0 mt-1">Upload your image</p>
       <div class="container-img">
-        <img src="../../../assets/images/Group 1259.png" alt="" width="125" height="125" />
+        <img id="ProfileImg" src="../../../assets/images/Group 1259.png" alt="" width="125" height="125" />
 
         <label action="" class="profilechange">
-          <input type="file"/>
+          <input id="ProfileName" type="file" (change)="onFileSelected()"/>
           <i class="fas fa-camera profileicon"></i>
         </label>
       </div>
@@ -22,11 +22,17 @@
         <input
           type="text"
           id="fname"
+          name="Fname"
           class="form-control"
           placeholder="Enter your first "
-          required
+          formControlName="Fname"
         />
         <i class="fas fa-user icon"></i>
+      </div>
+
+      <div *ngIf="RegForm.controls.Fname.errors&&RegForm.controls.Fname.touched" class="text-danger">
+        <i class="fas fa-exclamation-triangle"></i>
+        Name Must be at least 4 character
       </div>
 
       <label class="fw-bold">Last Name</label>
@@ -34,50 +40,80 @@
         <input
           type="text"
           id="lname"
+          name="Lname"
           class="form-control"
           placeholder="Enter your last "
           required
+          formControlName="Lname"
         />
         <i class="fas fa-user icon"></i>
       </div>
+
+      <div *ngIf="RegForm.controls.Lname.errors&&RegForm.controls.Lname.touched" class="text-danger">
+        <i class="fas fa-exclamation-triangle"></i>
+        Name Must be at least 4 character
+      </div>
+
       <label class="fw-bold">Age</label>
           <div class="mb-2  input-container">
             <input
               type="text"
               id="num"
+              name="Age"
               class="form-control"
               placeholder="Enter your Age"
               required
+              formControlName="Age"
             />
             <i class="fas fa-user-friends icon"></i>
           </div>
+
+          <div *ngIf="RegForm.controls.Age.errors&&RegForm.controls.Age.touched" class="text-danger">
+            <i class="fas fa-exclamation-triangle"></i>
+            Age Must be bigger than 11
+          </div>
+
           <label class="fw-bold">Address</label>
           <div class="mb-2  input-container">
             <input
               type="text"
               id="address"
+              name="Address"
               class="form-control"
               placeholder="Enter your Address"
               required
+              formControlName="Address"
             />
-            <i class="fas fa-user-friends icon"></i>
+            <i class="fas fa-map-marked-alt icon"></i>
           </div>
+
+          <div *ngIf="RegForm.controls.Address.errors&&RegForm.controls.Address.touched" class="text-danger">
+            <i class="fas fa-exclamation-triangle"></i>
+            Enter Address
+          </div>
+
           <label class="fw-bold">Phone</label>
           <div class="mb-2  input-container">
             <input
               type="text"
               id="Phone"
+              name="Phone"
               class="form-control"
               placeholder="Enter your Phone"
               required
+              formControlName="Phone"
             />
-            <i class="fas fa-user-friends icon"></i>
+            <i class="fas fa-phone-alt icon"></i>
           </div>
-
+          <div *ngIf="RegForm.controls.Phone.errors&&RegForm.controls.Phone.touched" class="text-danger">
+            <i class="fas fa-exclamation-triangle"></i>
+            Enter Valid Phone
+          </div>
       <button
         class="mb-2 btn btn-lg btn-block fw-bold"
         type="button"
         routerLink="/SignUp"
+        [disabled]="!RegForm.valid"
       >
         Next
       </button>
