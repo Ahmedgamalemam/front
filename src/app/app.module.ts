@@ -13,12 +13,19 @@ import {MatSelectModule} from '@angular/material/select';
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { RouterModule,Routes } from '@angular/router';
+import { ProfileComponent } from './component/profile/profile.component';
+import { FooterComponent } from './share/footer/footer.component';
+var route:Routes = [{path:"home",component:HomeComponent},
+{path:"profile",component:ProfileComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -38,3 +46,4 @@ export class AppModule {
     defineElement(lottie.loadAnimation);
   }
 }
+
