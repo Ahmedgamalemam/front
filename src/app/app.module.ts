@@ -18,6 +18,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
 import { Register2Component } from './component/register2/register2.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,5 +1,5 @@
 <div class="container-signup">
-  <form class="form-signup">
+  <form class="form-signup" [formGroup]="RegForm">
 
       <h1 class="h3 mb-0 fw-bold text-center color-text">SignUp</h1>
       <p class="fw-bold text-center">Final Step</p>
@@ -21,10 +21,15 @@
           placeholder="Enter your email"
           autofocus
           required
+          formControlName="Email"
         />
         <i class="fas fa-envelope icon"></i>
       </div>
 
+      <div *ngIf="Email.errors&&Email.touched" class="text-danger">
+        <i class="fas fa-exclamation-triangle"></i>
+        Enter Valid Email like <span>(example@gmail.com)</span>
+      </div>
 
       <label for="inputPassword" class="fw-bold">
         Password
@@ -36,8 +41,8 @@
           id="inputPassword"
           class="form-control"
           placeholder="Enter your password"
-
           required
+          formControlName="Password"
         />
         <i class="fas fa-lock icon"></i>
 
@@ -50,7 +55,10 @@
 
         </span>
       </div>
-
+      <div *ngIf="Password.errors&&Password.touched" class="text-danger">
+        <i class="fas fa-exclamation-triangle"></i>
+        Password must be bigger than 3 and must contain characters and numbers like(Demoo123@)
+      </div>
 
       <label for="inputPassword" class="fw-bold">
         Confirm Password
@@ -62,6 +70,7 @@
           class="form-control"
           placeholder="Enter your password"
           required
+          formControlName="ConfirmPassword"
         />
         <i class="fas fa-lock icon"></i>
 
@@ -72,9 +81,22 @@
         </span>
       </div>
 
+      <div  *ngIf="!confirmPassword.valid && (confirmPassword.touched )" class="text-danger">
+        <span *ngIf="confirmPassword.hasError('required')">
+          <i class="fas fa-exclamation-triangle"></i>
+          Please confirm password
+        </span>
+      </div>
+        <div *ngIf="RegForm.hasError('notmatched') && confirmPassword.valid" class="text-danger">
+          <i class="fas fa-exclamation-triangle"></i>
+          Password not matched
+        </div>
+
+
       <button
         class="mb-2 btn btn-lg btn-block fw-bold"
         routerLink="/Login"
+        [disabled]="!RegForm.valid"
       >
        Finish
       </button>
