@@ -17,13 +17,8 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
 import { Register2Component } from './component/register2/register2.component';
-
-import { RouterModule,Routes } from '@angular/router';
-import { ProfileComponent } from './component/profile/profile.component';
 import { FooterComponent } from './share/footer/footer.component';
-var route:Routes = [{path:"home",component:HomeComponent},
-{path:"profile",component:ProfileComponent}
-]
+
 
 @NgModule({
   declarations: [
