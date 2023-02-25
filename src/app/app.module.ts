@@ -14,8 +14,9 @@ import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './component/login/login.component';
-
-
+import { RegisterComponent } from './component/register/register.component';
+import { ErrorComponent } from './component/error/error.component';
+import { Register2Component } from './component/register2/register2.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import { LoginComponent } from './component/login/login.component';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-
-
+    RegisterComponent,
+    ErrorComponent,
+    Register2Component,
   ],
   imports: [
     BrowserModule,

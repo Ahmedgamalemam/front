@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-login',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class HomeComponent {
+export class RegisterComponent {
   constructor(public nav:NavBarService){
+
   }
   ngOnInit(){
-    this.nav.Show();
+    this.nav.hide();
   }
-
 }
