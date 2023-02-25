@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
+import { Register2Component } from './component/register2/register2.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ErrorComponent } from './component/error/error.component';
     LoginComponent,
     RegisterComponent,
     ErrorComponent,
+    Register2Component,
   ],
   imports: [
     BrowserModule,
@@ -34,13 +36,13 @@ import { ErrorComponent } from './component/error/error.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { 
+export class AppModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }

@@ -1,0 +1,83 @@
+<div class="container-signup">
+  <form class="form-signup">
+
+      <h1 class="h3 mb-0 fw-bold text-center color-text">SignUp</h1>
+      <p class="fw-bold text-center">Final Step</p>
+      <div class="check">
+        <i class="fas fa-check-circle iconsc"></i>
+        <i class="fas fa-long-arrow-alt-right icons2c"></i>
+        <i class="fas fa-check-circle iconsc"></i>
+
+      </div>
+
+      <label for="inputEmail" class="fw-bold">
+        Email Address
+      </label>
+      <div class="input-container mb-4">
+        <input
+          type="email"
+          id="inputEmail"
+          class="form-control"
+          placeholder="Enter your email"
+          autofocus
+          required
+        />
+        <i class="fas fa-envelope icon"></i>
+      </div>
+
+
+      <label for="inputPassword" class="fw-bold">
+        Password
+      </label>
+
+      <div class="mb-4 input-container">
+        <input
+          type= "password"
+          id="inputPassword"
+          class="form-control"
+          placeholder="Enter your password"
+
+          required
+        />
+        <i class="fas fa-lock icon"></i>
+
+        <span
+          class="span-eye"
+
+        >
+
+          <!--i class={visible ? "fas fa-eye" : "fas fa-eye-slash"}></i>-->
+
+        </span>
+      </div>
+
+
+      <label for="inputPassword" class="fw-bold">
+        Confirm Password
+      </label>
+      <div class="mb-4 input-container">
+        <input
+          type= "password"
+          id="ConPassword"
+          class="form-control"
+          placeholder="Enter your password"
+          required
+        />
+        <i class="fas fa-lock icon"></i>
+
+        <span
+          class="span-eye"
+
+        >
+        </span>
+      </div>
+
+      <button
+        class="mb-2 btn btn-lg btn-block fw-bold"
+        routerLink="/Login"
+      >
+       Finish
+      </button>
+
+  </form>
+</div>

@@ -6,11 +6,10 @@
         <i class="fas fa-check-circle icons"></i>
         <i class="fas fa-long-arrow-alt-right icons2"></i>
         <i class="fas fa-check-circle icons"></i>
-        <i class="fas fa-long-arrow-alt-right icons2"></i>
-        <i class="fas fa-check-circle icons"></i>
       </div>
       <p class=" fw-bold text-center mb-0 mt-1">Upload your image</p>
       <div class="container-img">
+        <img src="../../../assets/images/Group 1259.png" alt="" width="125" height="125" />
 
         <label action="" class="profilechange">
           <input type="file"/>
@@ -18,7 +17,7 @@
         </label>
       </div>
 
-      <label class="fw-bold">First </label>
+      <label class="fw-bold">First Name </label>
       <div class="mb-2 input-container">
         <input
           type="text"
@@ -30,7 +29,7 @@
         <i class="fas fa-user icon"></i>
       </div>
 
-      <label class="fw-bold">Last </label>
+      <label class="fw-bold">Last Name</label>
       <div class="mb-2 input-container">
         <input
           type="text"
@@ -41,13 +40,47 @@
         />
         <i class="fas fa-user icon"></i>
       </div>
+      <label class="fw-bold">Age</label>
+          <div class="mb-2  input-container">
+            <input
+              type="text"
+              id="num"
+              class="form-control"
+              placeholder="Enter your Age"
+              required
+            />
+            <i class="fas fa-user-friends icon"></i>
+          </div>
+          <label class="fw-bold">Address</label>
+          <div class="mb-2  input-container">
+            <input
+              type="text"
+              id="address"
+              class="form-control"
+              placeholder="Enter your Address"
+              required
+            />
+            <i class="fas fa-user-friends icon"></i>
+          </div>
+          <label class="fw-bold">Phone</label>
+          <div class="mb-2  input-container">
+            <input
+              type="text"
+              id="Phone"
+              class="form-control"
+              placeholder="Enter your Phone"
+              required
+            />
+            <i class="fas fa-user-friends icon"></i>
+          </div>
 
-      <Button
-        className="mb-2 btn btn-lg color-button btn-block fw-bold"
-
+      <button
+        class="mb-2 btn btn-lg btn-block fw-bold"
+        type="button"
+        routerLink="/SignUp"
       >
         Next
-      </Button>
+      </button>
 
   </form>
 </div>

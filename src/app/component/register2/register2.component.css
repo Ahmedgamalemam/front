@@ -9,36 +9,8 @@
   padding: 10px;
   margin: auto;
 }
-.container-img {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-.profilechange {
-  border: 1px solid white;
-  width: 25px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 0.2px 1px,
-    rgba(0, 0, 0, 0.16) 0px 0.2px 1px;
-  background-color: white;
-  color: #50402c;
-  position: absolute;
-  bottom: 5px;
-  left: 57%;
-}
-.container-img input[type="file"] {
-  display: none;
-}
-.profilechange i {
-  padding: 5px;
-  cursor: pointer;
-  color: var(--white);
-}
-.profileicon {
-  font-size: 13px;
-}
+
+
 .color-text {
   color: #50402c;
 }
@@ -47,17 +19,17 @@
   justify-content: center;
 }
 
-.icons {
+
+.iconsc {
   padding: 2px;
-  color: #5f5f5f;
+  color: #f7e3ac;
   font-size: 30px;
 }
-.icons2 {
+.icons2c {
   padding: 7px;
-  color: #5f5f5f;
+  color: #f7e3ac;
   font-size: 20px;
 }
-
 
 .form-signup .form-control {
   position: relative;
@@ -75,8 +47,7 @@
   width: 100%;
   position: relative;
 }
-
-.form-signup input[type="text"] {
+.form-signup input[type="email"] {
 
   padding: 10px 10px 10px 39px;
   box-shadow: 0px 0px 2px 1px #eeeaea;
@@ -86,6 +57,17 @@
   height: 50px;
   position: relative;
 }
+.form-signup input[type="password"] {
+
+  padding: 10px 10px 10px 39px;
+  box-shadow: 0px 0px 2px 1px #eeeaea;
+  outline: 0;
+  border-color: #eeeaea;
+  font-size: 16px;
+  height: 50px;
+  position: relative;
+}
+
 .form-signup input::placeholder {
   color: #aeaeae;
   font-size: 12px;
@@ -99,11 +81,29 @@
   top: 18px;
   left: 15px;
 }
+
+.span-eye,
+.span-eye-confirm {
+  position: absolute;
+  color: #f7e3ac;
+  top: 35%;
+  left: 90%;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 3;
+  min-width: 50px;
+}
+
+
+.form-signup input[type="email"]:focus,
+.form-signup input[type="password"]:focus,
 .form-signup input[type="text"]:focus {
   border: 1px solid #f7e3ac;
   box-shadow: 0px 0px 2px 2px rgba(31, 149, 161, 0.2);
 }
 
+input[type="email"]:focus + i,
+input[type="password"]:focus + i,
 input[type="text"]:focus + i {
   color: #f7e3ac;
 }

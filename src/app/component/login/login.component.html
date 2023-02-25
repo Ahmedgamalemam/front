@@ -1,13 +1,13 @@
 <div class="container-login">
     <form class="form-signin">
       <h1 class="h4 mb-3 fw-bold text-center color-text">Login</h1>
-        <div class="container-img">
+        <div class="container-img mb-2">
           <img src="../../../assets/images/logo.png" alt="" width="200" height="100" />
         </div>
         <label htmlFor="inputEmail" class="fw-bold">
           Email
         </label>
-        <div class="mb-2 input-container">
+        <div class="mb-3 input-container">
           <input
             type="email"
             id="inputEmail"
@@ -20,7 +20,7 @@
         <label htmlFor="inputPassword" class="fw-bold">
           Password
         </label>
-        <div class="mb-2 input-container">
+        <div class="mb-3 input-container">
           <input
             type="password"
             id="inputPassword"
@@ -55,12 +55,13 @@
         <Button
           class="mb-2 btn btn-lg btn-block fw-bold"
            type="button"
+           routerLink="/home"
           >
           Login
        </Button>
         <p class="para-center text-center ">
           Create new account ?
-          <a href="" class="fw-bold color-text">
+          <a routerLink="/Register" class="fw-bold color-text">
             Sign Up
           </a>
         </p>
