@@ -1,5 +1,5 @@
 <div class="container-login">
-    <form class="form-signin">
+    <form class="form-signin" [formGroup]="form">
       <h1 class="h4 mb-3 fw-bold text-center color-text">Login</h1>
         <div class="container-img mb-2">
           <img src="../../../assets/images/logo.png" alt="" width="200" height="100" />
@@ -13,9 +13,14 @@
             id="inputEmail"
             class="form-control"
             placeholder="Enter your email"
+            formControlName="Email"
             required
             autofocus/>
           <i class="fas fa-envelope icon"></i>
+        </div>
+        <div *ngIf="form.controls.Email.errors&&form.controls.Email.touched" class="text-danger">
+          <i class="fas fa-exclamation-triangle"></i>
+          Please enter valid Email
         </div>
         <label htmlFor="inputPassword" class="fw-bold">
           Password
@@ -26,13 +31,17 @@
             id="inputPassword"
             class="form-control"
             placeholder="Enter your password"
+            formControlName="Password"
             required />
           <i class="fas fa-lock icon"></i>
           <span
             class="span-eye">
             </span>
         </div>
-
+        <div *ngIf="form.controls.Password.errors&&form.controls.Password.touched" class="text-danger">
+          <i class="fas fa-exclamation-triangle"></i>
+          Please enter the correct password
+        </div>
         <div class="checkbox mb-3">
           <label class="checkbox-label">
             <input
@@ -55,7 +64,8 @@
         <Button
           class="mb-2 btn btn-lg btn-block fw-bold"
            type="button"
-           routerLink="/home"
+           [disabled]="!form.valid"
+           (click)="Login()"
           >
           Login
        </Button>
