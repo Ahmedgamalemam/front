@@ -24,17 +24,13 @@ L.Marker.prototype.options.icon = iconDefault;
 })
 export class MapComponent implements AfterViewInit {
   private map: any;
-  public usermap:any;
 
-  public center= [30.06263, 31.24967];
 
   private initMap(): void {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.userpoistion);
-    }
+
 
     this.map = L.map('map', {
-      center: this.usermap!=null?this.usermap:this.center,
+      center: [30.06263, 31.24967],
       //center: [ 39.8282, -98.5795 ],
       zoom:10,
     });
@@ -62,14 +58,9 @@ export class MapComponent implements AfterViewInit {
 
   constructor(private markerService: MarkerService) {}
 
-   userpoistion=(position:any)=> {
-    this.usermap =[position.coords.latitude, position.coords.longitude];
-    console.log(this.usermap)
-    //this.initMap();
-
-
-  }
-
+GoTo(){
+  this.markerService.makeUserPostion(this.map);
+}
 
   ngAfterViewInit(): void {
     this.initMap();

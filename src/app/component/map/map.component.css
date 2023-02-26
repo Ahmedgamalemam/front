@@ -6,14 +6,39 @@
   bottom: 0; */
   margin: 30px;
   height: 500px;
+  position: relative;
 
 }
 
 .map-frame {
   border: 2px solid black;
   height: 100%;
-}
+
+  }
 
 #map {
   height: 100%;
+  z-index: 1;
+}
+#location{
+  position: absolute;
+  top:90px;
+  left: 17px;
+  z-index: 1;
+  font-size: 20px;
+  cursor: pointer;
+  color: #50402c;
+}
+.hide{
+  position: absolute;
+  top:120px;
+  left: 15px;
+  z-index: 1;
+  font-size: 15px;
+  display: none;
+  color: red;
+
+}
+#location:hover +.hide{
+  display: block;
 }
