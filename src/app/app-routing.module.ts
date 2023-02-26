@@ -14,8 +14,8 @@ const route: Routes = [
 {path:'Login',component:LoginComponent},
 {path:'Register',component:RegisterComponent},
 {path:"SignUp",component:Register2Component},
-{path:"profile",component:ProfileComponent},
-{path:"Map",component:MapComponent},
+{path:"Profile",component:ProfileComponent},
+{path:"Clinic",component:MapComponent},
 {path:'**',component:ErrorComponent},
 ];
 
