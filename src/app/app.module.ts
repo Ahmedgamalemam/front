@@ -13,12 +13,16 @@ import {MatSelectModule} from '@angular/material/select';
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FavouritComponent } from './component/favourit/favourit.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    FavouritComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

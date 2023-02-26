@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
+.main-card{
+    min-width: 33rem;
+    max-height: 13rem;
+    margin-bottom: 3rem;
+
+}
+.card-img{
+    max-height: 12rem;
+    border-radius: 20px;
+}
+.card-button{
+        min-width: 5rem;
+        color: #50402c;
+}
+.card-button:hover{
+        background-color: #daa06d;
+        color: #50402c;
+}

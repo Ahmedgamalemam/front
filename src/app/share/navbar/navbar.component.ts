@@ -7,7 +7,6 @@ import { Component,HostListener } from '@angular/core';
 })
 export class NavbarComponent {
 
-
   sidebar(){
   document.getElementById("side")?.classList.toggle("show-side")
   }
