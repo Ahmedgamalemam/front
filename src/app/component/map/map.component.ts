@@ -60,7 +60,7 @@ export class MapComponent implements AfterViewInit {
       });
       L.Marker.prototype.options.icon = iconDefault;
       if (marker) this.map.removeLayer(marker);
-      console.log(e.latlng); // e is an event object (MouseEvent in this case)
+      console.log(e.latlng.lat,e.latlng.lng); // e is an event object (MouseEvent in this case)
       marker = L.marker(e.latlng).addTo(this.map);
     });
   }

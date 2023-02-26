@@ -30,7 +30,7 @@ export class MarkerService {
       iconRetinaUrl,
       iconUrl,
       shadowUrl,
-      iconSize: [40, 41],
+      iconSize: [50, 51],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
       tooltipAnchor: [16, -28],
