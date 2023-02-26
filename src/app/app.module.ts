@@ -16,6 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProfileComponent } from './component/profile/profile.component';
 import { FooterComponent } from './share/footer/footer.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { EditProfileComponent } from './component/edit-profile/edit-profile.comp
     HomeComponent,
     FooterComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
