@@ -18,13 +18,11 @@ import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
 import { Register2Component } from './component/register2/register2.component';
 
-import { RouterModule,Routes } from '@angular/router';
-import { ProfileComponent } from './component/profile/profile.component';
-import { FooterComponent } from './share/footer/footer.component';
-var route:Routes = [{path:"home",component:HomeComponent},
-{path:"profile",component:ProfileComponent}
-]
+import { MarkerService } from './core/Services/marker.service';
+import { PopupService } from './core/Services/popup.service';
 
+import { FooterComponent } from './share/footer/footer.component';
+import { MapComponent } from './component/map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +32,8 @@ var route:Routes = [{path:"home",component:HomeComponent},
     RegisterComponent,
     ErrorComponent,
     Register2Component,
-    FooterComponent
+    FooterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +46,10 @@ var route:Routes = [{path:"home",component:HomeComponent},
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    MarkerService,
+    PopupService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
