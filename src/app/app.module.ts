@@ -23,6 +23,7 @@ import { PopupService } from './core/Services/popup.service';
 
 import { FooterComponent } from './share/footer/footer.component';
 import { MapComponent } from './component/map/map.component';
+import { PetsComponent } from './component/pets/pets.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { MapComponent } from './component/map/map.component';
     ErrorComponent,
     Register2Component,
     FooterComponent,
-    MapComponent
+    MapComponent,
+    PetsComponent
   ],
   imports: [
     BrowserModule,
