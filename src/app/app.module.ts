@@ -17,7 +17,12 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
 import { Register2Component } from './component/register2/register2.component';
+
+import { MarkerService } from './core/Services/marker.service';
+import { PopupService } from './core/Services/popup.service';
+
 import { FooterComponent } from './share/footer/footer.component';
+import { MapComponent } from './component/map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,8 @@ import { FooterComponent } from './share/footer/footer.component';
     RegisterComponent,
     ErrorComponent,
     Register2Component,
-    FooterComponent
+    FooterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -37,10 +43,13 @@ import { FooterComponent } from './share/footer/footer.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
+
   ],
-  providers: [],
+  providers: [
+    MarkerService,
+    PopupService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
