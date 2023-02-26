@@ -1,5 +1,5 @@
 <div class="container-signup">
-  <form class="form-signup" [formGroup]="RegForm">
+  <form class="form-signup" [formGroup]="RegForm" (ngSubmit)="add()">
 
       <h1 class="h3 mb-0 fw-bold text-center color-text">SignUp</h1>
       <p class="fw-bold text-center">Final Step</p>
@@ -94,8 +94,8 @@
 
 
       <button
+        type="submit"
         class="mb-2 btn btn-lg btn-block fw-bold"
-        routerLink="/Login"
         [disabled]="!RegForm.valid"
       >
        Finish

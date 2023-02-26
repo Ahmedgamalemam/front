@@ -20,7 +20,7 @@
       <label class="fw-bold">First Name </label>
       <div class="mb-2 input-container">
         <input
-          type="text"
+          typeE="text"
           id="fname"
           name="Fname"
           class="form-control"
@@ -114,6 +114,7 @@
         type="button"
         routerLink="/SignUp"
         [disabled]="!RegForm.valid"
+        (click)="next()"
       >
         Next
       </button>
