@@ -1,5 +1,5 @@
 <div class="container-login">
-    <form class="form-signin" [formGroup]="form">
+    <form class="form-signin" [formGroup]="form"(ngSubmit)="Login()">
       <h1 class="h4 mb-3 fw-bold text-center color-text">Login</h1>
         <div class="container-img mb-2">
           <img src="../../../assets/images/logo.png" alt="" width="200" height="100" />
@@ -63,9 +63,8 @@
 
         <Button
           class="mb-2 btn btn-lg btn-block fw-bold"
-           type="button"
+           type="submit"
            [disabled]="!form.valid"
-           (click)="Login()"
           >
           Login
        </Button>
