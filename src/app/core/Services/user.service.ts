@@ -19,4 +19,9 @@ public LoginCheck(Password:string,Email:string)
 {
 return this.myClient.get(this.Url_DB+"/"+Password+","+Email)
 }
+
+public CheckEmails(Email:string)
+{
+return this.myClient.get(this.Url_DB+"/"+Email)
+}
 }

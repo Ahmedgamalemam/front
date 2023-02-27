@@ -56,12 +56,16 @@ export class Register2Component {
     }
   }
   add() {
-    this.userService.addUser(this.userData()).subscribe((response: any) => {
-      console.log(response);
+    this.userService.CheckEmails(this.Email.value).subscribe((response: any) => {
+      if(response){
+        this.alertify.error('Email is already Exist before')
+      }else{
+        this.userService.addUser(this.userData()).subscribe((data:any)=>{console.log(data)});
+        this.alertify.success('Congrats, you are successfully registered');
+        console.log(this.userData())
+        this.route.navigate(["/Login"])
+      }
     });
-    this.alertify.success('Congrats, you are successfully registered');
-    console.log(this.userData())
-    this.route.navigate(["/Login"])
 
     }
 }

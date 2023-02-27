@@ -63,7 +63,7 @@ export class RegisterComponent {
         Type:"user",
         Age:this.Age.value,
         Address:this.Address.value,
-        Image:this.profile,
+        Image:this.profile.toString(),
         Phone:this.Phone.value,
         Email:"",
         Password:""
