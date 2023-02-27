@@ -8,7 +8,7 @@ import { Register2Component } from './component/register2/register2.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './component/products/products.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
