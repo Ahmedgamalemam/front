@@ -35,8 +35,8 @@ const route: Routes = [
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
 {path:"clinic",component:ClinicComponent},
-{ path: 'EditProfile', component: EditProfileComponent },
-{ path: "Aboutus", component: AboutUsComponent },
+{ path:'EditProfile', component: EditProfileComponent },
+{ path:"Aboutus", component: AboutUsComponent },
 {path:'**',component:ErrorComponent},
 
 ];
