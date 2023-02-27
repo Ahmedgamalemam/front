@@ -15,6 +15,9 @@ import { OredrsComponent } from './component/oredrs/oredrs.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
+import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -32,7 +35,10 @@ const route: Routes = [
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
 {path:"clinic",component:ClinicComponent},
+{ path: 'EditProfile', component: EditProfileComponent },
+{ path: "Aboutus", component: AboutUsComponent },
 {path:'**',component:ErrorComponent},
+
 ];
 
 @NgModule({

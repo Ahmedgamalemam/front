@@ -1,18 +1,16 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './share/navbar/navbar.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './component/home/home.component';
-import {MatSelectModule} from '@angular/material/select';
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
@@ -31,6 +29,10 @@ import { PopupService } from './core/Services/popup.service';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
+import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { ProductsComponent } from './component/products/products.component';
     ProductDetailsComponent,
     PaymentComponent,
     ClinicComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProfileComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
