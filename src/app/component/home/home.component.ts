@@ -64,20 +64,20 @@ currentPage_pets: number = 1;
 
   populatePagePosition_pets() {
     if(window.innerWidth <= 1199 && window.innerWidth > 922 ){
-      this.pagePosition_pets = `calc(${-25 * (this.currentPage_pets-1)}% - ${10 *
+      this.pagePosition_pets = `calc(${-24 * (this.currentPage_pets-1)}% - ${10 *
       (this.currentPage_pets - 1)}px)`;
     }else if(window.innerWidth <= 922 && window.innerWidth > 767 ){
-      this.pagePosition_pets = `calc(${-75 * (this.currentPage_pets-1)}% - ${10 *
+      this.pagePosition_pets = `calc(${-32 * (this.currentPage_pets-1)}% - ${10 *
       (this.currentPage_pets - 1)}px)`;
+        this.totalPages_pets = 3
     }else if(window.innerWidth <= 767 && window.innerWidth > 415){
-      this.pagePosition_pets = `calc(${-50 * (this.currentPage_pets-1)}% - ${10 *
+      this.pagePosition_pets = `calc(${-49 * (this.currentPage_pets-1)}% - ${10 *
         (this.currentPage_pets - 1)}px)`;
+        this.totalPages_pets = 4
     }else if(window.innerWidth <= 415){
-      this.pagePosition_pets = `calc(${-50 * (this.currentPage_pets-1)}% - ${10 *
+      this.pagePosition_pets = `calc(${-100 * (this.currentPage_pets-1)}% - ${10 *
       (this.currentPage_pets - 1)}px)`;
     }
-    
-    console.log(window.innerWidth)
   }
 
 
@@ -128,7 +128,21 @@ currentPage_products: number = 1;
   }
 
   populatePagePosition_products() {
-    this.pagePosition_products = `calc(${-25 * (this.currentPage_products - 1)}% - ${10 *
+    if(window.innerWidth <= 1199 && window.innerWidth > 922 ){
+      this.pagePosition_products = `calc(${-24 * (this.currentPage_products-1)}% - ${10 *
       (this.currentPage_products - 1)}px)`;
+    }else if(window.innerWidth <= 922 && window.innerWidth > 767 ){
+      this.pagePosition_products = `calc(${-32 * (this.currentPage_products-1)}% - ${10 *
+      (this.currentPage_products - 1)}px)`;
+        this.totalPages_products = 3
+    }else if(window.innerWidth <= 767 && window.innerWidth > 415){
+      this.pagePosition_products = `calc(${-49 * (this.currentPage_products-1)}% - ${10 *
+        (this.currentPage_products - 1)}px)`;
+
+        this.totalPages_products = 4
+    }else if(window.innerWidth <= 415){
+      this.pagePosition_products = `calc(${-100 * (this.currentPage_products-1)}% - ${10 *
+      (this.currentPage_products - 1)}px)`;
+    }
   }
 }

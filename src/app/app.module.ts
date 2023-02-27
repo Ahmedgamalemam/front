@@ -15,6 +15,7 @@ import { defineElement } from 'lord-icon-element';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FavouritComponent } from './component/favourit/favourit.component';
 import { CartComponent } from './component/cart/cart.component';
+import { OredrsComponent } from './component/oredrs/oredrs.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CartComponent } from './component/cart/cart.component';
     HomeComponent,
     FavouritComponent,
     CartComponent,
+    OredrsComponent,
   ],
   imports: [
     BrowserModule,

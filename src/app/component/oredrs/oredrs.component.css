@@ -26,3 +26,11 @@
 .cart-count{
     text-align: center;
 }
+.remove-btn{
+        background-color:transparent;
+        width: 1.6rem;
+        height: 1.6rem;
+        border: none;
+        margin-right: 1.5rem;
+        
+}

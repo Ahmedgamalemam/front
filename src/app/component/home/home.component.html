@@ -6,7 +6,9 @@
 
     <!-- card for pets -->
     <div class="card-title">
-        <img class="card-title" style="height: 4rem;" src="assets/images/Pets.png">
+        <a class="nav-link btn button" routerLink="/pets">
+            <img class="card-title" style="height: 4rem;" src="assets/images/Pets.png">
+        </a>
     </div>
     <div class="container" #container>
         <div class="left" *ngIf="totalPages_pets > 1" (click)="currentPage_pets != 1 && changePage_pets(-1)" [ngClass]="{'disabled':currentPage_pets === 1}">&#10094;</div>
@@ -26,7 +28,9 @@
 
     <!-- card for products -->
     <div class="card-title">
-        <img class="card-title" src="assets/images/Products.png">
+        <a class="nav-link btn button" routerLink="/products">
+            <img class="card-title" src="assets/images/Products.png">
+        </a>
     </div>
 
     <div class="container" #container>
@@ -38,7 +42,7 @@
                         <img class="card-img" src="{{i}}">
                     </a>
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="right" *ngIf="totalPages_products > 1" (click)="currentPage_products != totalPages_products && changePage_products(+1)"
             [ngClass]="{'disabled':currentPage_products === totalPages_products}">&#10095;</div>
