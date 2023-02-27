@@ -16,16 +16,23 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule,Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile/profile.component';
 import { FooterComponent } from './share/footer/footer.component';
-var route:Routes = [{path:"home",component:HomeComponent},
-{path:"profile",component:ProfileComponent}
-]
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { ClinicComponent } from './component/clinic/clinic.component';
+// var route:Routes = [{path:"home",component:HomeComponent},
+// {path:"profile",component:ProfileComponent},
+// {path:"productDetails",component:ProductDetailsComponent}
+// ]
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ProductDetailsComponent,
+    PaymentComponent,
+    ClinicComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,7 @@ var route:Routes = [{path:"home",component:HomeComponent},
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    RouterModule.forRoot(route)
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
