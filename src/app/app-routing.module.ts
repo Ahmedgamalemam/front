@@ -13,6 +13,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { FavouritComponent } from './component/favourit/favourit.component';
 import { OredrsComponent } from './component/oredrs/oredrs.component';
 
+
 const route: Routes = [
 {path:'',component:HomeComponent},
 {path:'home',component:HomeComponent},
@@ -23,10 +24,10 @@ const route: Routes = [
 {path:"Clinic",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
+{path:"Favourit",component:FavouritComponent},
+{path:"Cart",component:CartComponent},
+{path:"orders",component:OredrsComponent},
 {path:'**',component:ErrorComponent},
-{path:'favourit',component:FavouritComponent},
-{path:'cart',component:CartComponent},
-{path:'orders',component:OredrsComponent},
 ];
 
 @NgModule({

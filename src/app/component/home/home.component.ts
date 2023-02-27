@@ -1,5 +1,6 @@
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(public nav:NavBarService){
+  constructor(public nav:NavBarService,public search:SearchService){
   }
 
 
@@ -43,6 +44,7 @@ currentPage_pets: number = 1;
 
   ngOnInit() {
     this.nav.Show();
+    this.search.hide()
     this.cardsPerPage_pets = this.getCardsPerPage_pets();
     this.initializeSlider_pets();
 

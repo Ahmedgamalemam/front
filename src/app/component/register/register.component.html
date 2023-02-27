@@ -1,124 +1,197 @@
 <div class="container-signup">
   <form class="form-signup" [formGroup]="RegForm">
-      <h1 class="h3 mb-0 fw-bold text-center color-text">SignUp</h1>
-      <p class="fw-bold text-center mb-0">First Step</p>
-      <div class="check">
-        <i class="fas fa-check-circle icons"></i>
-        <i class="fas fa-long-arrow-alt-right icons2"></i>
-        <i class="fas fa-check-circle icons"></i>
-      </div>
-      <p class=" fw-bold text-center mb-0 mt-1">Upload your image</p>
-      <div class="container-img">
-        <img id="ProfileImg" src="../../../assets/images/Group 1259.png" alt="" width="125" height="125" />
+    <h1 class="h3 mb-0 fw-bold text-center color-text">SignUp</h1>
+    <p class="fw-bold text-center mb-0">First Step</p>
+    <div class="check">
+      <i class="fas fa-check-circle icons"></i>
+      <i class="fas fa-long-arrow-alt-right icons2"></i>
+      <i class="fas fa-check-circle icons"></i>
+    </div>
+    <p class="fw-bold text-center mb-0 mt-1">Upload your image</p>
+    <div class="container-img">
+      <img
+        id="ProfileImg"
+        src="../../../assets/images/Group 1259.png"
+        alt=""
+        width="125"
+        height="125"
+      />
 
-        <label action="" class="profilechange">
-          <input id="ProfileName" type="file" (change)="onFileSelected()"/>
-          <i class="fas fa-camera profileicon"></i>
-        </label>
-      </div>
+      <label action="" class="profilechange">
+        <input id="ProfileName" type="file" (change)="onFileSelected()" />
+        <i class="fas fa-camera profileicon"></i>
+      </label>
+    </div>
 
-      <label class="fw-bold">First Name </label>
-      <div class="mb-2 input-container">
+    <label class="fw-bold">First Name </label>
+    <div class="mb-2 input-container">
+      <input
+        type="text"
+        id="fname"
+        name="Fname"
+        class="form-control"
+        placeholder="Enter your first Name "
+        required
+        formControlName="Fname"
+      />
+      <i class="fas fa-user icon"></i>
+    </div>
+
+    <div
+      *ngIf="RegForm.controls.Fname.errors && RegForm.controls.Fname.touched"
+      class="text-danger"
+    >
+      <i class="fas fa-exclamation-triangle"></i>
+      Name Must be at least 4 character
+    </div>
+
+    <label class="fw-bold">Last Name</label>
+    <div class="mb-2 input-container">
+      <input
+        type="text"
+        id="lname"
+        name="Lname"
+        class="form-control"
+        placeholder="Enter your last Name"
+        required
+        formControlName="Lname"
+      />
+      <i class="fas fa-user icon"></i>
+    </div>
+
+    <div
+      *ngIf="RegForm.controls.Lname.errors && RegForm.controls.Lname.touched"
+      class="text-danger"
+    >
+      <i class="fas fa-exclamation-triangle"></i>
+      Name Must be at least 4 character
+    </div>
+
+    <label class="fw-bold">Age</label>
+    <div class="mb-2 input-container">
+      <input
+        type="text"
+        id="num"
+        name="Age"
+        class="form-control"
+        placeholder="Enter your Age"
+        required
+        formControlName="Age"
+      />
+      <i class="fas fa-user-friends icon"></i>
+    </div>
+
+    <div
+      *ngIf="RegForm.controls.Age.errors && RegForm.controls.Age.touched"
+      class="text-danger"
+    >
+      <i class="fas fa-exclamation-triangle"></i>
+      Age Must be bigger than 11
+    </div>
+
+    <label class="fw-bold">Address</label>
+    <div class="row">
+      <label class="fw-bold col-4" for="City">City</label>
+      <label class="fw-bold col-5" for="area">Area</label>
+      <label class="fw-bold col-3" for="building number">Build no</label>
+    </div>
+    <div class="row">
+      <!-- <label class="fw-bold">City</label> -->
+      <div class="mb-2 input-container2 col-4">
         <input
           type="text"
-          id="fname"
-          name="Fname"
+          id="City"
+          name="Address"
           class="form-control"
-          placeholder="Enter your first Name "
+          placeholder="City"
           required
-          formControlName="Fname"
+          formControlName="City"
         />
-        <i class="fas fa-user icon"></i>
+        <i class="fas fa-map-marked-alt Addressicon"></i>
       </div>
 
-      <div *ngIf="RegForm.controls.Fname.errors&&RegForm.controls.Fname.touched" class="text-danger">
-        <i class="fas fa-exclamation-triangle"></i>
-        Name Must be at least 4 character
-      </div>
-
-      <label class="fw-bold">Last Name</label>
-      <div class="mb-2 input-container">
+      <!-- <label class="fw-bold">Area</label> -->
+      <div class="mb-2 input-container3 col-4">
         <input
           type="text"
-          id="lname"
-          name="Lname"
+          id="area"
+          name="Address"
           class="form-control"
-          placeholder="Enter your last Name"
+          placeholder="Area"
           required
-          formControlName="Lname"
+          formControlName="Area"
         />
-        <i class="fas fa-user icon"></i>
+        <i class="fas fa-map-marked-alt Addressicon"></i>
       </div>
 
-      <div *ngIf="RegForm.controls.Lname.errors&&RegForm.controls.Lname.touched" class="text-danger">
-        <i class="fas fa-exclamation-triangle"></i>
-        Name Must be at least 4 character
+      <!-- <label class="fw-bold">Building Number</label> -->
+      <div class="mb-2 input-container4 col-4">
+        <input
+          type="number"
+          id="building number"
+          name="Address"
+          class="form-control"
+          placeholder="No"
+          required
+          formControlName="buildingNumber"
+        />
+        <i class="fas fa-map-marked-alt Addressicon"></i>
       </div>
-
-      <label class="fw-bold">Age</label>
-          <div class="mb-2  input-container">
-            <input
-              type="text"
-              id="num"
-              name="Age"
-              class="form-control"
-              placeholder="Enter your Age"
-              required
-              formControlName="Age"
-            />
-            <i class="fas fa-user-friends icon"></i>
-          </div>
-
-          <div *ngIf="RegForm.controls.Age.errors&&RegForm.controls.Age.touched" class="text-danger">
-            <i class="fas fa-exclamation-triangle"></i>
-            Age Must be bigger than 11
-          </div>
-
-          <label class="fw-bold">Address</label>
-          <div class="mb-2  input-container">
-            <input
-              type="text"
-              id="address"
-              name="Address"
-              class="form-control"
-              placeholder="Enter your Address"
-              required
-              formControlName="Address"
-            />
-            <i class="fas fa-map-marked-alt icon"></i>
-          </div>
-
-          <div *ngIf="RegForm.controls.Address.errors&&RegForm.controls.Address.touched" class="text-danger">
-            <i class="fas fa-exclamation-triangle"></i>
-            Enter Address
-          </div>
-
-          <label class="fw-bold">Phone</label>
-          <div class="mb-2  input-container">
-            <input
-              type="text"
-              id="Phone"
-              name="Phone"
-              class="form-control"
-              placeholder="Enter your Phone"
-              required
-              formControlName="Phone"
-            />
-            <i class="fas fa-phone-alt icon"></i>
-          </div>
-          <div *ngIf="RegForm.controls.Phone.errors&&RegForm.controls.Phone.touched" class="text-danger">
-            <i class="fas fa-exclamation-triangle"></i>
-            Enter Valid Phone
-          </div>
-      <button
-        class="mb-2 btn btn-lg btn-block fw-bold"
-        type="button"
-        routerLink="/SignUp"
-        [disabled]="!RegForm.valid"
-        (click)="next()"
+    </div>
+    <div class="row">
+      <div
+        *ngIf="RegForm.controls.City.errors && RegForm.controls.City.touched"
+        class="text-danger col-4"
       >
-        Next
-      </button>
-
+        <i class="fas fa-exclamation-triangle"></i>
+        Enter City
+      </div>
+      <div
+        *ngIf="RegForm.controls.Area.errors && RegForm.controls.Area.touched"
+        class="text-danger col-4"
+      >
+        <i class="fas fa-exclamation-triangle"></i>
+        Enter Area
+      </div>
+      <div
+        *ngIf="
+          RegForm.controls.buildingNumber.errors &&
+          RegForm.controls.buildingNumber.touched
+        "
+        class="text-danger col-4"
+      >
+        <i class="fas fa-exclamation-triangle"></i>
+        Enter Num
+      </div>
+    </div>
+    <label class="fw-bold">Phone</label>
+    <div class="mb-2 input-container">
+      <input
+        type="text"
+        id="Phone"
+        name="Phone"
+        class="form-control"
+        placeholder="Enter your Phone"
+        required
+        formControlName="Phone"
+      />
+      <i class="fas fa-phone-alt icon"></i>
+    </div>
+    <div
+      *ngIf="RegForm.controls.Phone.errors && RegForm.controls.Phone.touched"
+      class="text-danger"
+    >
+      <i class="fas fa-exclamation-triangle"></i>
+      Enter Valid Phone
+    </div>
+    <button
+      class="mb-2 btn btn-lg btn-block fw-bold"
+      type="button"
+      routerLink="/SignUp"
+      [disabled]="!RegForm.valid"
+      (click)="next()"
+    >
+      Next
+    </button>
   </form>
 </div>

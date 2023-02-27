@@ -41,7 +41,9 @@ export class RegisterComponent {
       Fname: new FormControl(null,[Validators.required,Validators.minLength(4)]),
       Lname: new FormControl(null,[Validators.required,Validators.minLength(4)]),
       Age: new FormControl(null, [Validators.min(12), Validators.max(40)]),
-      Address: new FormControl(null,Validators.required),
+      City: new FormControl(null,Validators.required),
+      Area:new FormControl(null,Validators.required),
+      buildingNumber:new FormControl(null,Validators.required),
       Phone: new FormControl(null,[Validators.required,Validators.pattern("01+[1-5\b]+[0-9\b]+$"),Validators.minLength(11),Validators.maxLength(11)]),
     })
 
@@ -55,7 +57,7 @@ export class RegisterComponent {
       return this.RegForm.get('Age') as FormControl;
     }
     get Address(){
-      return this.RegForm.get('Address') as FormControl;
+      return this.RegForm.get('Area') as FormControl;
     }
     get Phone(){
       return this.RegForm.get('Phone') as FormControl;

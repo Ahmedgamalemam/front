@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row pb-5">
     <div class="col-sm-6 col-lg-3" fxLayout="row" fxLayoutAlign="space-evenly center"  *ngFor="let i of products">
         <div class="card card1 pet" style="width: 18rem;">
             <img src="{{i.Image}}" class="card-img-top card-img">
@@ -9,7 +9,7 @@
                 <div style="margin-top: 1.4rem;">
                     <p class="card-text">{{i.Price}}</p>
                 </div>
-                
+
                 <button class="card-btn" (click)="removefromcard(i)" >
                   <lord-icon
                       src="https://cdn.lordicon.com/xryjrepg.json"
