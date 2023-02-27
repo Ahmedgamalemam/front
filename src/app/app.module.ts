@@ -30,7 +30,7 @@ import { MarkerService } from './core/Services/marker.service';
 import { PopupService } from './core/Services/popup.service';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './component/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
