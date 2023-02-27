@@ -1,3 +1,4 @@
+import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
@@ -6,6 +7,9 @@ import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  constructor(public nav:NavBarService){
+  }
+
 
 // pets card
 arr_pets: string[] = ["assets/images/cardcat.png",
@@ -15,7 +19,7 @@ arr_pets: string[] = ["assets/images/cardcat.png",
 "assets/images/cartfish.png"];
 
 totalCards_pets: number = this.arr_pets.length;
-  
+
 currentPage_pets: number = 1;
   pagePosition_pets: string = "0%";
   cardsPerPage_pets: number = 0;
@@ -38,6 +42,7 @@ currentPage_pets: number = 1;
   }
 
   ngOnInit() {
+    this.nav.Show();
     this.cardsPerPage_pets = this.getCardsPerPage_pets();
     this.initializeSlider_pets();
 
