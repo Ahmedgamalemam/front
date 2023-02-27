@@ -20,11 +20,14 @@ import { Register2Component } from './component/register2/register2.component';
 import { FavouritComponent } from './component/favourit/favourit.component';
 import { CartComponent } from './component/cart/cart.component';
 import { OredrsComponent } from './component/oredrs/oredrs.component';
-
+import { RouterModule,Routes } from '@angular/router';
+import { ProfileComponent } from './component/profile/profile.component';
+import { FooterComponent } from './share/footer/footer.component';
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { ClinicComponent } from './component/clinic/clinic.component';
 import { MarkerService } from './core/Services/marker.service';
 import { PopupService } from './core/Services/popup.service';
-
-import { FooterComponent } from './share/footer/footer.component';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './products/products.component';
@@ -44,6 +47,11 @@ import { ProductsComponent } from './products/products.component';
     FavouritComponent,
     CartComponent,
     OredrsComponent,
+    FooterComponent,
+    ProductDetailsComponent,
+    PaymentComponent,
+    ClinicComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +66,8 @@ import { ProductsComponent } from './products/products.component';
   ],
   providers: [
     MarkerService,
-    PopupService
+    PopupService,
+    RouterModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

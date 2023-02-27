@@ -12,6 +12,9 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './component/cart/cart.component';
 import { FavouritComponent } from './component/favourit/favourit.component';
 import { OredrsComponent } from './component/oredrs/oredrs.component';
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { ClinicComponent } from './component/clinic/clinic.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -20,13 +23,16 @@ const route: Routes = [
 {path:'Register',component:RegisterComponent},
 {path:"SignUp",component:Register2Component},
 {path:"Profile",component:ProfileComponent},
-{path:"Clinic",component:MapComponent},
+{path:"Map",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
 {path:'**',component:ErrorComponent},
 {path:'favourit',component:FavouritComponent},
 {path:'cart',component:CartComponent},
 {path:'orders',component:OredrsComponent},
+{path:"productDetails",component:ProductDetailsComponent},
+{path:"payment",component:PaymentComponent},
+{path:"clinic",component:ClinicComponent}
 ];
 
 @NgModule({
