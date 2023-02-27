@@ -26,13 +26,13 @@ const route: Routes = [
 {path:"Map",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
-{path:'**',component:ErrorComponent},
 {path:'favourit',component:FavouritComponent},
 {path:'cart',component:CartComponent},
 {path:'orders',component:OredrsComponent},
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
-{path:"clinic",component:ClinicComponent}
+{path:"clinic",component:ClinicComponent},
+{path:'**',component:ErrorComponent},
 ];
 
 @NgModule({
