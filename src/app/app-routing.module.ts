@@ -7,6 +7,8 @@ import { RegisterComponent } from './component/register/register.component';
 import { Register2Component } from './component/register2/register2.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MapComponent } from './component/map/map.component';
+import { PetsComponent } from './component/pets/pets.component';
+import { ProductsComponent } from './products/products.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -16,6 +18,8 @@ const route: Routes = [
 {path:"SignUp",component:Register2Component},
 {path:"Profile",component:ProfileComponent},
 {path:"Clinic",component:MapComponent},
+{path:"Pets",component:PetsComponent},
+{path:"Products",component:ProductsComponent},
 {path:'**',component:ErrorComponent},
 ];
 

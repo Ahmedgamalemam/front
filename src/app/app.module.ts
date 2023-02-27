@@ -24,6 +24,7 @@ import { PopupService } from './core/Services/popup.service';
 import { FooterComponent } from './share/footer/footer.component';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
+import { ProductsComponent } from './products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { PetsComponent } from './component/pets/pets.component';
     Register2Component,
     FooterComponent,
     MapComponent,
-    PetsComponent
+    PetsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

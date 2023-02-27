@@ -25,12 +25,16 @@ export class RegisterComponent {
 
       reader.onload = (e: any) => {
         this.profile = e.target.result;
-        //console.log(this.profile)
+
+
         document.getElementById("ProfileImg")?.setAttribute("src",this.profile)
+
       };
       reader.readAsDataURL(inputNode.files[0]);
+
     }
   }
+
 
   //////validate
   RegForm = new FormGroup({
@@ -63,7 +67,7 @@ export class RegisterComponent {
         Type:"user",
         Age:this.Age.value,
         Address:this.Address.value,
-        Image:this.profile,
+        Image:this.profile.toString(),
         Phone:this.Phone.value,
         Email:"",
         Password:""
