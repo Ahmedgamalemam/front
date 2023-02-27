@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-6 col-lg-3" fxLayout="row" fxLayoutAlign="space-evenly center"  *ngFor="let i of products">
+        <div class="card card1 pet" style="width: 18rem;">
+            <img src="{{i.Image}}" class="card-img-top card-img">
+            <div class="card-body" fxLayout="column" fxLayoutAlign="space-evenly center">
+              <h4 class="card-title">{{i.Name}}</h4>
+              <p>{{i.discription}}</p>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <div style="margin-top: 1.4rem;">
+                    <p class="card-text">{{i.Price}}</p>
+                </div>
+                
+                <button class="card-btn" (click)="removefromcard(i)" >
+                  <lord-icon
+                      src="https://cdn.lordicon.com/xryjrepg.json"
+                      trigger="hover"
+                      colors="primary:#50402c"
+                      scale="40"
+                      state="hover"
+                      style="width:50px;height:50px">
+                  </lord-icon>
+                </button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

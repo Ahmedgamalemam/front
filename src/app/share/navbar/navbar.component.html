@@ -1,4 +1,4 @@
-<nav class="navbar nav navbar-expand-lg navbar-light" *ngIf="nav.visable">
+<nav class="navbar nav navbar-expand-lg navbar-light fixed-top" *ngIf="nav.visable">
 
         <div class="container-fluid" fxLayout="row">
 
@@ -67,8 +67,32 @@
 
 
             <!-- icons -->
+            <!-- profile icon -->
+            <div class="btn-group">
+                <button type="button" style="background-color: transparent;border: none;" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div style="display: inline-block;">
+                        <a routerLink="/home">
+                        <lord-icon
+                        src="https://cdn.lordicon.com/hbvyhtse.json"
+                        trigger="hover"
+                        colors="primary:#50402c"
+                        scale="40"
+                        state="hover"
+                        style="width:50px;height:50px">
+                        </lord-icon></a>
+                    </div>
+                </button>
+                <ul class="dropdown-menu drob-style">
+                <li><a class="dropdown-item" href="#">MY Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+                <br>
+                <hr>
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
+            </div>
+
             <!-- favourit icon -->
-            <a routerLink="/home">
+            <a routerLink="/favourit">
             <lord-icon
             src="https://cdn.lordicon.com/xryjrepg.json"
             trigger="morph"
@@ -79,7 +103,7 @@
             </lord-icon></a>
 
             <!-- cart icon -->
-            <a routerLink="/home">
+            <a routerLink="/cart">
             <lord-icon
             src="https://cdn.lordicon.com/udbbfuld.json"
             trigger="hover"
@@ -89,21 +113,10 @@
             style="width:50px;height:50px">
             </lord-icon></a>
 
-            <!-- profile icon -->
-            <div style="display: inline-block;">
-                <a routerLink="/Profile">
-                <lord-icon
-                src="https://cdn.lordicon.com/hbvyhtse.json"
-                trigger="hover"
-                colors="primary:#50402c"
-                scale="40"
-                state="hover"
-                style="width:50px;height:50px">
-                </lord-icon></a>
-            </div>
           </div>
         </div>
       </nav>
+
       <!-- side bar -->
       <div class="hide-side" id="side">
 
@@ -126,12 +139,12 @@
 
         <!-- home & clinic -->
         <li class="nav-item">
-            <a class="nav-link btn button" routerLink="/home">Home</a>
+            <a class="nav-link btn button side-home" routerLink="/home">Home</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link btn button" routerLink="/Clinic">Clinic</a>
         </li>
-    <hr>
+        <hr>
         <!-- drob down list (for pet) -->
         <div fxLayout="column">
             <div class="btn-group side-drop-down">
@@ -162,12 +175,36 @@
             </div>
         </div>
 
-        <hr style=" margin-top: 7rem;">
+        <hr style=" margin-top: 5rem;">
 
         <!-- icons -->
         <div fxLayout="row" fxLayoutAlign="center center">
-            <!-- favourit icon -->
-            <a routerLink="/home">
+             <!-- profile icon -->
+             <div class="btn-group">
+                <button type="button" style="background-color: transparent;border: none;" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div style="display: inline-block;">
+                        <a routerLink="/home">
+                        <lord-icon
+                        src="https://cdn.lordicon.com/hbvyhtse.json"
+                        trigger="hover"
+                        colors="primary:#50402c"
+                        scale="40"
+                        state="hover"
+                        style="width:50px;height:50px">
+                        </lord-icon></a>
+                    </div>
+                </button>
+                <ul class="dropdown-menu drob-style">
+                <li><a class="dropdown-item" href="#">MY Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+                <br>
+                <hr>
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
+            </div>
+
+                <!-- favourit icon -->
+                <a routerLink="/favourit">
                 <lord-icon
                 src="https://cdn.lordicon.com/xryjrepg.json"
                 trigger="morph"
@@ -178,7 +215,7 @@
                 </lord-icon></a>
 
                 <!-- cart icon -->
-                <a routerLink="/home">
+                <a routerLink="/cart">
                 <lord-icon
                 src="https://cdn.lordicon.com/udbbfuld.json"
                 trigger="hover"
@@ -187,18 +224,5 @@
                 state="hover"
                 style="width:50px;height:50px">
                 </lord-icon></a>
-
-                <!-- profile icon -->
-                <div style="display: inline-block;">
-                    <a routerLink="/Profile">
-                    <lord-icon
-                    src="https://cdn.lordicon.com/hbvyhtse.json"
-                    trigger="hover"
-                    colors="primary:#50402c"
-                    scale="40"
-                    state="hover"
-                    style="width:50px;height:50px">
-                    </lord-icon></a>
-                </div>
         </div>
     </div>
