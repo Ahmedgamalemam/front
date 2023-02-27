@@ -4,7 +4,7 @@
 .slideshow-container {
   width: 100%;
   position: relative;
-  margin: auto;  
+  margin: auto;
 }
 
 .mySlides {
@@ -21,34 +21,34 @@ margin: auto;
 text-align: center;
 margin-bottom: 2.5rem;
 margin-top: 2rem;
-transform: translate3d(2px, 2px, 10em); 
+transform: translate3d(2px, 2px, 10em);
 }
 .card-title:hover{
-    box-shadow:2px 0px 10px 0px #f7e3ac;
+    box-shadow:0px 0px 10px 0px #f7e3ac;
     transform: translate3d(0, 0, 0);
 }
 .w-100 {
     width: 100%!important;
   }
-  
+
   .container {
     display: flex;
     position: relative;
     justify-content: center;
   }
-  
+
   .cards {
-max-width: 300rem;  
+max-width: 300rem;
 overflow: hidden;
 max-height: 14rem;
 margin-bottom: 5rem;
 }
-  
+
 .overflow {
     position: relative;
     transition: left 0.5s ease-in-out;
 }
-  
+
   .card1 {
     height: 300px;
     background-color: #e0e1e2;
@@ -68,7 +68,7 @@ margin-bottom: 5rem;
   .no-right-margin {
     margin-right: 0px;
   }
-  
+
   .card span {
     font-size:48px;
     position: absolute;
@@ -108,13 +108,13 @@ margin-bottom: 5rem;
     margin-left: -15px;
     z-index: 1;
   }
-  
+
   .right {
     right: 0;
     margin-right: -15px;
-    border-radius: 3px 0 0 3px;  
+    border-radius: 3px 0 0 3px;
 }
- 
+
 /* clinic card */
 .banarcard{
     width: 100%;
