@@ -17,6 +17,9 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ErrorComponent } from './component/error/error.component';
 import { Register2Component } from './component/register2/register2.component';
+import { FavouritComponent } from './component/favourit/favourit.component';
+import { CartComponent } from './component/cart/cart.component';
+import { OredrsComponent } from './component/oredrs/oredrs.component';
 
 import { MarkerService } from './core/Services/marker.service';
 import { PopupService } from './core/Services/popup.service';
@@ -37,7 +40,10 @@ import { ProductsComponent } from './products/products.component';
     FooterComponent,
     MapComponent,
     PetsComponent,
-    ProductsComponent
+    ProductsComponent,
+    FavouritComponent,
+    CartComponent,
+    OredrsComponent,
   ],
   imports: [
     BrowserModule,

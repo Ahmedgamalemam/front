@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-12 col-lg-6" fxLayout="row" fxLayoutAlign="space-evenly center"  *ngFor="let meal of products">
+        <div class="card main-card" fxLayout="row" fxLayoutAlign="space-evenly center"  style="width: 18rem;">
+            <div>
+                <img src="{{meal.Image}}" class="card-img-top card-img">
+            </div>
+
+            <div class="card-body">
+                <div style="margin-top: -75px">
+                    <h3 class="card-title">{{meal.Name}}</h3>
+                </div>
+                <div>
+                    <p class="card-text">{{meal.discription}}</p>
+                </div>
+            </div>
+
+            <div fxLayout="column">
+                <div style="margin: auto;margin-top: 14px;">
+                    <h3 class="card-text">{{meal.Price}}</h3>
+                </div>
+
+                <div fxLayout="row" style="margin-top: 26px;">
+                    <button type="button" class="button btn" (click)="counter_mins(meal.Name)">
+                        <img src="assets/images/mins.png" class="plus">
+                    </button>
+                   
+                    <h3 class="card-text inline cart-count" style="margin-top: 13px;">{{meal.Counter}}</h3>
+
+                    <button type="button" class="button btn" (click)="counter_plus(meal.Name)">
+                        <img src="assets/images/plus.png" class="plus">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

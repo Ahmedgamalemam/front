@@ -9,6 +9,9 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './component/cart/cart.component';
+import { FavouritComponent } from './component/favourit/favourit.component';
+import { OredrsComponent } from './component/oredrs/oredrs.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -21,6 +24,9 @@ const route: Routes = [
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
 {path:'**',component:ErrorComponent},
+{path:'favourit',component:FavouritComponent},
+{path:'cart',component:CartComponent},
+{path:'orders',component:OredrsComponent},
 ];
 
 @NgModule({

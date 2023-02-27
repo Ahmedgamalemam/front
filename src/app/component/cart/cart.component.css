@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
+.main-card{
+    min-width: 33rem;
+    max-height: 13rem;
+    margin-top: 7rem;
+}
+.main-card:hover{
+    box-shadow:2px 0px 20px 0px #e0dcce;
+    transform: translate3d(2px, 2px, 10em); 
+}
+.card-img{
+    max-height: 12rem;
+    border-radius: 20px;
+}
+.card-button{
+        min-width: 5rem;
+        color: #50402c;
+}
+.card-button:hover{
+        background-color: #daa06d;
+        color: #50402c; 
+}
+.cart-count{
+    text-align: center;
+}
