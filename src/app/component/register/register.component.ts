@@ -25,12 +25,16 @@ export class RegisterComponent {
 
       reader.onload = (e: any) => {
         this.profile = e.target.result;
-        //console.log(this.profile)
+
+
         document.getElementById("ProfileImg")?.setAttribute("src",this.profile)
+
       };
       reader.readAsDataURL(inputNode.files[0]);
+
     }
   }
+
 
   //////validate
   RegForm = new FormGroup({
