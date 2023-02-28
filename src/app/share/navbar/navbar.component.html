@@ -57,12 +57,30 @@
               Products
             </button>
             <ul class="dropdown-menu drob-style">
-              <li><a class="dropdown-item" routerLink="/Products">All Products</a></li>
-              <li><a class="dropdown-item" href="#">Food</a></li>
-              <li><a class="dropdown-item" href="#">Cages</a></li>
-              <li><a class="dropdown-item" href="#">Tools</a></li>
-              <li><a class="dropdown-item" href="#">Drugs</a></li>
-              <li><a class="dropdown-item" href="#">Clothes</a></li>
+              <li>
+                <a class="dropdown-item" routerLink="/Products">All Products</a>
+              </li>
+
+              <li>
+                <button class="dropdown-item" value="Food" (click)="productcategory($event)" routerLink="/Products" >Food</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Drugs" (click)="productcategory($event)"routerLink="/Products" >Drugs</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Kennels & cages" (click)="productcategory($event)" routerLink="/Products" >Kennels & cages</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Toys" (click)="productcategory($event)" routerLink="/Products" >Toys</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="(Accessories" (click)="productcategory($event)"
+                  >Accessories</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Grooming" (click)="productcategory($event)"
+                  >Grooming</button>
+              </li>
             </ul>
           </div>
         </div>
@@ -71,12 +89,16 @@
       <!-- search -->
       <form class="d-flex" *ngIf="search.visable">
         <input
+          matInput
           class="form-control me-2 inputsearch"
           type="search"
           placeholder="Search"
           aria-label="Search"
+          (keyup)="applyFilter($event)"
         />
-        <button class="btn button search" type="submit">Search</button>
+        <button class="btn button search" (click)="categorysearch()">
+          Search
+        </button>
       </form>
 
       <!-- icons -->
@@ -89,7 +111,7 @@
           aria-expanded="false"
         >
           <div style="display: inline-block">
-            <a >
+            <a>
               <lord-icon
                 src="https://cdn.lordicon.com/hbvyhtse.json"
                 trigger="hover"
@@ -184,30 +206,40 @@
   </button>
 
   <!-- search -->
-  <form class="d-flex" fxLayout="column" fxLayoutAlign="space-around center" *ngIf="search.visable">
+  <form
+    class="d-flex"
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+    *ngIf="search.visable"
+  >
     <input
+      matInput
       class="form-control me-2 inputsearch search-side"
       type="search"
       placeholder="Search"
       aria-label="Search"
+      (keyup)="applyFilter($event)"
     />
-    <button class="btn button search side-btn-search" type="submit">
+    <button
+      class="btn button search side-btn-search"
+      (click)="categorysearch()"
+    >
       Search
     </button>
   </form>
-  <hr *ngIf="search.visable"/>
-  <br *ngIf="!search.visable">
+  <hr *ngIf="search.visable" />
+  <br *ngIf="!search.visable" />
 
   <!-- home & clinic -->
-  <br>
-  <div class="nav-item" >
+  <br />
+  <div class="nav-item">
     <a class="nav-link btn button side-home" routerLink="/home">Home</a>
   </div>
   <div class="nav-item">
     <a class="nav-link btn button" routerLink="/Clinic">Clinic</a>
   </div>
   <hr />
-  <br *ngIf="!search.visable">
+  <br *ngIf="!search.visable" />
   <!-- drob down list (for pet) -->
   <div fxLayout="column">
     <div class="btn-group side-drop-down">
@@ -240,13 +272,31 @@
         Products
       </button>
       <ul class="dropdown-menu drob-style">
-        <li><a class="dropdown-item" routerLink="/Products">All Products</a></li>
-        <li><a class="dropdown-item" href="#">Food</a></li>
-        <li><a class="dropdown-item" href="#">Cages</a></li>
-        <li><a class="dropdown-item" href="#">Tools</a></li>
-        <li><a class="dropdown-item" href="#">Drugs</a></li>
-        <li><a class="dropdown-item" href="#">Clothes</a></li>
-      </ul>
+        <li>
+          <a class="dropdown-item" routerLink="/Products">All Products</a>
+        </li>
+
+        <li>
+          <button class="dropdown-item" value="Food" (click)="productcategory($event)" routerLink="/Products" >Food</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Drugs" (click)="productcategory($event)"routerLink="/Products" >Drugs</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Kennels & cages" (click)="productcategory($event)" routerLink="/Products" >Kennels & cages</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Toys" (click)="productcategory($event)" routerLink="/Products" >Toys</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="(Accessories" (click)="productcategory($event)"
+            >Accessories</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Grooming" (click)="productcategory($event)"
+            >Grooming</button>
+        </li>
+      </ul>>
     </div>
   </div>
 
@@ -263,7 +313,7 @@
         aria-expanded="false"
       >
         <div style="display: inline-block">
-          <a >
+          <a>
             <lord-icon
               src="https://cdn.lordicon.com/hbvyhtse.json"
               trigger="hover"
