@@ -26,12 +26,12 @@ export class ProductsComponent {
       this.FilteredProduct = this.Products;
     });
   }
-  add() {
+
+  ngDoCheck(){
     let filterValue = this.searchservice.getsearch();
     this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
       Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())
     );
-    console.log(filterValue);
   }
 
   ngOnInit() {
