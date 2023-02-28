@@ -8,9 +8,12 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+id!:number;
 constructor(public nav:NavBarService,public search:SearchService) {
-
+console.log(localStorage.getItem("id"))
+}
+ngDoCheck(){
+  this.id=Number(localStorage.getItem("id"))
 }
 
   sidebar(){
@@ -18,5 +21,9 @@ constructor(public nav:NavBarService,public search:SearchService) {
   }
   close(){
     document.getElementById("side")?.classList.toggle("show-side")
+  }
+
+  LogOut(){
+    localStorage.clear();
   }
 }

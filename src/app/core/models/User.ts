@@ -1,13 +1,15 @@
 export interface User {
-  // ID:number
-  Fname:string,
-  Lname:string,
-  Age:number,
-  Address:string,
-  Type:string,
-  Email:string,
-  Phone:string,
-  Password:string,
-  Image:string
+  //ID:number
+  fname:string,
+  lname:string,
+  age:number,
+  city:string,
+  area:string,
+  buildingID:number,
+  type:string,
+  email:string,
+  phone:string,
+  password:string,
+  image:string
 }
 

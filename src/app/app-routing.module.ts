@@ -25,7 +25,7 @@ const route: Routes = [
 {path:'Login',component:LoginComponent},
 {path:'Register',component:RegisterComponent},
 {path:"SignUp",component:Register2Component},
-{path:"profile/:id",component:ProfileComponent},
+{path:"Profile/:id",component:ProfileComponent},
 {path:"Map",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},

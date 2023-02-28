@@ -33,7 +33,8 @@ export class LoginComponent {
    this.userService.LoginCheck(this.Password.value,this.Email.value)
    .subscribe((response: any) => {
 
-    if(response){
+    if(response!=0){
+      localStorage.setItem("id",response)
 
       this.route.navigate(["/home"])
       this.alertify.success('Congrats, you are successfully Logged In');

@@ -3,6 +3,7 @@ import { SearchService } from 'src/app/core/Services/search.service';
 import { ActivatedRoute } from '@angular/router';
 import { Profile } from 'src/app/core/models/profile';
 import { UserService } from 'src/app/core/Services/ModelServices/user.service';
+import { User } from 'src/app/core/models/User';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/core/Services/ModelServices/user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  prof!:Profile;
+  prof!:User;
   ID=0;
 
 
