@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PetSService } from 'src/app/core/pet-s.service';
+import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
   selector: 'app-favourit',
@@ -10,8 +11,13 @@ export class FavouritComponent {
 
   products =new Array();
 
-  constructor(private SharedService:PetSService) {
-    
+  ngOnInit() {
+    this.search.hide()
+  }
+
+
+  constructor(private SharedService:PetSService,public search:SearchService) {
+
     // this.products=this.SharedService.getItem();
     this.products = [{Name:'Marvelous Spatuletail',Image:"assets/images/cardcat.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
     {Name:'Marvelous Spatuletail',Image:"assets/images/cartfood.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
@@ -20,6 +26,6 @@ export class FavouritComponent {
   }
    removefromcard(element:any){
     var remove = this.products.indexOf(element)
-    this.products.splice(remove, 1); 
+    this.products.splice(remove, 1);
    }
 }

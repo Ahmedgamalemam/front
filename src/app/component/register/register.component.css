@@ -75,10 +75,48 @@
   width: 100%;
   position: relative;
 }
+.input-container2 {
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  position: relative;
+}
+.input-container3 {
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  position: relative;
+}
+.input-container4 {
+  display: -ms-flexbox;
+  display: flex;
+  width: 25%;
+  position: relative;
+}
 
-.form-signup input[type="text"] {
+.form-signup .input-container>input[type="text"] {
 
   padding: 10px 10px 10px 39px;
+  box-shadow: 0px 0px 2px 1px #eeeaea;
+  outline: 0;
+  border-color: #eeeaea;
+  font-size: 16px;
+  height: 50px;
+  position: relative;
+}
+.form-signup .input-container2>input[type="text"],.input-container3>input[type="text"] {
+
+  padding: 10px 10px 10px 33px;
+  box-shadow: 0px 0px 2px 1px #eeeaea;
+  outline: 0;
+  border-color: #eeeaea;
+  font-size: 16px;
+  height: 50px;
+  position: relative;
+}
+.form-signup input[type="number"] {
+
+  padding: 10px 10px 10px 33px;
   box-shadow: 0px 0px 2px 1px #eeeaea;
   outline: 0;
   border-color: #eeeaea;
@@ -98,6 +136,15 @@
   font-size: 16px;
   top: 18px;
   left: 15px;
+}
+.Addressicon {
+  color: #a7a7a7;
+  min-width: 50px;
+  position: absolute;
+  z-index: 3;
+  font-size: 16px;
+  top: 18px;
+  left: 23px;
 }
 .form-signup input[type="text"]:focus {
   border: 1px solid #f7e3ac;

@@ -19,6 +19,7 @@ import { EditProfileComponent } from './component/edit-profile/edit-profile.comp
 import { AboutUsComponent } from './component/about-us/about-us.component';
 
 
+
 const route: Routes = [
 {path:'',component:HomeComponent},
 {path:'home',component:HomeComponent},

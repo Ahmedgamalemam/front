@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { AlertService } from 'src/app/core/Services/alert.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
+import { PasswordIconService } from 'src/app/core/Services/password-icon.service';
 import { UserService } from 'src/app/core/Services/user.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent {
     Password:new FormControl(null,Validators.required)
   })
   constructor(public nav:NavBarService,public route:Router,private userService:UserService,
-    private alertify: AlertService){}
+    private alertify: AlertService,public PassIcon:PasswordIconService){}
   ngOnInit(){
     this.nav.hide();
   }
@@ -41,5 +42,12 @@ export class LoginComponent {
       this.alertify.error('Please enter valid Email and Password');
     }
     });
+  }
+  getIcon(){
+    this.PassIcon.Show()
+
+  }
+  disableIcon(){
+    this.PassIcon.hide()
   }
 }

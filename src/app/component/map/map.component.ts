@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import { SearchService } from 'src/app/core/Services/search.service';
 import { MarkerService } from '../../core/Services/marker.service';
 
 const iconRetinaUrl = 'assets/icon.png';
@@ -65,7 +66,7 @@ export class MapComponent implements AfterViewInit {
     });
   }
 
-  constructor(private markerService: MarkerService) {}
+  constructor(private markerService: MarkerService,public search:SearchService) {}
 
   GoTo() {
     this.markerService.makeUserPostion(this.map);
@@ -75,4 +76,9 @@ export class MapComponent implements AfterViewInit {
     this.initMap();
     this.markerService.makeCapitalMarkers(this.map);
   }
+
+  ngOnInit() {
+    this.search.hide()
+  }
+
 }
