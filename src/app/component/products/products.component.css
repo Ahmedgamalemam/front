@@ -52,11 +52,7 @@
   width: 100% !important;
 }
 
-/* .container {
-  display: flex;
-  position: relative;
-  justify-content: center;
-} */
+
 
 .cards {
   max-width: 300rem;
@@ -90,7 +86,9 @@
   margin-right: 0px;
 }
 .slide{
-  margin: auto 15%;
+    display: flex;
+  position: relative;
+   justify-content: center;
 }
 /* .card span {
   font-size: 48px;

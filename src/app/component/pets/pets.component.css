@@ -52,11 +52,11 @@
   width: 100% !important;
 }
 
-/* .container {
+.slide {
   display: flex;
   position: relative;
   justify-content: center;
-} */
+}
 
 .cards {
   max-width: 300rem;
@@ -89,9 +89,7 @@
 .no-right-margin {
   margin-right: 0px;
 }
-.slide{
-  margin: auto 15%;
-}
+
 /* .card span {
   font-size: 48px;
   position: absolute;
@@ -106,7 +104,7 @@
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -65px;
+  margin-top:-65px;
   padding: 16px;
   background-color: #f7e3ac;
   color: white;
