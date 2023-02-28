@@ -10,3 +10,4 @@ export interface User {
   Password:string,
   Image:string
 }
+

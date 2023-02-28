@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { SearchService } from 'src/app/core/Services/search.service';
+import { UserService } from 'src/app/core/Services/user.service';
+import { ActivatedRoute } from '@angular/router';
+import { Profile } from 'src/app/core/models/profile';
 
 @Component({
   selector: 'app-profile',
@@ -7,15 +10,24 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-onFileSelected() {
-throw new Error('Method not implemented.');
-}
-constructor(public search:SearchService){
+  prof!:Profile;
+  ID=0;
 
+
+constructor(public search:SearchService,myService:UserService,myactivated:ActivatedRoute){
+  this.ID = myactivated.snapshot.params["id"]
+   myService.GetUserById(this.ID).subscribe(
+  (res:any)=>{
+    this.prof=res
+    console.log(res)
+  })
 }
+
 ngOnInit() {
   this.search.hide()
+  console.log(this.prof)
+}
+
 }
 
 
-}
