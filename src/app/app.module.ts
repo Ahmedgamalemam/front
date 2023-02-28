@@ -24,7 +24,7 @@ import { FooterComponent } from './share/footer/footer.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
-import { MapComponent } from './component/map/map.component'; 
+import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
 import { MarkerService } from './core/Services/marker.service';
