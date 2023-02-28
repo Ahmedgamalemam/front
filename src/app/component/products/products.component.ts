@@ -21,6 +21,7 @@ export class ProductsComponent {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
         this.Products.push(element);
+        console.log(element)
 
       });
       this.FilteredProduct = this.Products;
@@ -32,6 +33,11 @@ export class ProductsComponent {
     this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
       Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())
     );
+    let filterValue2= this.searchservice.getsearch();
+    this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
+      Pharmicay.category_Name.toLowerCase().includes(filterValue2.toLowerCase())
+    );
+    console.log(filterValue2)
   }
 
   ngOnInit() {

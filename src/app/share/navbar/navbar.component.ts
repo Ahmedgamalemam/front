@@ -24,6 +24,10 @@ export class NavbarComponent {
     this.searchservice.setsearch(this.textsearch);
     //console.log(this.textsearch);
   }
+  productcategory(item:Event){
+    let inputsearch = (item.target as HTMLInputElement).value;
+    this.searchservice.setsearch(inputsearch);
+  }
 
   sidebar() {
     document.getElementById('side')?.classList.toggle('show-side');

@@ -60,11 +60,27 @@
               <li>
                 <a class="dropdown-item" routerLink="/Products">All Products</a>
               </li>
-              <li><a class="dropdown-item" href="#">Food</a></li>
-              <li><a class="dropdown-item" href="#">Cages</a></li>
-              <li><a class="dropdown-item" href="#">Tools</a></li>
-              <li><a class="dropdown-item" href="#">Drugs</a></li>
-              <li><a class="dropdown-item" href="#">Clothes</a></li>
+
+              <li>
+                <button class="dropdown-item" value="Food" (click)="productcategory($event)" routerLink="/Products" >Food</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Drugs" (click)="productcategory($event)"routerLink="/Products" >Drugs</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Kennels & cages" (click)="productcategory($event)" routerLink="/Products" >Kennels & cages</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Toys" (click)="productcategory($event)" routerLink="/Products" >Toys</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="(Accessories" (click)="productcategory($event)"
+                  >Accessories</button>
+              </li>
+              <li>
+                <button class="dropdown-item" value="Grooming" (click)="productcategory($event)"
+                  >Grooming</button>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,11 +96,7 @@
           aria-label="Search"
           (keyup)="applyFilter($event)"
         />
-        <button
-          class="btn button search"
-
-          (click)="categorysearch()"
-        >
+        <button class="btn button search" (click)="categorysearch()">
           Search
         </button>
       </form>
@@ -210,9 +222,7 @@
     />
     <button
       class="btn button search side-btn-search"
-
       (click)="categorysearch()"
-
     >
       Search
     </button>
@@ -265,12 +275,28 @@
         <li>
           <a class="dropdown-item" routerLink="/Products">All Products</a>
         </li>
-        <li><a class="dropdown-item" href="#">Food</a></li>
-        <li><a class="dropdown-item" href="#">Cages</a></li>
-        <li><a class="dropdown-item" href="#">Tools</a></li>
-        <li><a class="dropdown-item" href="#">Drugs</a></li>
-        <li><a class="dropdown-item" href="#">Clothes</a></li>
-      </ul>
+
+        <li>
+          <button class="dropdown-item" value="Food" (click)="productcategory($event)" routerLink="/Products" >Food</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Drugs" (click)="productcategory($event)"routerLink="/Products" >Drugs</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Kennels & cages" (click)="productcategory($event)" routerLink="/Products" >Kennels & cages</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Toys" (click)="productcategory($event)" routerLink="/Products" >Toys</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="(Accessories" (click)="productcategory($event)"
+            >Accessories</button>
+        </li>
+        <li>
+          <button class="dropdown-item" value="Grooming" (click)="productcategory($event)"
+            >Grooming</button>
+        </li>
+      </ul>>
     </div>
   </div>
 
