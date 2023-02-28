@@ -24,4 +24,7 @@ public CheckEmails(Email:string)
 {
 return this.myClient.get(this.Url_DB+"/"+Email)
 }
+public GetUserById(ID:number){
+  return this.myClient.get(this.Url_DB+"/"+ID)
+}
 }
