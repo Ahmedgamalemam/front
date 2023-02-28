@@ -39,6 +39,17 @@ currentPage_pets: number = 1;
         this.populatePagePosition_pets();
       }
     }
+
+
+    let newCardsPerPagepro = this.getCardsPerPage_products();
+    if (newCardsPerPagepro != this.cardsPerPage_products) {
+      this.cardsPerPage_products = newCardsPerPagepro;
+      this.initializeSlider_products();
+      if (this.currentPage_products > this.totalPages_products) {
+        this.currentPage_products = this.totalPages_products;
+        this.populatePagePosition_products();
+      }
+    }
   }
 
   ngOnInit() {
@@ -104,17 +115,7 @@ currentPage_products: number = 1;
   containerWidth_products: number = 0;
   @ViewChild("container", { static: true, read: ElementRef })
   container_products: ElementRef<HTMLInputElement> = {} as ElementRef;
-  @HostListener("window:resize") windowResize_products() {
-    let newCardsPerPage = this.getCardsPerPage_products();
-    if (newCardsPerPage != this.cardsPerPage_products) {
-      this.cardsPerPage_products = newCardsPerPage;
-      this.initializeSlider_products();
-      if (this.currentPage_products > this.totalPages_products) {
-        this.currentPage_products = this.totalPages_products;
-        this.populatePagePosition_products();
-      }
-    }
-  }
+
   initializeSlider_products() {
     this.totalPages_products = Math.ceil(this.totalCards_products / this.cardsPerPage_products);
     this.overflowWidth_products = `calc(${this.totalPages_products * 100}% + ${this.totalPages_products *
