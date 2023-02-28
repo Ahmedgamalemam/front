@@ -24,14 +24,17 @@ import { FooterComponent } from './share/footer/footer.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
-import { MarkerService } from './core/Services/marker.service';
-import { PopupService } from './core/Services/popup.service';
-import { MapComponent } from './component/map/map.component';
+import { MapComponent } from './component/map/map.component'; 
 import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
-import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
-import { AboutUsComponent } from './component/about-us/about-us.component';
+import { MarkerService } from './core/Services/marker.service';
+import { PopupService } from './core/Services/popup.service';
 
+
+// var route:Routes = [{path:"home",component:HomeComponent},
+// {path:"profile",component:ProfileComponent},
+// {path:"productDetails",component:ProductDetailsComponent}
+// ]
 
 @NgModule({
   declarations: [
@@ -52,10 +55,7 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
     FooterComponent,
     ProductDetailsComponent,
     PaymentComponent,
-    ClinicComponent,
-    ProfileComponent,
-    EditProfileComponent,
-    AboutUsComponent
+    ClinicComponent
   ],
   imports: [
     BrowserModule,
@@ -81,4 +81,3 @@ export class AppModule {
     defineElement(lottie.loadAnimation);
   }
 }
-

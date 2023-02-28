@@ -18,15 +18,13 @@ import { ClinicComponent } from './component/clinic/clinic.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
 
-
-
 const route: Routes = [
 {path:'',component:HomeComponent},
 {path:'home',component:HomeComponent},
 {path:'Login',component:LoginComponent},
 {path:'Register',component:RegisterComponent},
 {path:"SignUp",component:Register2Component},
-{path:"Profile",component:ProfileComponent},
+{path:"profile",component:ProfileComponent},
 {path:"Map",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
@@ -38,7 +36,9 @@ const route: Routes = [
 {path:"Clinic",component:ClinicComponent},
 { path:'EditProfile', component: EditProfileComponent },
 { path:"Aboutus", component: AboutUsComponent },
+{path:"clinic",component:ClinicComponent},
 {path:'**',component:ErrorComponent},
+
 ];
 
 @NgModule({
