@@ -19,6 +19,8 @@ import { FooterComponent } from './share/footer/footer.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
+import { PetDetailsComponent } from './component/pet-details/pet-details.component';
+import { AddProductComponent } from './component/add-product/add-product.component';
 // var route:Routes = [{path:"home",component:HomeComponent},
 // {path:"profile",component:ProfileComponent},
 // {path:"productDetails",component:ProductDetailsComponent}
@@ -32,7 +34,9 @@ import { ClinicComponent } from './component/clinic/clinic.component';
     FooterComponent,
     ProductDetailsComponent,
     PaymentComponent,
-    ClinicComponent
+    ClinicComponent,
+    PetDetailsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
