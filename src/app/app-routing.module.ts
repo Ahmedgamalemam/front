@@ -1,23 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './component/error/error.component';
 import { HomeComponent } from './component/home/home.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
+import { Register2Component } from './component/register2/register2.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { MapComponent } from './component/map/map.component';
+import { PetsComponent } from './component/pets/pets.component';
+import { ProductsComponent } from './component/products/products.component';
+import { CartComponent } from './component/cart/cart.component';
+import { FavouritComponent } from './component/favourit/favourit.component';
+import { OredrsComponent } from './component/oredrs/oredrs.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
-import { PetDetailsComponent } from './component/pet-details/pet-details.component';
-import { AddProductComponent } from './component/add-product/add-product.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
 {path:'home',component:HomeComponent},
-{path:"profile",component:ProfileComponent},
+{path:'Login',component:LoginComponent},
+{path:'Register',component:RegisterComponent},
+{path:"SignUp",component:Register2Component},
+{path:"Profile",component:ProfileComponent},
+{path:"Map",component:MapComponent},
+{path:"Pets",component:PetsComponent},
+{path:"Products",component:ProductsComponent},
+{path:'Favourit',component:FavouritComponent},
+{path:'Cart',component:CartComponent},
+{path:'orders',component:OredrsComponent},
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
-{path:"clinic",component:ClinicComponent},
-{path:"pet-details",component:PetDetailsComponent},
-{path:"addProduct",component:AddProductComponent}
-
+{path:"clinic",component:ClinicComponent}
 ];
 
 @NgModule({
