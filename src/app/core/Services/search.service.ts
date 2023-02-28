@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class NavBarService {
+export class SearchService {
+
   visable:boolean;
-  search:string="";
   constructor() {
     this.visable=true;
   }
@@ -15,12 +15,4 @@ export class NavBarService {
   Show(){
     this.visable=true
   }
-
-  setsearch(Item: any): void {
-    this.search = Item;
-    //console.log(Item)
-}
-getsearch(): any {
-  return this.search;
-}
 }
