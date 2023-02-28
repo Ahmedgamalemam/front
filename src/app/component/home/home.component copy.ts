@@ -11,26 +11,34 @@ import { Category } from 'src/app/core/models/category';
 export class HomeComponent {
 
   arr_category_pets:Category[]=[]
-
-  totalCards_pets: number=0;
+  
 
   constructor(public nav:NavBarService,category:CategoryService){
-    
     category.get_category().subscribe((responce:any)=>{
       responce.forEach((element:any) => {
         this.arr_category_pets.push(element)
         console.log(element)
       })
-      console.log(this.arr_category_pets)
-      this.totalCards_pets = this.arr_category_pets.length;
-      
-      console.log(this.totalCards_pets)
     })
-   
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // pets card
+
+totalCards_pets: number = this.arr_category_pets.length;
 
 currentPage_pets: number = 1;
   pagePosition_pets: string = "0%";

@@ -35,11 +35,12 @@
                             Pets
                         </button>
                         <ul class="dropdown-menu drob-style">
-                        <li><a class="dropdown-item" href="#">Fish</a></li>
-                        <li><a class="dropdown-item" href="#">Cats</a></li>
-                        <li><a class="dropdown-item" href="#">Dogs</a></li>
-                        <li><a class="dropdown-item" href="#">Birds</a></li>
-                        <li><a class="dropdown-item" href="#">Hamsters</a></li>
+                        <li><a class="dropdown-item" routerLink="/Pets">All Pets</a></li>
+                        <li><a class="dropdown-item" click="petcategory(fish)">Fish</a></li>
+                        <li><a class="dropdown-item" click="petcategory(cats)">Cats</a></li>
+                        <li><a class="dropdown-item" click="petcategory(dogs)">Dogs</a></li>
+                        <li><a class="dropdown-item" click="petcategory(birds)">Birds</a></li>
+                        <li><a class="dropdown-item" click="petcategory(Hamsters)">Hamsters</a></li>
                         </ul>
                     </div>
 
@@ -49,11 +50,12 @@
                             Products
                         </button>
                         <ul class="dropdown-menu drob-style">
-                        <li><a class="dropdown-item" href="#">Food</a></li>
-                        <li><a class="dropdown-item" href="#">Cages</a></li>
-                        <li><a class="dropdown-item" href="#">Tools</a></li>
-                        <li><a class="dropdown-item" href="#">Drugs</a></li>
-                        <li><a class="dropdown-item" href="#">Clothes</a></li>
+                        <li><a class="dropdown-item" routerLink="/Products">All Products</a></li>
+                        <li><a class="dropdown-item" click="procategory(food)">Food</a></li>
+                        <li><a class="dropdown-item" click="procategory(cages)">Cages</a></li>
+                        <li><a class="dropdown-item" click="procategory(tools)">Tools</a></li>
+                        <li><a class="dropdown-item" click="procategory(drugs)">Drugs</a></li>
+                        <li><a class="dropdown-item" click="procategory(clothes)">Clothes</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,8 +63,8 @@
 
             <!-- search -->
             <form class="d-flex">
-              <input class="form-control me-2 inputsearch" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn button search" type="submit">Search</button>
+              <input class="form-control me-2 inputsearch" id="search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn button search" click="search()" type="submit">Search</button>
             </form>
 
 
@@ -71,7 +73,7 @@
             <div class="btn-group">
                 <button type="button" style="background-color: transparent;border: none;" data-bs-toggle="dropdown" aria-expanded="false">
                     <div style="display: inline-block;">
-                        <a routerLink="/home">
+                        <a>
                         <lord-icon
                         src="https://cdn.lordicon.com/hbvyhtse.json"
                         trigger="hover"
@@ -152,11 +154,12 @@
                     Pets
                 </button>
                 <ul class="dropdown-menu drob-style">
-                <li><a class="dropdown-item" href="#">Fish</a></li>
-                <li><a class="dropdown-item" href="#">Cats</a></li>
-                <li><a class="dropdown-item" href="#">Dogs</a></li>
-                <li><a class="dropdown-item" href="#">Birds</a></li>
-                <li><a class="dropdown-item" href="#">Hamsters</a></li>
+                <li><a class="dropdown-item" routerLink="/Pets">All Pets</a></li>
+                <li><a class="dropdown-item" click="petcategory(fish)">Fish</a></li>
+                <li><a class="dropdown-item" click="petcategory(cats)">Cats</a></li>
+                <li><a class="dropdown-item" click="petcategory(dogs)">Dogs</a></li>
+                <li><a class="dropdown-item" click="petcategory(birds)">Birds</a></li>
+                <li><a class="dropdown-item" click="petcategory(Hamsters)">Hamsters</a></li>
                 </ul>
             </div>
 
@@ -166,11 +169,12 @@
                     Products
                 </button>
                 <ul class="dropdown-menu drob-style">
-                <li><a class="dropdown-item" href="#">Food</a></li>
-                <li><a class="dropdown-item" href="#">Cages</a></li>
-                <li><a class="dropdown-item" href="#">Tools</a></li>
-                <li><a class="dropdown-item" href="#">Drugs</a></li>
-                <li><a class="dropdown-item" href="#">Clothes</a></li>
+                <li><a class="dropdown-item" routerLink="/Products">All Products</a></li>
+                <li><a class="dropdown-item" click="procategory(food)">Food</a></li>
+                <li><a class="dropdown-item" click="procategory(cages)">Cages</a></li>
+                <li><a class="dropdown-item" click="procategory(tools)">Tools</a></li>
+                <li><a class="dropdown-item" click="procategory(drugs)">Drugs</a></li>
+                <li><a class="dropdown-item" click="procategory(clothes)">Clothes</a></li>
                 </ul>
             </div>
         </div>
@@ -183,7 +187,7 @@
              <div class="btn-group">
                 <button type="button" style="background-color: transparent;border: none;" data-bs-toggle="dropdown" aria-expanded="false">
                     <div style="display: inline-block;">
-                        <a routerLink="/home">
+                        <a>
                         <lord-icon
                         src="https://cdn.lordicon.com/hbvyhtse.json"
                         trigger="hover"
