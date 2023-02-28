@@ -14,4 +14,7 @@ private Url_DB="https://localhost:7248/api/Pet";
 getpets(){
   return this.myClient.get(this.Url_DB);
 }
+getPetByID(id:number){
+  return this.myClient.get(this.Url_DB+"/"+id);
+}
 }

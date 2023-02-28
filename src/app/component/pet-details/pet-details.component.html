@@ -1,45 +1,44 @@
-<div class="container">
+<div class="container pt-5" style="margin-top: 4rem;">
     <div class="row justify-content-center align-items-center">
     <div class="single_product">
         <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
             <div class="row">
                 <div class="col-lg-4 order-lg-4 order-1">
                     <div class="image_selected" >
-                        <img style="width: 400px;height: 400px;" 
-                        src="https://petclassifieds.com/wp-content/uploads/2023/02/D2001FDC-D938-4F66-905C-36F5B12AD959.jpeg" alt=""></div>
+                        <img style="width: 400px;height: 400px;"
+                        src="{{Pet.image}}" alt=""></div>
                 </div>
                 <div class="col-lg-6 order-3">
                     <div class="product_description">
-                        <div class="product_name" style="font-size: 35px;line-height: 1em;">Gotika Maine Coon female</div>
+                        <div class="product_name" style="font-size: 35px;line-height: 1em;">{{Pet.name}}</div>
                         <br><br>
-                        <div> <span style="font-size: 25px;" class="product_price">9,000 LE</span> 
+                        <div> <span style="font-size: 25px;" class="product_price">{{Pet.price}} LE</span>
                             <!-- <span class="product_discount"> <span style='color:black'>₹ 2,000<span> -->
                         <!-- <div> <span class="product_saved">You Saved:</span> <span style='color:black'>₹ 2,000<span> -->
                         <hr class="singleline">
                         <div class="product_info">
-                            <label style="font-weight: bold;" for="type">Type&nbsp;:&nbsp;</label><span>Cat</span>
+                            <label style="font-weight: bold;" for="type">Type&nbsp;:&nbsp;</label><span>{{Pet.category_Name}}</span>
                         </div>
                         <hr class="singleline">
                         <div class="product_info">
-                            <label style="font-weight: bold;" for="age">Age&nbsp;:&nbsp;</label><span>3 month</span>
+                            <label style="font-weight: bold;" for="age">Age&nbsp;:&nbsp;</label><span>{{Pet.age}}</span>
                         </div>
                         <hr class="singleline">
                         <div class="product_info">
-                            <label style="font-weight: bold;" for="sex">Sex&nbsp;:&nbsp;</label><span>Male</span>
+                            <label style="font-weight: bold;" for="sex">Sex&nbsp;:&nbsp;</label><span>{{Pet.sex}}</span>
                         </div>
                         <hr class="singleline">
-                        <div> <span  class="product_info">EMI starts at ₹ 2,000. No Cost EMI Available Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, distinctio rerum, ab hic enim qui ea, eaque possimus numquam sed magni repudiandae architecto iure aliquid similique corporis inventore magnam. Cum!<span>
-                        
+                        <div> <span  class="product_info">{{Pet.description}}<span>
+
                         <hr class="singleline">
                         <div class="order_info d-flex flex-row">
                             <form action="#">
                         <div class="row">
-                            <div class="color col-xs-6" > 
-                                <button style="margin: 10px;background-color: rgb(247,227,172);color: #50402c;"type="button" class="btn btn-primary shop-button">Add to Cart</button> 
+                            <div class="color col-xs-6" >
+                                <button style="margin: 10px;background-color: rgb(247,227,172);color: #50402c;"type="button" class="btn btn-primary shop-button">Add to Cart</button>
                                 <button style="margin: 10px;background-color: rgb(247,227,172);color: #50402c; float: right;"type="button" class="btn btn-success shop-button"><img src="../../../assets/images/heart2.png" alt=""></button>
                                 <!-- <div class="product_fav"><i class="fas fa-heart"></i></div> -->
                             </div>
                         </div>
 
-            
-            
+

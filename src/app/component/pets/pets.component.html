@@ -28,7 +28,7 @@
           *ngFor="let i of arr_pets; let index = index"
           [ngStyle]="{ width: cardWidth_pets }"
         >
-          <a href="">
+          <a >
             <img class="card-img" src="{{ i }}" />
           </a>
         </div>
@@ -106,10 +106,10 @@
                 </div>
                 <h6 class="text-success">Free shipping</h6>
                 <div class="d-flex flex-column mt-4">
-                  <button class="btn Details btn-sm" type="button">
+                  <button class="btn Details btn-sm" type="button" routerLink="/PetDetails/{{item.id}}">
                     Details
                   </button>
-                  <button class="btn Cart btn-sm mt-2" type="button">
+                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addtocard(item)">
                     Add to Cart
                   </button>
                 </div>

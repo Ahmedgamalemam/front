@@ -1,4 +1,5 @@
 export interface Pets {
+  id:number,
   name:string,
   description:string,
   type:string,
@@ -6,5 +7,6 @@ export interface Pets {
   sex:string,
   price:number,
   image:string,
+  category_ID:number
   category_Name:string
 }

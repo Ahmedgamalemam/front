@@ -17,6 +17,7 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
+import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -36,9 +37,8 @@ const route: Routes = [
 {path:"Clinic",component:ClinicComponent},
 { path:'EditProfile', component: EditProfileComponent },
 { path:"Aboutus", component: AboutUsComponent },
-{path:"clinic",component:ClinicComponent},
+{path:"PetDetails/:id",component:PetDetailsComponent},
 {path:'**',component:ErrorComponent},
-
 ];
 
 @NgModule({
