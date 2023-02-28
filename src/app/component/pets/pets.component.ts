@@ -1,4 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Pets } from 'src/app/core/models/Pets';
+import { PetSService } from 'src/app/core/pet-s.service';
+import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
@@ -7,7 +10,22 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./pets.component.css']
 })
 export class PetsComponent {
-  constructor(public search:SearchService){}
+  pets:Pets[]=[];
+  constructor(public search:SearchService, petServices:PetsService)
+  {
+    petServices.getpets().subscribe((response:any)=>{
+      response.forEach((element:Pets) => {
+        this.pets.push(element);
+        console.log(element.name)
+        console.log(element)
+      })
+
+
+    // console.log(typeof(this.pets))
+
+  })
+  }
+
   arr_pets: string[] = ["assets/images/cardcat.png",
 "assets/images/cartdog.png",
 "assets/images/cartbirds.png",
@@ -42,7 +60,7 @@ currentPage_pets: number = 1;
     this.cardsPerPage_pets = this.getCardsPerPage_pets();
     this.initializeSlider_pets();
     this.search.Show()
-
+    console.log(this.pets)
   }
 
   initializeSlider_pets() {
@@ -79,5 +97,7 @@ currentPage_pets: number = 1;
       (this.currentPage_pets - 1)}px)`;
     }
   }
+
+
 
 }

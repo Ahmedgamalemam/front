@@ -39,7 +39,6 @@ const route: Routes = [
 { path:'EditProfile', component: EditProfileComponent },
 { path:"Aboutus", component: AboutUsComponent },
 {path:'**',component:ErrorComponent},
-
 ];
 
 @NgModule({

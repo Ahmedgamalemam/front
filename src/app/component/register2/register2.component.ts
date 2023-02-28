@@ -6,7 +6,7 @@ import { AlertService } from 'src/app/core/Services/alert.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { PasswordIconService } from 'src/app/core/Services/password-icon.service';
 import { SharedService } from 'src/app/core/Services/Shared.service';
-import { UserService } from 'src/app/core/Services/user.service';
+import { UserService } from 'src/app/core/Services/ModelServices/user.service';
 
 @Component({
   selector: 'app-register2',
