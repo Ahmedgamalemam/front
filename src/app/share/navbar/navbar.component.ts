@@ -35,6 +35,10 @@ ngDoCheck(){
     let inputsearch = (item.target as HTMLInputElement).value;
     this.searchservice.setsearch(inputsearch);
   }
+  petcategory(item:Event){
+    let inputsearch = (item.target as HTMLInputElement).value;
+    this.searchservice.setsearch(inputsearch);
+  }
 
   sidebar() {
     document.getElementById('side')?.classList.toggle('show-side');
