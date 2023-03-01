@@ -15,6 +15,7 @@ import { OredrsComponent } from './component/oredrs/oredrs.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
+import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -31,7 +32,8 @@ const route: Routes = [
 {path:'orders',component:OredrsComponent},
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
-{path:"clinic",component:ClinicComponent}
+{path:"clinic",component:ClinicComponent},
+{path:"petDetails",component:PetDetailsComponent}
 ];
 
 @NgModule({
