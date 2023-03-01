@@ -31,16 +31,13 @@ export class PetsComponent {
   })
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     let filterValue = this.searchservice.getsearch();
     this.FilteredPets = this.pets.filter((Pharmicay: any) =>
-      Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())
+      Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())||
+      Pharmicay.category_Name.toLowerCase().includes(filterValue.toLowerCase())
     );
-    let filterValue2= this.searchservice.getsearch();
-    this.FilteredPets = this.pets.filter((Pharmicay: any) =>
-      Pharmicay.category_Name.toLowerCase().includes(filterValue2.toLowerCase())
-    );
-    console.log(filterValue2)
+
   }
 
   arr_pets: string[] = ["assets/images/cardcat.png",

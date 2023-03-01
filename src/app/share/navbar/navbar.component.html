@@ -42,20 +42,54 @@
               </li>
 
               <li>
-                <button class="dropdown-item" value="Cat" (click)="petcategory($event)" routerLink="/Pets" >Cats</button>
+                <button
+                  class="dropdown-item"
+                  value="Cat"
+                  (click)="petcategory($event)"
+                  routerLink="/Pets"
+                >
+                  Cats
+                </button>
               </li>
               <li>
-                <button class="dropdown-item" value="Dog" (click)="petcategory($event)"routerLink="/Pets" >Dogs</button>
+                <button
+                  class="dropdown-item"
+                  value="Dog"
+                  (click)="petcategory($event)"
+                  routerLink="/Pets"
+                >
+                  Dogs
+                </button>
               </li>
               <li>
-                <button class="dropdown-item" value="Fish" (click)="petcategory($event)" routerLink="/Pets" >Fish</button>
+                <button
+                  class="dropdown-item"
+                  value="Fish"
+                  (click)="petcategory($event)"
+                  routerLink="/Pets"
+                >
+                  Fish
+                </button>
               </li>
               <li>
-                <button class="dropdown-item" value="Birds" (click)="petcategory($event)" routerLink="/Pets" >Birds</button>
+                <button
+                  class="dropdown-item"
+                  value="Birds"
+                  (click)="petcategory($event)"
+                  routerLink="/Pets"
+                >
+                  Birds
+                </button>
               </li>
               <li>
-                <button class="dropdown-item" value="Hamesters" (click)="petcategory($event)" routerLink="/Pets"
-                  >Hamesters</button>
+                <button
+                  class="dropdown-item"
+                  value="Hamesters"
+                  (click)="petcategory($event)"
+                  routerLink="/Pets"
+                >
+                  Hamesters
+                </button>
               </li>
             </ul>
           </div>
@@ -177,11 +211,19 @@
           </div>
         </button>
         <ul class="dropdown-menu drob-style">
-          <li><a class="dropdown-item" routerLink="/Profile/{{id}}">MY Profile</a></li>
+          <li>
+            <a class="dropdown-item" routerLink="/Profile/{{ id }}"
+              >MY Profile</a
+            >
+          </li>
           <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
           <br />
           <hr />
-          <li><a class="dropdown-item" routerLink="/home" (click)="LogOut()">Log Out</a></li>
+          <li>
+            <a class="dropdown-item" routerLink="/home" (click)="LogOut()"
+              >Log Out</a
+            >
+          </li>
         </ul>
       </div>
 
@@ -309,20 +351,54 @@
         </li>
 
         <li>
-          <button class="dropdown-item" value="Cat" (click)="petcategory($event)" routerLink="/Pets" >Cats</button>
+          <button
+            class="dropdown-item"
+            value="Cat"
+            (click)="procategory($event)"
+            routerLink="/Pets"
+          >
+            Cats
+          </button>
         </li>
         <li>
-          <button class="dropdown-item" value="Dog" (click)="petcategory($event)"routerLink="/Pets" >Dogs</button>
+          <button
+            class="dropdown-item"
+            value="Dog"
+            (click)="petcategory($event)"
+            routerLink="/Pets"
+          >
+            Dogs
+          </button>
         </li>
         <li>
-          <button class="dropdown-item" value="Fish" (click)="petcategory($event)" routerLink="/Pets" >Fish</button>
+          <button
+            class="dropdown-item"
+            value="Fish"
+            (click)="petcategory($event)"
+            routerLink="/Pets"
+          >
+            Fish
+          </button>
         </li>
         <li>
-          <button class="dropdown-item" value="Birds" (click)="petcategory($event)" routerLink="/Pets" >Birds</button>
+          <button
+            class="dropdown-item"
+            value="Birds"
+            (click)="petcategory($event)"
+            routerLink="/Pets"
+          >
+            Birds
+          </button>
         </li>
         <li>
-          <button class="dropdown-item" value="Hamesters" (click)="petcategory($event)" routerLink="/Pets"
-            >Hamesters</button>
+          <button
+            class="dropdown-item"
+            value="Hamesters"
+            (click)="petcategory($event)"
+            routerLink="/Pets"
+          >
+            Hamesters
+          </button>
         </li>
       </ul>
     </div>
@@ -432,11 +508,17 @@
         </div>
       </button>
       <ul class="dropdown-menu drob-style">
-        <li><a class="dropdown-item" routerLink="/Profile/{{id}}">MY Profile</a></li>
+        <li>
+          <a class="dropdown-item" routerLink="/Profile/{{ id }}">MY Profile</a>
+        </li>
         <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
         <br />
         <hr />
-        <li><a class="dropdown-item" routerLink="/home" (click)="LogOut()">Log Out</a></li>
+        <li>
+          <a class="dropdown-item" routerLink="/home" (click)="LogOut()"
+            >Log Out</a
+          >
+        </li>
       </ul>
     </div>
 

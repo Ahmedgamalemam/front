@@ -30,7 +30,7 @@ ngOnInit() {
 
 edit(){
   console.log("hi")
-  this.route.navigate(["/home"])
+  this.route.navigate(["/EditProfile"])
 }
 
 }
