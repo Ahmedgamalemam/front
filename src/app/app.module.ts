@@ -21,15 +21,16 @@ import { OredrsComponent } from './component/oredrs/oredrs.component';
 import { RouterModule,Routes } from '@angular/router';
 import { ProfileComponent } from './component/profile/profile.component';
 import { FooterComponent } from './share/footer/footer.component';
-import { ProductDetailsComponent } from './component/product-details/product-details.component';
-import { PaymentComponent } from './component/payment/payment.component';
-import { ClinicComponent } from './component/clinic/clinic.component';
 import { MapComponent } from './component/map/map.component';
 import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
 import { MarkerService } from './core/Services/marker.service';
 import { PopupService } from './core/Services/popup.service';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { ChangePasswordComponent } from './component/change-password/change-password.component';
+import { ProductDetailsComponent } from './component/product-details/product-details.component';
+import { ClinicComponent } from './component/clinic/clinic.component';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -54,11 +55,12 @@ import { EditProfileComponent } from './component/edit-profile/edit-profile.comp
     CartComponent,
     OredrsComponent,
     FooterComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    AboutUsComponent,
+    ChangePasswordComponent,
     ProductDetailsComponent,
-    PaymentComponent,
-    ClinicComponent,
-    EditProfileComponent
-
+    ClinicComponent
   ],
   imports: [
     BrowserModule,
@@ -86,3 +88,4 @@ export class AppModule {
     defineElement(lottie.loadAnimation);
   }
 }
+
