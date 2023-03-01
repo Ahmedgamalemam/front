@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+
+          30.06263, 31.24967
+        ]
+      },
+      "properties": {
+        "state": "Cairo",
+        "name": "Tallahassee",
+        "population": 191049
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+
+          30.06263, 32.24967
+        ]
+      },
+      "properties": {
+        "state": "Eypt",
+        "name": "Tallahassee",
+        "population": 191049
+      }
+
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+
+          32.58384932565662, 38.36425781250001
+        ]
+      },
+      "properties": {
+        "state": "nnnnnn",
+        "name": "Tallahassee",
+        "population": 191049
+      }
+
+    }
+  ]
+}

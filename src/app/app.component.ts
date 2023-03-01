@@ -1,4 +1,5 @@
 import { Component,HostListener } from '@angular/core';
+import { SearchService } from './core/Services/search.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component,HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'pets';
+
 }

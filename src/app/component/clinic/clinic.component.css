@@ -1,0 +1,40 @@
+body{background:#eee;
+}
+.ratings i{font-size: 16px;color: red}
+.strike-text{color: red;text-decoration: line-through}
+.product-image{width: 100%}
+.dot{
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block}
+    .spec-1{
+        color: #938787;
+        font-size: 15px}
+    h2{
+        font-weight: 600}
+    .para{
+            font-size: 16px;
+
+        }
+    .nearest{
+        color: #50402c;
+        font-size: 50px;
+    }
+    .here{
+        background-color: rgb(247,227,172);
+        color: #50402c;
+        width: 150px;
+        height: 30px;
+    }
+    .location{
+        width: 30px;
+        height: 30px; 
+    }
+    .bttn{
+        width: 50px;
+    }

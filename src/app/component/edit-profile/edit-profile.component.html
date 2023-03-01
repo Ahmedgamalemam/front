@@ -1,4 +1,4 @@
-<div class="container-xl px-4 mt-4">
+<div class="container-xl px-4 mt-5 pt-5">
     <!-- Account page navigation-->
 
 
@@ -9,13 +9,13 @@
                 <div style="background-color:rgb(247,227,172) ;" class="card-header">Profile Picture</div>
                 <div class="card-body text-center">
                     <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2"
-                        src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" id="ProfileImg"
+                        src="{{Profile.image}}" alt="">
                     <!-- Profile picture help block-->
                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                     <!-- Profile picture upload button-->
                     <!-- <button class="btn btn-primary" type="button">Upload new image</button> -->
-                    <input value="Upload new image" type="file" (change)="onFileSelected()" />
+                    <input id="ProfileName" value="Upload new image" type="file" (change)="onFileSelected()" />
                 </div>
             </div>
         </div>
@@ -24,8 +24,8 @@
             <div class="card mb-4">
                 <div style="background-color:rgb(247,227,172) ;" class="card-header">Account Details</div>
                 <div class="card-body">
-                    <form>
-                        <!-- Form Group (username)-->
+                  <form class="form-signin" [formGroup]="Edit" >
+                    <!-- Form Group (username)-->
 
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
@@ -33,7 +33,7 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputFirstName">First name</label>
                                 <input class="form-control" id="inputFirstName" type="text"
-                                    placeholder="Enter your first name" value="Valerie">
+                                    placeholder="Enter your first name" value="{{Profile.fname}}" formControlName="Fname">
                                 <!-- <input  class="form-control" type="text" placeholder="Enter your first name" [(ngModel)]="userFirstName" /> -->
                                 <!-- <label for="first-name">First Name: </label>
                                     <input id="first-name" type="text" formControlName="firstName" required> -->
@@ -42,7 +42,7 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Last name</label>
                                 <input class="form-control" id="inputLastName" type="text"
-                                    placeholder="Enter your last name" value="Luna">
+                                    placeholder="Enter your last name" value="{{Profile.lname}}" formControlName="Lname">
                             </div>
                         </div>
                         <!-- Form Row        -->
@@ -51,14 +51,24 @@
 
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputLocation">ِAddress</label>
+                                <label class="small mb-1" for="inputLocation">City</label>
                                 <input class="form-control" id="inputLocation" type="text"
-                                    placeholder="Enter your location" value="San Francisco, CA">
+                                    placeholder="Enter your location" value="{{Profile.city}}"formControlName="City">
                             </div>
+                            <div class="col-md-6">
+                              <label class="small mb-1" for="inputLocation">Area</label>
+                              <input class="form-control" id="inputLocation" type="text"
+                                  placeholder="Enter your location" value="{{Profile.area}}" formControlName="Area">
+                          </div>
+                          <div class="col-md-6">
+                            <label class="small mb-1" for="inputLocation">Building Number</label>
+                            <input class="form-control" id="inputLocation" type="text"
+                                placeholder="Enter your location" value="{{Profile.buildingID}}" formControlName="buildingNumber">
+                        </div>
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
                                 <input class="form-control" id="inputEmailAddress" type="email"
-                                    placeholder="Enter your email address" value="name@example.com">
+                                    placeholder="Enter your email address" value="{{Profile.email}}" formControlName="Email">
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
@@ -69,18 +79,18 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Phone number</label>
                                 <input class="form-control" id="inputPhone" type="tel"
-                                    placeholder="Enter your phone number" value="555-123-4567">
+                                    placeholder="Enter your phone number" value="{{Profile.phone}}" formControlName="Phone">
                             </div>
                             <!-- Form Group (birthday)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                <label class="small mb-1" for="inputBirthday">Age</label>
                                 <input class="form-control" id="inputBirthday" type="text" name="birthday"
-                                    placeholder="Enter your birthday" value="06/10/1988">
+                                    placeholder="Enter your birthday" value="{{Profile.age}}" formControlName="Age">
                             </div>
                         </div>
                         <!-- Save changes button-->
                         <!-- <button class="btn btn-primary" type="button">Save changes</button> -->
-                        <input style="background-color:rgb(247,227,172) ;" class="btn btn-primary" type="button"
+                        <input style="background-color:rgb(247,227,172) ;" class="btn btn-primary" type="submit"
                             value="Save changes" (click)="SaveChanges()" />
                         <button style="float: right; " class="btn btn-secondary" type="button"
                             routerLink="/ChangePassword">Change Password</button>
@@ -90,3 +100,4 @@
         </div>
     </div>
 </div>
+
