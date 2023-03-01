@@ -8,14 +8,20 @@ import { ClinicService } from 'src/app/core/Services/clinic.service';
   styleUrls: ['./clinic.component.css']
 })
 export class ClinicComponent {
-clinik!:Clinic;
+clinik:Clinic[]=[];
 constructor(myservice:ClinicService){
   myservice.getAll().subscribe(
     (res:any)=>{
       res.forEach((element:any) => {
-        this.clinik.Push(element)
+        this.clinik.push(element)
+        console.log(this.clinik)
       });
     }
   )
+  console.log(this.clinik)
 }
+ngOnInit(){
+  console.log(this.clinik)
+}
+
 }
