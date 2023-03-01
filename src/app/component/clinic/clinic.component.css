@@ -30,11 +30,16 @@ body{background:#eee;
         color: #50402c;
         width: 150px;
         height: 30px;
+        margin: 25px;
     }
     .location{
-        width: 30px;
-        height: 30px; 
+        width: 80px;
+        height: 40px; 
     }
     .bttn{
-        width: 50px;
+        width: 90px;
+        border: none;
+        margin-left: 150px;
+        margin-top: 40px;
+
     }
