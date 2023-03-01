@@ -16,12 +16,8 @@ export class CartComponent {
 
   constructor(private SharedService:PetSService,public search:SearchService) {
 
-    // this.products=this.SharedService.getItem();
-    this.products = [{Name:'Marvelous Spatuletail',Image:"assets/images/cardcat.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
-    {Name:' Spatuletail',Image:"assets/images/cardcat.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
-    {Name:' Spatuletail',Image:"assets/images/cardcat.png",discription:"beautiful pets", Price:"200$" ,Counter:1 }]
+    this.products.push(this.SharedService.getItem());
   }
-
   counter_plus(count:any){
     var name = this.products.filter(meal=>meal.Name.includes(count))
     var counter = name.filter(meal=>meal.Counter++)

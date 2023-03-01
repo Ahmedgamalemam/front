@@ -17,8 +17,7 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
-
-
+import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -26,7 +25,7 @@ const route: Routes = [
 {path:'Login',component:LoginComponent},
 {path:'Register',component:RegisterComponent},
 {path:"SignUp",component:Register2Component},
-{path:"Profile",component:ProfileComponent},
+{path:"Profile/:id",component:ProfileComponent},
 {path:"Map",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
@@ -38,8 +37,8 @@ const route: Routes = [
 {path:"Clinic",component:ClinicComponent},
 { path:'EditProfile', component: EditProfileComponent },
 { path:"Aboutus", component: AboutUsComponent },
+{path:"PetDetails/:id",component:PetDetailsComponent},
 {path:'**',component:ErrorComponent},
-
 ];
 
 @NgModule({

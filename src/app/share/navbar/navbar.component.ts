@@ -8,13 +8,20 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  textsearch: string = "";
-  constructor(
-    public nav: NavBarService,
-    public search: SearchService,
-    public searchservice: NavBarService,
+id!:number;
+textsearch: string = "";
 
-  ) {}
+constructor(public nav:NavBarService,public search:SearchService,public searchservice: NavBarService,
+  ) {
+console.log(localStorage.getItem("id"))
+}
+ngDoCheck(){
+  this.id=Number(localStorage.getItem("id"))
+}
+
+  // sidebar(){
+  // document.getElementById("side")?.classList.toggle("show-side")
+  // }
 
   applyFilter(event: Event) {
     let inputsearch = (event.target as HTMLInputElement).value;
@@ -28,11 +35,19 @@ export class NavbarComponent {
     let inputsearch = (item.target as HTMLInputElement).value;
     this.searchservice.setsearch(inputsearch);
   }
+  petcategory(item:Event){
+    let inputsearch = (item.target as HTMLInputElement).value;
+    this.searchservice.setsearch(inputsearch);
+  }
 
   sidebar() {
     document.getElementById('side')?.classList.toggle('show-side');
   }
   close() {
     document.getElementById('side')?.classList.toggle('show-side');
+  }
+
+  LogOut(){
+    localStorage.clear();
   }
 }

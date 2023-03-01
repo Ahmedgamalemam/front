@@ -6,11 +6,13 @@
       <div class="col-xl-4">
           <!-- Profile picture card-->
           <div  class="card mb-4 mb-xl-0">
-              <div style="background-color:rgb(247,227,172) ;" class="card-header">Profile Picture</div>
+              <div style="background-color:rgb(247,227,172) ;" class="card-header"></div>
               <div class="card-body text-center">
                   <!-- Profile picture image-->
                   <img class="img-account-profile rounded-circle mb-2"
-                      src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                  src="{{prof.image}}" alt="">
+
+                      <!-- src="http://bootdey.com/img/Content/avatar/avatar1.png" alt=""> -->
                   <!-- Profile picture help block-->
                   <!-- <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> -->
                   <!-- Profile picture upload button-->
@@ -27,7 +29,7 @@
                 <p class="mb-0">First Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Mohamed</p>
+                <p class="text-muted mb-0">{{prof.fname}}</p>
               </div>
             </div>
             <hr>
@@ -36,7 +38,7 @@
                 <p class="mb-0">Last Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Zedan</p>
+                <p class="text-muted mb-0">{{prof.lname}}</p>
               </div>
             </div>
             <hr>
@@ -45,7 +47,7 @@
                 <p class="mb-0">Age</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">27</p>
+                <p class="text-muted mb-0">{{prof.age}}</p>
               </div>
             </div>
             <hr>
@@ -54,7 +56,7 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
+                <p class="text-muted mb-0">{{prof.email}}</p>
               </div>
             </div>
             <hr>
@@ -64,23 +66,41 @@
                 <p class="mb-0">Mobile</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
+                <p class="text-muted mb-0">{{prof.phone}}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Address</p>
+                <p class="mb-0">City</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                <p class="text-muted mb-0">{{prof.city}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Area</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{prof.area}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Building ID</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{prof.buildingID}}</p>
               </div>
             </div>
           </div>
         </div>
                       <!-- Save changes button-->
-                      <button style="float: right;margin: 10px;" class="btn btn-secondary" type="button" routerLink="/EditProfile">Edit Profile</button>
-                      <button style="float: right;margin: 10px;" class="btn btn-danger" type="button">Change Password</button>
+                     <button style="float: right;margin: 10px;" class="btn btn-secondary" type="button" (click)="edit()">Edit Profile</button>
+                     <button style="float: right;margin: 10px;" class="btn btn-danger" type="button">Change Password</button>
 
                       <!-- <input class="btn btn-primary" type="button" value="Save changes" (click)="SaveChanges()" /> -->
               </div>

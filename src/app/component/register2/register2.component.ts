@@ -6,7 +6,7 @@ import { AlertService } from 'src/app/core/Services/alert.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { PasswordIconService } from 'src/app/core/Services/password-icon.service';
 import { SharedService } from 'src/app/core/Services/Shared.service';
-import { UserService } from 'src/app/core/Services/user.service';
+import { UserService } from 'src/app/core/Services/ModelServices/user.service';
 
 @Component({
   selector: 'app-register2',
@@ -45,15 +45,17 @@ export class Register2Component {
 
   userData(): User {
     return this.user = {
-      Fname:this.getdata.Fname,
-      Lname:this.getdata.Lname,
-      Type:"user",
-      Age:this.getdata.Age,
-      Address:this.getdata.Address,
-      Image:this.getdata.Image,
-      Phone:this.getdata.Phone,
-      Email:this.Email.value,
-      Password:this.Password.value
+      fname:this.getdata.fname,
+      lname:this.getdata.lname,
+      type:"user",
+      age:this.getdata.age,
+      city:this.getdata.city,
+      area:this.getdata.area,
+      buildingID:this.getdata.buildingID,
+      image:this.getdata.image,
+      phone:this.getdata.phone,
+      email:this.Email.value,
+      password:this.Password.value
     }
   }
   add() {
