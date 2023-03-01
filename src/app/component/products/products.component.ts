@@ -16,29 +16,27 @@ export class ProductsComponent {
   constructor(
     public search: SearchService,
     public Productservice: ProductsService,
-    public searchservice: NavBarService
+    public searchservice: NavBarService,
+
   ) {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
         this.Products.push(element);
-        console.log(element)
-
+        console.log(element);
       });
       this.FilteredProduct = this.Products;
     });
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
     let filterValue = this.searchservice.getsearch();
     this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
-      Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())
+      Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())||
+      Pharmicay.category_Name.toLowerCase().includes(filterValue.toLowerCase())
     );
-    let filterValue2= this.searchservice.getsearch();
-    this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
-      Pharmicay.category_Name.toLowerCase().includes(filterValue2.toLowerCase())
-    );
-    console.log(filterValue2)
+
   }
+
 
   ngOnInit() {
     this.cardsPerPage_products = this.getCardsPerPage_products();

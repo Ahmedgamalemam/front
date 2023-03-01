@@ -5,5 +5,6 @@ export interface Product {
   description: string
   quantity:number
   image :string
+  category_ID:number
   category_Name:string
 }
