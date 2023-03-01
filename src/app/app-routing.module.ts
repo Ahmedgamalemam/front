@@ -16,17 +16,32 @@ import { OredrsComponent } from './component/oredrs/oredrs.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
-import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
-import { AboutUsComponent } from './component/about-us/about-us.component';
 import { PetDetailsComponent } from './component/pet-details/pet-details.component';
-
+import { ErrorComponent } from './component/error/error.component';
+import { ChangePasswordComponent } from './component/change-password/change-password.component';
 const route: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'EditProfile', component: EditProfileComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "Aboutus", component: AboutUsComponent }
-];
+  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
+  {path:'Login',component:LoginComponent},
+  {path:'Register',component:RegisterComponent},
+  {path:"SignUp",component:Register2Component},
+  {path:"Profile/:id",component:ProfileComponent},
+  {path:"Map",component:MapComponent},
+  {path:"Pets",component:PetsComponent},
+  {path:"Products",component:ProductsComponent},
+  {path:'Favourit',component:FavouritComponent},
+  {path:'Cart',component:CartComponent},
+  {path:'orders',component:OredrsComponent},
+  {path:"productDetails/:id",component:ProductDetailsComponent},
+  {path:"payment",component:PaymentComponent},
+  {path:"Clinic",component:ClinicComponent},
+  { path:'EditProfile', component: EditProfileComponent },
+  { path:"Aboutus", component: AboutUsComponent },
+  {path:"PetDetails/:id",component:PetDetailsComponent},
+  {path:"ChangePassword",component:ChangePasswordComponent},
+  {path:'**',component:ErrorComponent},
+  ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(route)],

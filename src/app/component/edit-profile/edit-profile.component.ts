@@ -13,6 +13,7 @@ export class EditProfileComponent {
   Profile!:User;
   id!:number;
   user!:User;
+
 constructor(public search:SearchService,private myService:UserService){
   this.id=Number(localStorage.getItem("id"));
    myService.GetUserById(this.id).subscribe(
@@ -20,8 +21,9 @@ constructor(public search:SearchService,private myService:UserService){
     this.Profile=responce
     console.log(responce)
   })
+  // this.Edit.patchValue({"Fname":this.Profile.fname,"Lname":this.Profile.lname})
+  // this.Edit.get("Fname")?.setValue(this.Profile.fname);
 }
-
   profile: any = "";
   onFileSelected() {
     const inputNode: any = document.getElementById("ProfileName");
@@ -39,19 +41,30 @@ constructor(public search:SearchService,private myService:UserService){
   }
 
   Edit= new FormGroup({
-    Fname: new FormControl(null,[Validators.required,Validators.minLength(4)]),
-    Lname: new FormControl(null,[Validators.required,Validators.minLength(4)]),
-    Age: new FormControl(null, [Validators.min(12), Validators.max(40)]),
-    City: new FormControl(null,Validators.required),
-    Area:new FormControl(null,Validators.required),
-    buildingNumber:new FormControl(null,Validators.required),
-    Phone: new FormControl(null,[Validators.required,Validators.pattern("01+[1-5\b]+[0-9\b]+$"),Validators.minLength(11),Validators.maxLength(11)]),
-    Email: new FormControl(null,[Validators.required,Validators.pattern("[a-z0-9]+@[a-z]+\\.[a-z]{2,3}")]),
+    Fname: new FormControl("",[Validators.required,Validators.minLength(4)]),
+    Lname: new FormControl("",[Validators.required,Validators.minLength(4)]),
+    Age: new FormControl(0, [Validators.min(12), Validators.max(40)]),
+    City: new FormControl("",Validators.required),
+    Area:new FormControl("",Validators.required),
+    buildingNumber:new FormControl(0,Validators.required),
+    Phone: new FormControl("",[Validators.required,Validators.pattern("01+[1-5\b]+[0-9\b]+$"),Validators.minLength(11),Validators.maxLength(11)]),
+    Email: new FormControl("",[Validators.required,Validators.pattern("[a-z0-9]+@[a-z]+\\.[a-z]{2,3}")]),
+
+    // Fname: new FormControl(this.Profile.fname,[Validators.required,Validators.minLength(4)]),
+    // Lname: new FormControl(this.Profile.lname,[Validators.required,Validators.minLength(4)]),
+    // Age: new FormControl(this.Profile.age, [Validators.min(12), Validators.max(40)]),
+    // City: new FormControl(this.Profile.city,Validators.required),
+    // Area:new FormControl(this.Profile.area,Validators.required),
+    // buildingNumber:new FormControl(this.Profile.buildingID,Validators.required),
+    // Phone: new FormControl(this.Profile.phone,[Validators.required,Validators.pattern("01+[1-5\b]+[0-9\b]+$"),Validators.minLength(11),Validators.maxLength(11)]),
+    // Email: new FormControl(this.Profile.email,[Validators.required,Validators.pattern("[a-z0-9]+@[a-z]+\\.[a-z]{2,3}")]),
 
 })
+
   get Fname(){
     return this.Edit.get('Fname') as FormControl;
   }
+
   get Lname(){
     return this.Edit.get('Lname') as FormControl;
   }
