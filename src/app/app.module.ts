@@ -17,6 +17,8 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { FooterComponent } from './share/footer/footer.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
+import { ContactUsComponent } from './component/contact-us/contact-us.component';
+import { ChangePasswordComponent } from './component/change-password/change-password.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
     FooterComponent,
     ProfileComponent,
     EditProfileComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ContactUsComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
