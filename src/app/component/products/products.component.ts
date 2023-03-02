@@ -10,6 +10,7 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
+  pages: number = 1;
   Products: Product[] = [];
 
   FilteredProduct = new Array();
