@@ -19,7 +19,7 @@ export class PetsComponent {
   constructor(public search:SearchService,private Services:PetsService,public searchservice: NavBarService )
   {
     Services.getpets().subscribe((response:any)=>{
-      response.forEach((element:Pets) => {
+      response.forEach((element:any) => {
         this.pets.push(element);
         console.log(element.category_Name)
         console.log(element)
