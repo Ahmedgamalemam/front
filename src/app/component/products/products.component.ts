@@ -17,27 +17,53 @@ export class ProductsComponent {
   constructor(
     public search: SearchService,
     public Productservice: ProductsService,
-    public searchservice: NavBarService,
-
+    public searchservice: NavBarService
   ) {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
         this.Products.push(element);
-        console.log(element);
+        ///console.log( element.category_Name.where(element.category_ID==7));
       });
       this.FilteredProduct = this.Products;
     });
   }
+  productcategory(item: any) {
+    let inputsearch = (item.target as HTMLImageElement).alt;
+    this.searchservice.setsearchByID(inputsearch);
+    console.log(inputsearch);
+  }
+  searchtext(text: any) {
+    this.FilteredProduct = this.Products.filter((Product: any) =>
+      Product.name.toLowerCase().includes(text.toLowerCase())
+    );
+  }
+  searchCatogry(catogry: any) {
+    this.FilteredProduct = this.Products.filter((Product: any) =>
+      Product.category_Name.toLowerCase().includes(catogry.toLowerCase())
+    );
+  }
+  searchID(Id: any) {
+    this.FilteredProduct = this.Products.filter(
+      (Product: any) => Product.category_ID == Id
+    );
+  }
 
   ngDoCheck() {
     let filterValue = this.searchservice.getsearch();
-    this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
-      Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())||
-      Pharmicay.category_Name.toLowerCase().includes(filterValue.toLowerCase())
-    );
+    let filterValue2 = this.searchservice.getsearchBYID();
+    let filterValue3 = this.searchservice.getsearchBYCatogry();
+    if (filterValue == '' && filterValue2 == '' && filterValue3 == '') {
+      this.FilteredProduct = this.Products;
+    } else if (filterValue != '') {
+      this.searchtext(filterValue);
+    } else if (filterValue2 != '') {
+      this.searchID(Number(filterValue2));
+    } else if (filterValue3 != '') {
+      this.searchCatogry(filterValue3);
+    }
 
+    //console.log(this.FilteredProduct.length);
   }
-
 
   ngOnInit() {
     this.cardsPerPage_products = this.getCardsPerPage_products();

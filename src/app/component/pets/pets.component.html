@@ -24,8 +24,8 @@
           *ngFor="let i of arr_pets; let index = index"
           [ngStyle]="{ width: cardWidth_pets }"
         >
-          <a>
-            <img class="card-img" src="{{ i }}" />
+          <a (click)="petcategory($event)">
+            <img class="card-img" src="{{ i }}" alt="{{index+1}}" />
           </a>
         </div>
       </div>
