@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class NavBarService {
+export class PasswordIconService {
+
   visable:boolean;
-  search:string="";
+  convisable:boolean;
   constructor() {
     this.visable=true;
+    this.convisable=true
   }
   hide(){
     this.visable=false;
@@ -15,12 +17,10 @@ export class NavBarService {
   Show(){
     this.visable=true
   }
-
-  setsearch(Item: any): void {
-    this.search = Item;
-    //console.log(Item)
-}
-getsearch(): any {
-  return this.search;
-}
+  Conhide(){
+    this.convisable=false
+  }
+  Conshow(){
+    this.convisable=true
+  }
 }

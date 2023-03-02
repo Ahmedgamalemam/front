@@ -19,6 +19,7 @@ import { EditProfileComponent } from './component/edit-profile/edit-profile.comp
 import { AboutUsComponent } from './component/about-us/about-us.component';
 
 
+
 const route: Routes = [
 {path:'',component:HomeComponent},
 {path:'home',component:HomeComponent},
@@ -29,12 +30,12 @@ const route: Routes = [
 {path:"Map",component:MapComponent},
 {path:"Pets",component:PetsComponent},
 {path:"Products",component:ProductsComponent},
-{path:'favourit',component:FavouritComponent},
-{path:'cart',component:CartComponent},
+{path:'Favourit',component:FavouritComponent},
+{path:'Cart',component:CartComponent},
 {path:'orders',component:OredrsComponent},
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
-{path:"clinic",component:ClinicComponent},
+{path:"Clinic",component:ClinicComponent},
 { path:'EditProfile', component: EditProfileComponent },
 { path:"Aboutus", component: AboutUsComponent },
 {path:'**',component:ErrorComponent},

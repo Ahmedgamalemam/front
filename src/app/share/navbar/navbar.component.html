@@ -1,232 +1,332 @@
-<nav class="navbar nav navbar-expand-lg navbar-light fixed-top" *ngIf="nav.visable">
+<nav
+  class="navbar nav navbar-expand-lg navbar-light fixed-top"
+  *ngIf="nav.visable"
+>
+  <div class="container-fluid" fxLayout="row">
+    <!-- logo -->
+    <div class="navbar-brand" style="margin-right: 30px">
+      <img src="assets/images/logo.png" fxFlexOffset="15" />
+    </div>
 
-        <div class="container-fluid" fxLayout="row">
+    <!-- humberger icon -->
+    <button class="navbar-toggler" type="button" (click)="sidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <!-- logo -->
-            <div class="navbar-brand" style="margin-right: 30px;">
-                <img src="assets/images/logo.png" fxFlexOffset="15">
-            </div>
+    <!-- buttons -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <!-- home & clinic -->
 
+          <li class="nav-item">
+            <a class="nav-link btn button" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn button" routerLink="/Clinic">Clinic</a>
+          </li>
 
-            <!-- humberger icon -->
-          <button class="navbar-toggler" type="button" (click)="sidebar()">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-
-
-          <!-- buttons -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <div  fxLayout="row" fxLayoutAlign="space-around center">
-
-                    <!-- home & clinic -->
-
-                        <li class="nav-item">
-                            <a class="nav-link btn button" routerLink="/home">Home</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link btn button" routerLink="/clinic">Clinic</a>
-                        </li>
-
-
-                    <!-- drob down list (for pet) -->
-                    <div class="btn-group">
-                        <button type="button" class="btn dropdown-toggle button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pets
-                        </button>
-                        <ul class="dropdown-menu drob-style">
-                        <li><a class="dropdown-item" routerLink="/Pets">All Pets</a></li>
-                        <li><a class="dropdown-item" click="petcategory(fish)">Fish</a></li>
-                        <li><a class="dropdown-item" click="petcategory(cats)">Cats</a></li>
-                        <li><a class="dropdown-item" click="petcategory(dogs)">Dogs</a></li>
-                        <li><a class="dropdown-item" click="petcategory(birds)">Birds</a></li>
-                        <li><a class="dropdown-item" click="petcategory(Hamsters)">Hamsters</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- drob down list (for products) -->
-                    <div class="btn-group">
-                        <button type="button" class="btn dropdown-toggle button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </button>
-                        <ul class="dropdown-menu drob-style">
-                        <li><a class="dropdown-item" routerLink="/Products">All Products</a></li>
-                        <li><a class="dropdown-item" click="procategory(food)">Food</a></li>
-                        <li><a class="dropdown-item" click="procategory(cages)">Cages</a></li>
-                        <li><a class="dropdown-item" click="procategory(tools)">Tools</a></li>
-                        <li><a class="dropdown-item" click="procategory(drugs)">Drugs</a></li>
-                        <li><a class="dropdown-item" click="procategory(clothes)">Clothes</a></li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- drob down list (for pet) -->
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn dropdown-toggle button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Pets
+            </button>
+            <ul class="dropdown-menu drob-style">
+              <li><a class="dropdown-item" routerLink="/Pets">All Pets</a></li>
+              <li><a class="dropdown-item" href="#">Fish</a></li>
+              <li><a class="dropdown-item" href="#">Cats</a></li>
+              <li><a class="dropdown-item" href="#">Dogs</a></li>
+              <li><a class="dropdown-item" href="#">Birds</a></li>
+              <li><a class="dropdown-item" href="#">Hamsters</a></li>
             </ul>
+          </div>
 
-            <!-- search -->
-            <form class="d-flex">
-              <input class="form-control me-2 inputsearch" id="search" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn button search" click="search()" type="submit">Search</button>
-            </form>
-
-
-            <!-- icons -->
-            <!-- profile icon -->
-            <div class="btn-group">
-                <button type="button" style="background-color: transparent;border: none;" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div style="display: inline-block;">
-                        <a>
-                        <lord-icon
-                        src="https://cdn.lordicon.com/hbvyhtse.json"
-                        trigger="hover"
-                        colors="primary:#50402c"
-                        scale="40"
-                        state="hover"
-                        style="width:50px;height:50px">
-                        </lord-icon></a>
-                    </div>
-                </button>
-                <ul class="dropdown-menu drob-style">
-                <li><a class="dropdown-item" routerLink="/Profile">MY Profile</a></li>
-                <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
-                <br>
-                <hr>
-                <li><a class="dropdown-item" href="#">Log Out</a></li>
-                </ul>
-            </div>
-
-            <!-- favourit icon -->
-            <a routerLink="/favourit">
-            <lord-icon
-            src="https://cdn.lordicon.com/xryjrepg.json"
-            trigger="morph"
-            colors="primary:#50402c"
-            scale="40"
-            state="morph"
-            style="width:50px;height:50px">
-            </lord-icon></a>
-
-            <!-- cart icon -->
-            <a routerLink="/cart">
-            <lord-icon
-            src="https://cdn.lordicon.com/udbbfuld.json"
-            trigger="hover"
-            colors="primary:#50402c"
-            scale="40"
-            state="hover"
-            style="width:50px;height:50px">
-            </lord-icon></a>
-
+          <!-- drob down list (for products) -->
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn dropdown-toggle button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Products
+            </button>
+            <ul class="dropdown-menu drob-style">
+              <li>
+                <a class="dropdown-item" routerLink="/Products">All Products</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Food</a></li>
+              <li><a class="dropdown-item" href="#">Cages</a></li>
+              <li><a class="dropdown-item" href="#">Tools</a></li>
+              <li><a class="dropdown-item" href="#">Drugs</a></li>
+              <li><a class="dropdown-item" href="#">Clothes</a></li>
+            </ul>
           </div>
         </div>
-      </nav>
+      </ul>
 
-      <!-- side bar -->
-      <div class="hide-side" id="side">
-
-        <!-- close button -->
-        <button class="close-side-btn" (click)="close()">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-            width="20" height="20"
-            viewBox="0,0,256,256"
-            style="fill:#000000;margin-left:-4px;">
-            <g fill="#50402c" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path transform="translate(24.00059,-9.94113) rotate(45.001)" d="M21.5,4.5h5.001v39h-5.001z"></path><path transform="translate(57.94113,24.00474) rotate(135.008)" d="M21.5,4.5h5v39.001h-5z"></path></g></g>
-            </svg>
+      <!-- search -->
+      <form class="d-flex" *ngIf="search.visable">
+        <input
+          matInput
+          class="form-control me-2 inputsearch"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          (keyup)="applyFilter($event)"
+        />
+        <button class="btn button search" (click)="categorysearch()">
+          Search
         </button>
+      </form>
 
-        <!-- search -->
-        <form class="d-flex" fxLayout="column" fxLayoutAlign="space-around center">
-        <input class="form-control me-2 inputsearch search-side" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn button search side-btn-search" type="submit">Search</button>
-        </form>
-        <hr>
-
-        <!-- home & clinic -->
-        <li class="nav-item">
-            <a class="nav-link btn button side-home" routerLink="/home">Home</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link btn button" routerLink="/clinic">Clinic</a>
-        </li>
-        <hr>
-        <!-- drob down list (for pet) -->
-        <div fxLayout="column">
-            <div class="btn-group side-drop-down">
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Pets
-                </button>
-                <ul class="dropdown-menu drob-style">
-                <li><a class="dropdown-item" routerLink="/Pets">All Pets</a></li>
-                <li><a class="dropdown-item" click="petcategory(fish)">Fish</a></li>
-                <li><a class="dropdown-item" click="petcategory(cats)">Cats</a></li>
-                <li><a class="dropdown-item" click="petcategory(dogs)">Dogs</a></li>
-                <li><a class="dropdown-item" click="petcategory(birds)">Birds</a></li>
-                <li><a class="dropdown-item" click="petcategory(Hamsters)">Hamsters</a></li>
-                </ul>
-            </div>
-
-            <!-- drob down list (for products) -->
-            <div class="btn-group side-drop-down">
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Products
-                </button>
-                <ul class="dropdown-menu drob-style">
-                <li><a class="dropdown-item" routerLink="/Products">All Products</a></li>
-                <li><a class="dropdown-item" click="procategory(food)">Food</a></li>
-                <li><a class="dropdown-item" click="procategory(cages)">Cages</a></li>
-                <li><a class="dropdown-item" click="procategory(tools)">Tools</a></li>
-                <li><a class="dropdown-item" click="procategory(drugs)">Drugs</a></li>
-                <li><a class="dropdown-item" click="procategory(clothes)">Clothes</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <hr style=" margin-top: 5rem;">
-
-        <!-- icons -->
-        <div fxLayout="row" fxLayoutAlign="center center">
-             <!-- profile icon -->
-             <div class="btn-group">
-                <button type="button" style="background-color: transparent;border: none;" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div style="display: inline-block;">
-                        <a>
-                        <lord-icon
-                        src="https://cdn.lordicon.com/hbvyhtse.json"
-                        trigger="hover"
-                        colors="primary:#50402c"
-                        scale="40"
-                        state="hover"
-                        style="width:50px;height:50px">
-                        </lord-icon></a>
-                    </div>
-                </button>
-                <ul class="dropdown-menu drob-style">
-                <li><a class="dropdown-item" routerLink="/Profile">MY Profile</a></li>
-                <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
-                <br>
-                <hr>
-                <li><a class="dropdown-item" href="#">Log Out</a></li>
-                </ul>
-            </div>
-
-                <!-- favourit icon -->
-                <a routerLink="/favourit">
-                <lord-icon
-                src="https://cdn.lordicon.com/xryjrepg.json"
-                trigger="morph"
-                colors="primary:#50402c"
-                scale="40"
-                state="morph"
-                style="width:50px;height:50px">
-                </lord-icon></a>
-
-                <!-- cart icon -->
-                <a routerLink="/cart">
-                <lord-icon
-                src="https://cdn.lordicon.com/udbbfuld.json"
+      <!-- icons -->
+      <!-- profile icon -->
+      <div class="btn-group">
+        <button
+          type="button"
+          style="background-color: transparent; border: none"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <div style="display: inline-block">
+            <a>
+              <lord-icon
+                src="https://cdn.lordicon.com/hbvyhtse.json"
                 trigger="hover"
                 colors="primary:#50402c"
                 scale="40"
                 state="hover"
-                style="width:50px;height:50px">
-                </lord-icon></a>
-        </div>
+                style="width: 50px; height: 50px"
+              >
+              </lord-icon
+            ></a>
+          </div>
+        </button>
+        <ul class="dropdown-menu drob-style">
+          <li><a class="dropdown-item" routerLink="/Profile">MY Profile</a></li>
+          <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+          <br />
+          <hr />
+          <li><a class="dropdown-item" href="#">Log Out</a></li>
+        </ul>
+      </div>
+
+      <!-- favourit icon -->
+      <a routerLink="/Favourit">
+        <lord-icon
+          src="https://cdn.lordicon.com/xryjrepg.json"
+          trigger="morph"
+          colors="primary:#50402c"
+          scale="40"
+          state="morph"
+          style="width: 50px; height: 50px"
+        >
+        </lord-icon
+      ></a>
+
+      <!-- cart icon -->
+      <a routerLink="/Cart">
+        <lord-icon
+          src="https://cdn.lordicon.com/udbbfuld.json"
+          trigger="hover"
+          colors="primary:#50402c"
+          scale="40"
+          state="hover"
+          style="width: 50px; height: 50px"
+        >
+        </lord-icon
+      ></a>
     </div>
+  </div>
+</nav>
+
+<!-- side bar -->
+<div class="hide-side" id="side">
+  <!-- close button -->
+  <button class="close-side-btn" (click)="close()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="20"
+      height="20"
+      viewBox="0,0,256,256"
+      style="fill: #000000; margin-left: -4px"
+    >
+      <g
+        fill="#50402c"
+        fill-rule="nonzero"
+        stroke="none"
+        stroke-width="1"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-miterlimit="10"
+        stroke-dasharray=""
+        stroke-dashoffset="0"
+        font-family="none"
+        font-weight="none"
+        font-size="none"
+        text-anchor="none"
+        style="mix-blend-mode: normal"
+      >
+        <g transform="scale(5.33333,5.33333)">
+          <path
+            transform="translate(24.00059,-9.94113) rotate(45.001)"
+            d="M21.5,4.5h5.001v39h-5.001z"
+          ></path>
+          <path
+            transform="translate(57.94113,24.00474) rotate(135.008)"
+            d="M21.5,4.5h5v39.001h-5z"
+          ></path>
+        </g>
+      </g>
+    </svg>
+  </button>
+
+  <!-- search -->
+  <form
+    class="d-flex"
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+    *ngIf="search.visable"
+  >
+    <input
+      matInput
+      class="form-control me-2 inputsearch search-side"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      (keyup)="applyFilter($event)"
+    />
+    <button
+      class="btn button search side-btn-search"
+      (click)="categorysearch()"
+    >
+      Search
+    </button>
+  </form>
+  <hr *ngIf="search.visable" />
+  <br *ngIf="!search.visable" />
+
+  <!-- home & clinic -->
+  <br />
+  <div class="nav-item">
+    <a class="nav-link btn button side-home" routerLink="/home">Home</a>
+  </div>
+  <div class="nav-item">
+    <a class="nav-link btn button" routerLink="/Clinic">Clinic</a>
+  </div>
+  <hr />
+  <br *ngIf="!search.visable" />
+  <!-- drob down list (for pet) -->
+  <div fxLayout="column">
+    <div class="btn-group side-drop-down">
+      <button
+        type="button"
+        class="btn dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Pets
+      </button>
+      <ul class="dropdown-menu drob-style">
+        <li><a class="dropdown-item" routerLink="/Pets">All Pets</a></li>
+        <li><a class="dropdown-item" href="#">Fish</a></li>
+        <li><a class="dropdown-item" href="#">Cats</a></li>
+        <li><a class="dropdown-item" href="#">Dogs</a></li>
+        <li><a class="dropdown-item" href="#">Birds</a></li>
+        <li><a class="dropdown-item" href="#">Hamsters</a></li>
+      </ul>
+    </div>
+
+    <!-- drob down list (for products) -->
+    <div class="btn-group side-drop-down">
+      <button
+        type="button"
+        class="btn dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Products
+      </button>
+      <ul class="dropdown-menu drob-style">
+        <li>
+          <a class="dropdown-item" routerLink="/Products">All Products</a>
+        </li>
+        <li><a class="dropdown-item" href="#">Food</a></li>
+        <li><a class="dropdown-item" href="#">Cages</a></li>
+        <li><a class="dropdown-item" href="#">Tools</a></li>
+        <li><a class="dropdown-item" href="#">Drugs</a></li>
+        <li><a class="dropdown-item" href="#">Clothes</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr style="margin-top: 5rem" />
+
+  <!-- icons -->
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <!-- profile icon -->
+    <div class="btn-group">
+      <button
+        type="button"
+        style="background-color: transparent; border: none"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <div style="display: inline-block">
+          <a>
+            <lord-icon
+              src="https://cdn.lordicon.com/hbvyhtse.json"
+              trigger="hover"
+              colors="primary:#50402c"
+              scale="40"
+              state="hover"
+              style="width: 50px; height: 50px"
+            >
+            </lord-icon
+          ></a>
+        </div>
+      </button>
+      <ul class="dropdown-menu drob-style">
+        <li><a class="dropdown-item" routerLink="/Profile">MY Profile</a></li>
+        <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+        <br />
+        <hr />
+        <li><a class="dropdown-item" href="#">Log Out</a></li>
+      </ul>
+    </div>
+
+    <!-- favourit icon -->
+    <a routerLink="/Favourit">
+      <lord-icon
+        src="https://cdn.lordicon.com/xryjrepg.json"
+        trigger="morph"
+        colors="primary:#50402c"
+        scale="40"
+        state="morph"
+        style="width: 50px; height: 50px"
+      >
+      </lord-icon
+    ></a>
+
+    <!-- cart icon -->
+    <a routerLink="/Cart">
+      <lord-icon
+        src="https://cdn.lordicon.com/udbbfuld.json"
+        trigger="hover"
+        colors="primary:#50402c"
+        scale="40"
+        state="hover"
+        style="width: 50px; height: 50px"
+      >
+      </lord-icon
+    ></a>
+  </div>
+</div>

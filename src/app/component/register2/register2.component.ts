@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/core/models/User';
 import { AlertService } from 'src/app/core/Services/alert.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
+import { PasswordIconService } from 'src/app/core/Services/password-icon.service';
 import { SharedService } from 'src/app/core/Services/Shared.service';
 import { UserService } from 'src/app/core/Services/user.service';
 
@@ -15,7 +16,7 @@ import { UserService } from 'src/app/core/Services/user.service';
 export class Register2Component {
   getdata:any;
   user!: User;
-  constructor(public nav:NavBarService,private fb:FormBuilder,
+  constructor(public nav:NavBarService,private fb:FormBuilder,public PassIcon:PasswordIconService,public ConPassIcon:PasswordIconService,
     private userService:UserService,private data:SharedService,private alertify: AlertService,private route:Router){
       this.getdata=data.getItem();
       console.log(this.getdata)
@@ -67,5 +68,18 @@ export class Register2Component {
       }
     });
 
+    }
+    getIcon(){
+      this.PassIcon.Show()
+
+    }
+    disableIcon(){
+      this.PassIcon.hide()
+    }
+    getConIcon(){
+      this.ConPassIcon.Conshow()
+    }
+    disableConIcon(){
+      this.ConPassIcon.Conhide()
     }
 }
