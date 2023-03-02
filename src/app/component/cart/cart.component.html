@@ -1,16 +1,17 @@
-<section class="pt-5"  style="background-color: white; margin-top: 6rem;" *ngFor="let item of products">
-  <div class="container py-2 pt-2">
+<section
+  class="pt-5"
+  style="background-color: white"
+  *ngFor="let item of products"
+>
+  <div class="container py-2 pt-5">
     <div class="row justify-content-center mb-3">
-      <div class="col-md-8 col-sm-9 col-xl-10">
+      <div class="col-md-8 col-sm-9 col-xs-7 col-xl-10">
         <div class="card rounded-3">
           <div class="card-body">
             <div class="row">
               <div class="col-md-12 col-lg-3 col-xl-3 mb-1 mb-lg-0">
                 <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                  <img
-                    src="{{item.image}}"
-                    class="w-100"
-                  />
+                  <img src="{{ item.image }}" class="w-100" />
                   <a href="#!">
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: #50402c"></div>
@@ -19,44 +20,50 @@
                 </div>
               </div>
               <div class="col-md-6 col-lg-6 col-xl-6">
-                <h5>{{item.name}}</h5>
+                <h5>{{ item.name }}</h5>
 
                 <div class="mt-1 mb-0 text-muted small">
-                  <span>{{item.type}}</span><br>
-
-                  <span>{{item.age}}</span>
-                  <span class="text-primary"> • </span>
-                  <span>{{item.sex}}<br /></span>
-
+                  <span>{{ item.description }}</span>
+                  <span class="text-primary"></span>
+                  <span>{{ item.quantity }} Quantity</span>
                 </div>
-
-                <p class="text-truncate mb-0 mb-md-0 mt-3">
-                  {{item.description}}
-                </p>
               </div>
               <div
                 class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
               >
                 <div class="d-flex flex-row align-items-center mb-0">
-                  <h4 class="mb-1 me-5">{{item.price}}L.E</h4>
-                  <span class="ms-5 me-5"></span>
-                  <lord-icon
-                    src="https://cdn.lordicon.com/xryjrepg.json"
-                    trigger="morph"
-                    colors="primary:#50402c"
-                    scale="40"
-                    state="morph"
-                    style="width: 50px; height: 50px"
-                    class="ms-5"
-                  >
-                  </lord-icon>
+                  <h4 class="mb-1 me-5">{{ item.price }}L.E</h4>
                 </div>
                 <h6 class="text-success">Free shipping</h6>
                 <div class="d-flex flex-column mt-4">
-                  <button class="btn Details btn-sm" type="button" routerLink="/PetDetails/{{item.id}}">
+                  <button class="btn Details btn-sm" type="button">
                     Details
                   </button>
 
+                  <div fxLayout="row" style="margin-top: 26px">
+                    <button
+                      type="button"
+                      class="button btn"
+                      (click)="counter_mins(item.name)"
+                    >
+                      <img src="assets/images/mins.png" class="plus" />
+                    </button>
+
+                    <h3
+                      class="card-text inline cart-count"
+                      style="margin-top: 13px"
+                    >
+                      {{ item.quantity }}
+                    </h3>
+
+                    <button
+                      type="button"
+                      class="button btn"
+                      (click)="counter_plus(item.name)"
+                    >
+                      <img src="assets/images/plus.png" class="plus" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -66,3 +73,23 @@
     </div>
   </div>
 </section>
+<div style="margin-top: 4rem; text-align: center" *ngIf="products.length > 0">
+  <button
+    class="btn Cart btn-sm mt-2 Details btn-sm"
+    type="button"
+    routerLink="/payment"
+    style="width: 9rem; height: 4rem; background-color: #50402c"
+  >
+    <h4 style="color: white">BUY</h4>
+  </button>
+</div>
+
+<div class="empty" *ngIf="products.length == 0">
+  <h1>CARD IS EMPTY</h1>
+</div>
+
+<md-paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+></md-paginator>

@@ -1,27 +1,71 @@
-<div class="row pb-5">
-    <div class="col-sm-6 col-lg-3" fxLayout="row" fxLayoutAlign="space-evenly center"  *ngFor="let i of products">
-        <div class="card card1 pet" style="width: 18rem;">
-            <img src="{{i.Image}}" class="card-img-top card-img">
-            <div class="card-body" fxLayout="column" fxLayoutAlign="space-evenly center">
-              <h4 class="card-title">{{i.Name}}</h4>
-              <p>{{i.discription}}</p>
-              <div fxLayout="row" fxLayoutAlign="center center">
-                <div style="margin-top: 1.4rem;">
-                    <p class="card-text">{{i.Price}}</p>
+<section
+  class="pt-5"
+  style="background-color: white"
+  *ngFor="let item of products"
+>
+  <div class="container py-2 pt-5">
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-8 col-sm-9 col-xs-7 col-xl-10">
+        <div class="card rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-1 mb-lg-0">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <img src="{{ item.image }}" class="w-100" />
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style="background-color: #50402c"></div>
+                    </div>
+                  </a>
                 </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <h5>{{ item.name }}</h5>
 
-                <button class="card-btn" (click)="removefromcard(i)" >
-                  <lord-icon
+                <div class="mt-1 mb-0 text-muted small">
+                  <span>{{ item.description }}</span>
+                  <span class="text-primary"></span>
+                  <span>{{ item.quantity }} Quantity</span>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
+              >
+                <div class="d-flex flex-row align-items-center mb-0">
+                  <h4 class="mb-1 me-5">{{ item.price }}L.E</h4>
+                  <button
+                    class="card-btn"
+                    style="margin-left: 2rem; margin-bottom: 1rem"
+                    (click)="removefromfavourit(item.name)"
+                  >
+                    <lord-icon
                       src="https://cdn.lordicon.com/xryjrepg.json"
                       trigger="hover"
                       colors="primary:#50402c"
                       scale="40"
                       state="hover"
-                      style="width:50px;height:50px">
-                  </lord-icon>
+                      style="width: 50px; height: 50px"
+                    >
+                    </lord-icon>
+                  </button>
+                </div>
+
+                <h6 class="text-success">Free shipping</h6>
+
+                <button class="btn Details btn-sm" type="button">
+                  Details
                 </button>
+
+                <div fxLayout="row" style="margin-top: 26px"></div>
               </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<div class="empty" *ngIf="products.length == 0">
+  <h1>FAVOURITE IS EMPTY</h1>
 </div>

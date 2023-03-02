@@ -31,6 +31,10 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
 import { ChangePasswordComponent } from './component/change-password/change-password.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+
+
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -71,8 +75,6 @@ import { ClinicComponent } from './component/clinic/clinic.component';
     FlexLayoutModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-
-
 
   ],
   providers: [
