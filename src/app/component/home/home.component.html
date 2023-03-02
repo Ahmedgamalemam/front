@@ -19,29 +19,26 @@
     >
       &#10094;
     </div>
-    <div class="cards" [ngClass]="{ 'w-100': totalPages_pets === 1 }">
-      <div
-        class="overflow"
-        [ngStyle]="{ width: overflowWidth_pets, left: pagePosition_pets }"
-      >
-        <div
-          class="card1 card"
-          *ngFor="let i of arr_pets; let index = index"
-          [ngStyle]="{ width: cardWidth_pets }"
-        >
-          <a href="">
-            <img class="card-img" src="{{ i }}" />
-          </a>
+    <div class="container" #container>
+        <div class="left" *ngIf="totalPages_pets > 1" (click)="currentPage_pets != 1 && changePage_pets(-1)" [ngClass]="{'disabled':currentPage_pets === 1}">&#10094;</div>
+        <div class="cards" [ngClass]="{'w-100': totalPages_pets === 1}">
+            <div class="overflow" ngfo [ngStyle]="{'width': overflowWidth_pets, 'left': pagePosition_pets}">
+                <div class="card1 card"  *ngFor="let i of arr_category_pets;  let index = index" [ngStyle]="{'width': cardWidth_pets}">
+                    <h1>{{i.name}}</h1>  
+                    <p>{{i.type}}</p>  
+
+                            
+                </div>
+            </div>
         </div>
       </div>
     </div>
-    <div
-      class="right"
-      *ngIf="totalPages_pets > 1"
-      (click)="currentPage_pets != totalPages_pets && changePage_pets(+1)"
-      [ngClass]="{ disabled: currentPage_pets === totalPages_pets }"
-    >
-      &#10095;
+
+    <!-- card for products -->
+    <div class="card-title">
+        <a class="nav-link btn button" routerLink="/Products">
+            <img class="card-title" src="assets/images/Products.png">
+        </a>
     </div>
   </div>
 </div>

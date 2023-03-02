@@ -2,7 +2,6 @@ import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CategoryService } from 'src/app/core/Services/category.service';
 import { Category } from 'src/app/core/models/category';
-import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -10,30 +9,36 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(public nav:NavBarService,public search:SearchService){
-
 
   arr_category_pets:Category[]=[]
-
-  totalCards_pets: number=0;
+  
 
   constructor(public nav:NavBarService,category:CategoryService){
-    
     category.get_category().subscribe((responce:any)=>{
       responce.forEach((element:any) => {
         this.arr_category_pets.push(element)
         console.log(element)
       })
-      console.log(this.arr_category_pets)
-      this.totalCards_pets = this.arr_category_pets.length;
-      
-      console.log(this.totalCards_pets)
     })
-   
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // pets card
+
+totalCards_pets: number = this.arr_category_pets.length;
 
 currentPage_pets: number = 1;
   pagePosition_pets: string = "0%";
@@ -45,9 +50,6 @@ currentPage_pets: number = 1;
   @ViewChild("container", { static: true, read: ElementRef })
   container_pets: ElementRef<HTMLInputElement> = {} as ElementRef;
   @HostListener("window:resize") windowResize_pets() {
-    let newCardsPerPagepet = this.getCardsPerPage_pets();
-    if (newCardsPerPagepet != this.cardsPerPage_pets) {
-      this.cardsPerPage_pets = newCardsPerPagepet;
     let newCardsPerPagepet = this.getCardsPerPage_pets();
     if (newCardsPerPagepet != this.cardsPerPage_pets) {
       this.cardsPerPage_pets = newCardsPerPagepet;
@@ -68,22 +70,10 @@ currentPage_pets: number = 1;
         this.populatePagePosition_products();
       }
     }
-
-
-    let newCardsPerPagepro = this.getCardsPerPage_products();
-    if (newCardsPerPagepro != this.cardsPerPage_products) {
-      this.cardsPerPage_products = newCardsPerPagepro;
-      this.initializeSlider_products();
-      if (this.currentPage_products > this.totalPages_products) {
-        this.currentPage_products = this.totalPages_products;
-        this.populatePagePosition_products();
-      }
-    }
   }
 
   ngOnInit() {
     this.nav.Show();
-    this.search.hide()
     this.cardsPerPage_pets = this.getCardsPerPage_pets();
     this.initializeSlider_pets();
 
@@ -91,8 +81,6 @@ currentPage_pets: number = 1;
     this.initializeSlider_products();
   }
  
-    initializeSlider_pets() {
-
     initializeSlider_pets() {
     this.totalPages_pets = Math.ceil(this.totalCards_pets / this.cardsPerPage_pets);
     this.overflowWidth_pets = `calc(${this.totalPages_pets * 100}% + ${this.totalPages_pets *
@@ -111,7 +99,6 @@ currentPage_pets: number = 1;
   }
 
   populatePagePosition_pets() {
-    if(window.innerWidth <= 1303 && window.innerWidth > 922 ){
     if(window.innerWidth <= 1303 && window.innerWidth > 922 ){
       this.pagePosition_pets = `calc(${-24 * (this.currentPage_pets-1)}% - ${10 *
       (this.currentPage_pets - 1)}px)`;
@@ -150,8 +137,6 @@ currentPage_products: number = 1;
   container_products: ElementRef<HTMLInputElement> = {} as ElementRef;
  
   
-
-
   initializeSlider_products() {
     this.totalPages_products = Math.ceil(this.totalCards_products / this.cardsPerPage_products);
     this.overflowWidth_products = `calc(${this.totalPages_products * 100}% + ${this.totalPages_products *
@@ -170,7 +155,6 @@ currentPage_products: number = 1;
   }
 
   populatePagePosition_products() {
-    if(window.innerWidth <= 1305 && window.innerWidth > 922 ){
     if(window.innerWidth <= 1305 && window.innerWidth > 922 ){
       this.pagePosition_products = `calc(${-24 * (this.currentPage_products-1)}% - ${10 *
       (this.currentPage_products - 1)}px)`;
