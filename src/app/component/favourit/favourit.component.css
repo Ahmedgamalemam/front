@@ -17,3 +17,13 @@
     margin-top: 1.5rem;
     margin-left: 5rem;
   }
+  .Details {
+    background-color: #50402c;
+    color: white;
+  }
+  .empty{
+    padding-top: 20%;
+    margin: auto;
+    text-align: center;
+    color: #50402c;
+}

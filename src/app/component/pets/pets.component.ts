@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { PetSService } from 'src/app/core/pet-s.service';
-=======
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { PetSService } from 'src/app/core/pet-s.service';
 import { SearchService } from 'src/app/core/Services/search.service';
->>>>>>> 8c72e213a004794c936ce8af1f948bf59c6a8263
+
 
 @Component({
   selector: 'app-pets',
@@ -12,10 +9,7 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./pets.component.css']
 })
 export class PetsComponent {
-<<<<<<< HEAD
-constructor(private pet:PetSService){
-=======
-  constructor(public search:SearchService){}
+  constructor(public search:SearchService,public petservice:PetSService){}
   arr_pets: string[] = ["assets/images/cardcat.png",
 "assets/images/cartdog.png",
 "assets/images/cartbirds.png",
@@ -87,12 +81,12 @@ currentPage_pets: number = 1;
       (this.currentPage_pets - 1)}px)`;
     }
   }
->>>>>>> 8c72e213a004794c936ce8af1f948bf59c6a8263
 
-}
-
-Addtocart()
-  {
-  //  this.pet.setItem();
+  addpetcart(item:any){
+    this.petservice.setItem(item);
   }
+
 }
+
+
+

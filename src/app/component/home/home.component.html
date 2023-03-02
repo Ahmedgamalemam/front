@@ -20,29 +20,42 @@
       &#10094;
     </div>
     <div class="container" #container>
-        <div class="left" *ngIf="totalPages_pets > 1" (click)="currentPage_pets != 1 && changePage_pets(-1)" [ngClass]="{'disabled':currentPage_pets === 1}">&#10094;</div>
-        <div class="cards" [ngClass]="{'w-100': totalPages_pets === 1}">
-            <div class="overflow" ngfo [ngStyle]="{'width': overflowWidth_pets, 'left': pagePosition_pets}">
-                <div class="card1 card"  *ngFor="let i of arr_category_pets;  let index = index" [ngStyle]="{'width': cardWidth_pets}">
-                    <h1>{{i.name}}</h1>  
-                    <p>{{i.type}}</p>  
-
-                            
-                </div>
-            </div>
+      <div
+        class="left"
+        *ngIf="totalPages_pets > 1"
+        (click)="currentPage_pets != 1 && changePage_pets(-1)"
+        [ngClass]="{ disabled: currentPage_pets === 1 }"
+      >
+        &#10094;
+      </div>
+      <div class="cards" [ngClass]="{ 'w-100': totalPages_pets === 1 }">
+        <div
+          class="overflow"
+          ngfo
+          [ngStyle]="{ width: overflowWidth_pets, left: pagePosition_pets }"
+        >
+          <div
+            class="card1 card"
+            *ngFor="let i of arr_pets; let index = index"
+            [ngStyle]="{ width: cardWidth_pets }"
+          >
+            <!-- <h1>{{ i.name }}</h1> -->
+            <!-- <p>{{ i.type }}</p> -->
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- card for products -->
-    <div class="card-title">
-        <a class="nav-link btn button" routerLink="/Products">
-            <img class="card-title" src="assets/images/Products.png">
-        </a>
-    </div>
+  <!-- card for products -->
+  <div class="card-title">
+    <a class="nav-link btn button" routerLink="/Products">
+      <img class="card-title" src="assets/images/Products.png" />
+    </a>
   </div>
 </div>
-<div >
+
+<div>
   <!-- card for products -->
   <div class="card-title">
     <a class="nav-link btn button" routerLink="/Products">
@@ -59,7 +72,7 @@
     >
       &#10094;
     </div>
-    <div class="cards" [ngClass]="{ 'w-100': totalPages_products === 1 }">   b bbbb bb                         b
+    <div class="cards" [ngClass]="{ 'w-100': totalPages_products === 1 }">
       <div
         class="overflow"
         [ngStyle]="{

@@ -31,6 +31,10 @@ import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+
+
 
 
 @NgModule({
@@ -65,7 +69,7 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
   ],
   providers: [
