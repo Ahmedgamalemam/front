@@ -58,7 +58,7 @@
   style="background-color: white"
   *ngFor="
     let item of FilteredProduct
-      | paginate : { itemsPerPage: 7, currentPage: pages }
+      | paginate : { itemsPerPage: 5, currentPage: pages }
   "
 >
   <div class="container py-2 pt-5">
@@ -124,4 +124,9 @@
     </div>
   </div>
 </section>
-<pagination-controls (pageChange)="pages = $event"></pagination-controls>
+<div style="text-align: center">
+  <pagination-controls
+    style="color: #50402c"
+    (pageChange)="pages = $event"
+  ></pagination-controls>
+</div>

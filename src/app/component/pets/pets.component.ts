@@ -13,6 +13,7 @@ import { SharedService } from 'src/app/core/Services/Shared.service';
   styleUrls: ['./pets.component.css']
 })
 export class PetsComponent {
+  pages: number = 1;
   pets:Pets[]=[];
   FilteredPets:Pets[]=[];
   card:any;

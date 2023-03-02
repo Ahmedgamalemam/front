@@ -2,7 +2,9 @@
   .border-sm-start-none {
     border-left: none !important;
   }
+
 }
+
 * :not(button) {
   color: #50402c;
 }
