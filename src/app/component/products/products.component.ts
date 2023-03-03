@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
+import { PetSService } from 'src/app/core/pet-s.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { ProductsService } from 'src/app/core/Services/products.service';
 import { SearchService } from 'src/app/core/Services/search.service';
@@ -17,12 +18,11 @@ export class ProductsComponent {
     public search: SearchService,
     public Productservice: ProductsService,
     public searchservice: NavBarService,
-
+    public petservice:PetSService
   ) {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
         this.Products.push(element);
-        console.log(element);
       });
       this.FilteredProduct = this.Products;
     });
@@ -115,4 +115,12 @@ export class ProductsComponent {
       }% - ${10 * (this.currentPage_products - 1)}px)`;
     }
   }
+  addtocardpro(item:any){
+    this.petservice.setItem(item);
+  }
+
+// addtofavourite
+addtofavourite(item:any){
+  this.petservice.setfav(item)
+}
 }

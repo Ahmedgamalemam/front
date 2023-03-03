@@ -20,13 +20,14 @@ export class FavouritComponent {
 
     // this.products=this.SharedService.getItem();
     this.products = this.SharedService.getfav()
+    console.log(this.products)
   }
   removefromfavourit(element:any){
       var i = 0;
       while (i < this.products.length) {
         console.log(this.products[i])
         console.log(element)
-  
+
         if (this.products[i].name == element) {
           this.products.splice(i, 1);
           console.log(this.products[i])

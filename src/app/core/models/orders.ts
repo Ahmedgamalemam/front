@@ -1,9 +1,11 @@
 export interface Orders {
-  id: number,
-  date: string,
+  date: Date,
   money: number,
   count: number,
   user_ID: number,
   user_Name: string,
   payment_Method: string,
+  payment_State: string,
+  pets:any,
+  products:any
 }

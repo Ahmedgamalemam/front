@@ -27,7 +27,7 @@ return this.myClient.get(this.Url_DB+"/"+Email)
 public GetUserById(ID:number){
   return this.myClient.get(this.Url_DB+"/"+ID)
 }
-EditProfile(user:User){
-  return this.myClient.put(this.Url_DB,user);
+EditProfile(user:User,id:number){
+  return this.myClient.put(this.Url_DB+"?id="+id,user);
 }
 }

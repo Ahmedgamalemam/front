@@ -98,6 +98,7 @@
                     style="width: 50px; height: 50px"
                     class="ms-5"
                   >
+                  <a (click)="addtofavourite(item)"></a>
                   </lord-icon>
                 </div>
                 <h6 class="text-success">Free shipping</h6>
@@ -105,7 +106,7 @@
                   <button class="btn Details btn-sm" type="button" routerLink="/PetDetails/{{item.id}}">
                     Details
                   </button>
-                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addtocard(item)">
+                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addpetcart(item)">
                     Add to Cart
                   </button>
                 </div>

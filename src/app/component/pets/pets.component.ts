@@ -120,10 +120,12 @@ currentPage_pets: number = 1;
     this.FilteredPets= this.pets.filter((pet:Pets)=>pet.category_Name.toLowerCase().includes(category.toLowerCase()))
   }
 
-
-
   addpetcart(item:any){
     this.petservice.setItem(item);
+  }
+
+  addtofavourite(item:any){
+    this.petservice.setfav(item)
   }
 
 }
