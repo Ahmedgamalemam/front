@@ -29,6 +29,10 @@ import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
 import { MarkerService } from './core/Services/marker.service';
 import { PopupService } from './core/Services/popup.service';
+import { PetDetailsComponent } from './component/pet-details/pet-details.component'; 
+import { AddProductComponent } from './component/add-product/add-product.component';
+import { AddPetComponent } from './component/add-pet/add-pet.component';
+
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -55,7 +59,10 @@ import { PopupService } from './core/Services/popup.service';
     FooterComponent,
     ProductDetailsComponent,
     PaymentComponent,
-    ClinicComponent
+    ClinicComponent,
+    PetDetailsComponent,
+    AddProductComponent,
+    AddPetComponent
   ],
   imports: [
     BrowserModule,

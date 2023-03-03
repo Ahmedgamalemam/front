@@ -16,6 +16,8 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { PetDetailsComponent } from './component/pet-details/pet-details.component';
+import { AddProductComponent } from './component/add-product/add-product.component';
+import { AddPetComponent } from './component/add-pet/add-pet.component';
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -33,7 +35,11 @@ const route: Routes = [
 {path:"productDetails",component:ProductDetailsComponent},
 {path:"payment",component:PaymentComponent},
 {path:"clinic",component:ClinicComponent},
-{path:"petDetails",component:PetDetailsComponent}
+{path:"petDetails",component:PetDetailsComponent},
+{path:"addProduct",component:AddProductComponent},
+{path:"addPet",component:AddPetComponent}
+
+
 ];
 
 @NgModule({
@@ -41,3 +47,4 @@ const route: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

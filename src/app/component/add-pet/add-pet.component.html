@@ -1,0 +1,87 @@
+<div class="cont container" >
+    <form method="post" [formGroup]="addingform">
+        <h1>Add Pet</h1>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control"id="petName" placeholder="Pet Name"formControlName="petName">
+                    <label for="petName">Pet Name</label>
+                </div>
+                <div *ngIf="addingform.controls.petName.errors && addingform.controls.petName.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Name Must be at least 3 characters
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="petAge" placeholder="pet Age">
+                    <label for="petAge">Age</label>
+                </div>
+                <div *ngIf="addingform.controls.petAge.errors && addingform.controls.petAge.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Area is required
+                </div>
+                <div class="gender">
+                    <p class="card-description">Choose pet's gender</p>
+                    <div >
+                        <input type="radio" name="sex" id="male" checked="true" />
+                        <label class="male" for="male">male</label>
+                        <input type="radio" name="sex" id="female" />
+                        <label for="female">female</label>
+                    </div>
+            
+                </div>
+               
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="petPrice" placeholder="Pet Price">
+                    <label for="petPrice">Price</label>
+                </div>
+                <div *ngIf="addingform.controls.petPrice.errors && addingform.controls.petPrice.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Area is required
+                </div>
+                
+                <div class="form-floating">
+                    <select class="form-select" id="selectCategory" >
+                      <option selected="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                    <label for="selectCategory">Select Category</label>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="selectType" >
+                      <option selected="1">dog</option>
+                      <option value="2">cat</option>
+                      <option value="3">bird</option>
+                    </select>
+                    <label for="selectType">Select type</label>
+                </div>
+
+                <div class="container col-md-">
+                    <div class="mb-5">
+                        <label for="Image" class="form-label">Upload Pet's Image</label>
+                        <input class="form-control" type="file" id="formFile" onchange="preview()">
+                    </div>
+                    <img id="frame" src="" class="img-fluid" />
+                </div>
+                <div *ngIf="addingform.controls.formFile.errors && addingform.controls.formFile.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Area is required
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <textarea name="txtDescription" id="txtDescription" class="form-control" 
+                    placeholder="Product Description *" style="width: 100%; height: 150px;"></textarea>
+                    <label for="txtDescription">Description</label>
+                </div>
+                <br><br>
+                <div class="form-floating" style="float: right;">
+                    <input type="button" name="btnSubmit" class="here" value="Add Pet" />
+                </div>
+            </div>
+        </div>
+    
+    </form>
+</div>
+
