@@ -59,8 +59,8 @@ ngOnInit() {
 
 
   Edit= new FormGroup({
-    Fname: new FormControl('',[Validators.required,Validators.minLength(4)]),
-    Lname: new FormControl("",[Validators.required,Validators.minLength(4)]),
+    Fname: new FormControl('',[Validators.required,Validators.minLength(3)]),
+    Lname: new FormControl("",[Validators.required,Validators.minLength(3)]),
     Age: new FormControl(0, [Validators.min(12), Validators.max(40)]),
     City: new FormControl("",Validators.required),
     Area:new FormControl("",Validators.required),
