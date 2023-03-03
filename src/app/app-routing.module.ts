@@ -20,6 +20,7 @@ import { PetDetailsComponent } from './component/pet-details/pet-details.compone
 import { ErrorComponent } from './component/error/error.component';
 import { ChangePasswordComponent } from './component/change-password/change-password.component';
 import { ContactUsComponent } from './component/contact-us/contact-us.component';
+import { AddProductComponent } from './component/add-product/add-product.component';
 const route: Routes = [
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
@@ -41,7 +42,7 @@ const route: Routes = [
   {path:"PetDetails/:id",component:PetDetailsComponent},
   {path:"ChangePassword",component:ChangePasswordComponent},
   {path:"ContactUs",component:ContactUsComponent},
-
+  {path:"AddProduct",component:AddProductComponent},
   {path:'**',component:ErrorComponent},
   ];
 
