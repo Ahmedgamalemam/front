@@ -1,7 +1,8 @@
 export interface Clinic {
-    name:string,
-    address:string,
-    phone:number,
-    lat:number,
-    long:number,
+  id: number;
+  name: string;
+  address: string;
+  phone: number;
+  lat: number;
+  long: number;
 }

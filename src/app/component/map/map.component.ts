@@ -1,5 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import * as L from 'leaflet';
+import { ClinicService } from 'src/app/core/Services/clinic.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 import { MarkerService } from '../../core/Services/marker.service';
 
@@ -29,6 +31,7 @@ export class MapComponent implements AfterViewInit {
   private initMap(): void {
     this.map = L.map('map', {
       center: [30.06263, 31.24967],
+
       //center: [ 39.8282, -98.5795 ],
       zoom: 10,
     });
@@ -61,24 +64,35 @@ export class MapComponent implements AfterViewInit {
       });
       L.Marker.prototype.options.icon = iconDefault;
       if (marker) this.map.removeLayer(marker);
-      console.log(e.latlng.lat,e.latlng.lng); // e is an event object (MouseEvent in this case)
+      console.log(e.latlng.lat, e.latlng.lng); // e is an event object (MouseEvent in this case)
       marker = L.marker(e.latlng).addTo(this.map);
     });
   }
 
-  constructor(private markerService: MarkerService,public search:SearchService) {}
-
+  constructor(
+    private markerService: MarkerService,
+    public search: SearchService,
+    public myActive: ActivatedRoute
+  ) {}
+  ngDoCheck() {
+    this.markerService.id = this.myActive.snapshot.params['id'];
+   // console.log(this.myActive.snapshot.params['id'])
+    //this.markerService.locationMaker(this.map);
+  }
   GoTo() {
     this.markerService.makeUserPostion(this.map);
   }
 
   ngAfterViewInit(): void {
     this.initMap();
-    this.markerService.makeCapitalMarkers(this.map);
+    if(this.markerService.id==undefined){
+      this.markerService.makeCapitalMarkers(this.map);
+    }else
+
+    this.markerService.locationMaker(this.map)
   }
 
   ngOnInit() {
-    this.search.hide()
+    this.search.hide();
   }
-
 }

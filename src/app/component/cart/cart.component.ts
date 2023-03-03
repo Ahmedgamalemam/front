@@ -9,9 +9,10 @@ import { SearchService } from 'src/app/core/Services/search.service';
 })
 export class CartComponent {
   products = new Array();
-  length = 100;
-  pageSize = 10;
-  pageSizeOptions = [5, 10, 25, 100];
+  // length = 100;
+  // pageSize = 10;
+  // pageSizeOptions = [5, 10, 25, 100];
+  pages: number = 1;
 
   ngOnInit() {
     this.search.hide()

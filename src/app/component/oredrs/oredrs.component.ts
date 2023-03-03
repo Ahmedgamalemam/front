@@ -13,6 +13,7 @@ export class OredrsComponent {
   id!:number;
   Orders:Orders[]=[];
   Length:number=0;
+  pages: number = 1;
   ngOnInit() {
     this.search.hide()
     this.Length=this.Orders.length
