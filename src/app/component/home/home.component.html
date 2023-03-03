@@ -29,8 +29,8 @@
           *ngFor="let i of arr_pets; let index = index"
           [ngStyle]="{ width: cardWidth_pets }"
         >
-          <a href="">
-            <img class="card-img" src="{{ i }}" />
+          <a (click)="petcategory($event)" routerLink="/Pets">
+            <img class="card-img" src="{{ i }}" alt="{{index+1}}"/>
           </a>
         </div>
       </div>
@@ -76,8 +76,8 @@
           *ngFor="let i of arr_products; let index = index"
           [ngStyle]="{ width: cardWidth_products }"
         >
-          <a href="">
-            <img class="card-img" src="{{ i }}" />
+          <a (click)="productcategory($event)" routerLink="/Products">
+            <img class="card-img" src="{{ i }}" alt="{{index+6}}"/>
           </a>
         </div>
       </div>

@@ -32,6 +32,7 @@
     "lord-icon-element": "^4.0.3",
     "lottie-web": "^5.10.2",
     "modules": "^0.4.0",
+    "ngx-pagination": "^6.0.3",
     "node": "^19.7.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",

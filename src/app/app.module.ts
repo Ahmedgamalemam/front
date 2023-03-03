@@ -35,6 +35,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
 
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -75,6 +76,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     FlexLayoutModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
+    NgxPaginationModule
 
   ],
   providers: [
