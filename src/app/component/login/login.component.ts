@@ -4,7 +4,7 @@ import { Route, Router } from '@angular/router';
 import { AlertService } from 'src/app/core/Services/alert.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { PasswordIconService } from 'src/app/core/Services/password-icon.service';
-import { UserService } from 'src/app/core/Services/user.service';
+import { UserService } from 'src/app/core/Services/ModelServices/user.service';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +33,8 @@ export class LoginComponent {
    this.userService.LoginCheck(this.Password.value,this.Email.value)
    .subscribe((response: any) => {
 
-    if(response){
+    if(response!=0){
+      localStorage.setItem("id",response)
 
       this.route.navigate(["/home"])
       this.alertify.success('Congrats, you are successfully Logged In');

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorComponent } from './component/error/error.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -18,6 +19,7 @@ import { ClinicComponent } from './component/clinic/clinic.component';
 import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AddPetComponent } from './component/add-pet/add-pet.component';
+
 
 const route: Routes = [
 {path:'',component:HomeComponent},
@@ -38,9 +40,8 @@ const route: Routes = [
 {path:"petDetails",component:PetDetailsComponent},
 {path:"addProduct",component:AddProductComponent},
 {path:"addPet",component:AddPetComponent}
-
-
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(route)],

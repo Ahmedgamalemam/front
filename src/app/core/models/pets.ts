@@ -1,10 +1,12 @@
 export interface Pets {
-    Name:string,
-    description?:string,
-    Type:string,
-    Age:string,
-    Sex:string,
-    Price:string,
-    Category_Name:string,
-    Image:string
+  id:number,
+  name:string,
+  description:string,
+  type:string,
+  age:string,
+  sex:string,
+  price:number,
+  image:string,
+  category_ID:number
+  category_Name:string
 }

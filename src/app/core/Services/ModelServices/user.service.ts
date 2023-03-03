@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/User';
+import { User } from '../../models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,8 @@ return this.myClient.get(this.Url_DB+"/"+Email)
 }
 public GetUserById(ID:number){
   return this.myClient.get(this.Url_DB+"/"+ID)
+}
+EditProfile(user:User){
+  return this.myClient.put(this.Url_DB,user);
 }
 }

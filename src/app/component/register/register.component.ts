@@ -56,23 +56,32 @@ export class RegisterComponent {
     get Age(){
       return this.RegForm.get('Age') as FormControl;
     }
-    get Address(){
-      return this.RegForm.get('Area') as FormControl;
-    }
+
     get Phone(){
       return this.RegForm.get('Phone') as FormControl;
     }
+    get City(){
+      return this.RegForm.get('City') as FormControl;
+    }
+    get Area(){
+      return this.RegForm.get('Area') as FormControl;
+    }
+    get buildingNumber(){
+      return this.RegForm.get('buildingNumber') as FormControl;
+    }
     userData(): User {
       return this.user = {
-        Fname:this.Fname.value,
-        Lname:this.Lname.value,
-        Type:"user",
-        Age:this.Age.value,
-        Address:this.Address.value,
-        Image:this.profile.toString(),
-        Phone:this.Phone.value,
-        Email:"",
-        Password:""
+        fname:this.Fname.value,
+        lname:this.Lname.value,
+        type:"user",
+        age:this.Age.value,
+        city:this.City.value,
+        area:this.Area.value,
+        buildingID:this.buildingNumber.value,
+        image:this.profile.toString(),
+        phone:this.Phone.value,
+        email:"",
+        password:""
       }
     }
     next(){

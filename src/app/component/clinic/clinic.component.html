@@ -1,32 +1,30 @@
 <div class="container mb-5 pt-5 d-flex justify-content-center" style="margin-top: 6rem;" >
-    <span class="nearest">Find The Nearest Pet Clinic &nbsp;&nbsp;</span><button class="here btn btn-primary btn-sm" type="button" routerLink="/Map">CLICK HERE!</button>
+  <span class="nearest">Find The Nearest Pet Clinic &nbsp;&nbsp;</span><button class="here btn btn-primary btn-sm" type="button" routerLink="/Map">CLICK HERE!</button>
 </div>
 <div>{{clinik}}</div>
 <div class="container mt-5 mb-5" *ngFor="let c of clinik">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-10">
-            <div class="row p-2 bg-white border rounded">
-                <div class="col-md-3 mt-1">
-                <img class="img-fluid img-responsive rounded product-image" src="https://i.pinimg.com/originals/56/94/4e/56944e6c97cb77da412872caf2cdd14c.jpg"></div>
-                <div class="col-md-6 mt-1">
-                    <h2>{{c.name}}</h2>
-                    <div class="d-flex flex-column">
-                        <p>mobile: {{c.phone}}</p>
-                        <p>Address: {{c.address}}</p>
-                    </div>
-                    
-                    <p class="text-justify para mb-0 d-flex flex-wrap">Jungle pet clinic was established in 2005 with the aim of providing high quality veterinary care for your pets.
-                         We offer a comprehensive range of medical, surgical and laboratory services.<br></p>
-                </div>
-                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                    <div class="d-flex flex-column mt-4">
-                        <button 
-                        class="bttn btn-primary btn-sm" type="button"><img class="location" src="../../../assets/images/locationgoogle.jfif" alt=""></button></div>
-                </div>
-            </div>
+  <div class="d-flex justify-content-center row">
+      <div class="col-md-10">
+          <div class="row p-2 bg-white border rounded">
+              <div class="col-md-3 mt-1">
+              <img class="img-fluid img-responsive rounded product-image" src="https://i.pinimg.com/originals/56/94/4e/56944e6c97cb77da412872caf2cdd14c.jpg"></div>
+              <div class="col-md-6 mt-1">
+                  <h2>{{c.name}}</h2>
+                  <div class="d-flex flex-column">
+                      <p>mobile: {{c.phone}}</p>
+                      <p>Address: {{c.address}}</p>
+                  </div>
 
-            </div>
-        </div>
-    </div>
+                  <p class="text-justify para mb-0 d-flex flex-wrap">Jungle pet clinic was established in 2005 with the aim of providing high quality veterinary care for your pets.
+                       We offer a comprehensive range of medical, surgical and laboratory services.<br></p>
+              </div>
+              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                  <div class="d-flex flex-column mt-4">
+                      <button
+                      class="bttn btn-primary btn-sm" type="button"><img class="location" src="../../../assets/images/locationgoogle.jfif" alt=""></button></div>
+              </div>
+          </div>
 
-
+          </div>
+      </div>
+  </div>

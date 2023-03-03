@@ -1,28 +1,22 @@
-*{
-    box-sizing: border-box;
+@media (max-width: 767.98px) {
+  .border-sm-start-none {
+    border-left: none !important;
+  }
 }
-@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
-.main-card{
-    min-width: 33rem;
-    max-height: 13rem;
-    margin-top: 7rem;
+* :not(button) {
+  color: #50402c;
 }
-.main-card:hover{
-    box-shadow:2px 0px 20px 0px #e0dcce;
-    transform: translate3d(2px, 2px, 10em); 
+
+.card {
+  box-shadow: 2px 2px #50402c;
 }
-.card-img{
-    max-height: 12rem;
-    border-radius: 20px;
+.Details {
+  background-color: #50402c;
+  color: white;
 }
-.card-button{
-        min-width: 5rem;
-        color: #50402c;
+.Cart {
+  background-color: #f7e3ac;
 }
-.card-button:hover{
-        background-color: #daa06d;
-        color: #50402c; 
-}
-.cart-count{
-    text-align: center;
+* {
+  box-sizing: border-box;
 }
