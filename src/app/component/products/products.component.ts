@@ -13,7 +13,7 @@ import { SearchService } from 'src/app/core/Services/search.service';
 export class ProductsComponent {
   pages: number = 1;
   Products: Product[] = [];
-
+  id:any;
   FilteredProduct = new Array();
   constructor(
     public search: SearchService,
@@ -50,6 +50,8 @@ export class ProductsComponent {
   }
 
   ngDoCheck() {
+    this.id=Number(localStorage.getItem("id"))
+
     let filterValue = this.searchservice.getsearch();
     let filterValue2 = this.searchservice.getsearchBYID();
     let filterValue3 = this.searchservice.getsearchBYCatogry();

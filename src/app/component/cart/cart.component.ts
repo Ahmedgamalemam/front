@@ -48,4 +48,15 @@ export class CartComponent {
     }
     }
    }
+   buy_now() {
+    var i = 0;
+    var total_price = 0;
+    while (i < this.products.length) {
+      total_price =
+        total_price + this.products[i].price * this.products[i].quantity;
+      ++i;
+    }
+    this.SharedService.setbuy_now(this.products);
+    this.SharedService.settotal_price(total_price);
+  }
 }

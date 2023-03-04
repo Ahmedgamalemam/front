@@ -19,6 +19,7 @@ export class PetsComponent {
   pets: Pets[] = [];
   FilteredPets: Pets[] = [];
   card: any;
+  id:any;
   constructor(
     public search: SearchService,
     private Services: PetsService,
@@ -35,6 +36,7 @@ export class PetsComponent {
       this.FilteredPets = this.pets;
     });
   }
+
   petcategory(item: any) {
     let inputsearch = (item.target as HTMLImageElement).alt;
     this.searchservice.setsearchByID(inputsearch);
@@ -57,6 +59,8 @@ export class PetsComponent {
   }
 
   ngDoCheck() {
+    this.id=Number(localStorage.getItem("id"))
+
     let filterValue = this.searchservice.getsearch();
     let filterValue2 = this.searchservice.getsearchBYID();
     let filterValue3 = this.searchservice.getsearchBYCatogry();
