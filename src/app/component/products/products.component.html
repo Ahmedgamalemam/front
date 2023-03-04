@@ -29,8 +29,8 @@
           *ngFor="let i of arr_products; let index = index"
           [ngStyle]="{ width: cardWidth_products }"
         >
-          <a >
-            <img class="card-img" src="{{ i }}" />
+          <a  (click)="productcategory($event)">
+            <img class="card-img" src="{{ i }}" alt="{{index+6}}" />
           </a>
         </div>
       </div>
@@ -53,11 +53,13 @@
   </a>
 </div>
 
-
 <section
   class="pt-0"
   style="background-color: white"
-  *ngFor="let item of FilteredProduct"
+  *ngFor="
+    let item of FilteredProduct
+      | paginate : { itemsPerPage: 5, currentPage: pages }
+  "
 >
   <div class="container py-2 pt-5">
     <div class="row justify-content-center mb-3">
@@ -91,22 +93,27 @@
                   <h4 class="mb-1 me-5">{{ item.price }}L.E</h4>
 
                   <lord-icon
-                  src="https://cdn.lordicon.com/xryjrepg.json"
-                  trigger="morph"
-                  colors="primary:#50402c"
-                  scale="40"
-                  state="morph"
-                  style="width: 50px; height: 50px"
-                  class="ms-5"
+                    src="https://cdn.lordicon.com/xryjrepg.json"
+                    trigger="morph"
+                    colors="primary:#50402c"
+                    scale="40"
+                    state="morph"
+                    style="width: 50px; height: 50px"
+                    class="ms-5"
                   >
+                  <a (click)="addtofavourite(item)"></a>
                   </lord-icon>
                 </div>
                 <h6 class="text-success">Free shipping</h6>
                 <div class="d-flex flex-column mt-4">
-                  <button class="btn Details btn-sm" type="button" routerLink="/productDetails/{{item.id}}">
+                  <button
+                    class="btn Details btn-sm"
+                    type="button"
+                    routerLink="/productDetails/{{ item.id }}"
+                  >
                     Details
                   </button>
-                  <button class="btn Cart btn-sm mt-2" type="button">
+                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addtocardpro(item)">
                     Add to Cart
                   </button>
                 </div>
@@ -118,3 +125,9 @@
     </div>
   </div>
 </section>
+<div style="text-align: center">
+  <pagination-controls
+    style="color: #50402c"
+    (pageChange)="pages = $event"
+  ></pagination-controls>
+</div>

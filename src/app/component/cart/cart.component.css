@@ -1,22 +1,27 @@
 @media (max-width: 767.98px) {
-  .border-sm-start-none {
-    border-left: none !important;
+    .border-sm-start-none {
+      border-left: none !important;
+    }
   }
-}
-* :not(button) {
-  color: #50402c;
-}
+  * :not(button) {
+    color: #50402c;
+  }
 
-.card {
-  box-shadow: 2px 2px #50402c;
-}
-.Details {
-  background-color: #50402c;
-  color: white;
-}
-.Cart {
-  background-color: #f7e3ac;
-}
-* {
-  box-sizing: border-box;
+  .card {
+    box-shadow: 2px 2px #50402c;
+  }
+  .Details {
+    background-color: #50402c;
+    color: white;
+  }
+  .Cart {
+    background-color: #f7e3ac;
+  }
+  * {
+    box-sizing: border-box;
+  }
+.empty{
+    padding-top: 20%;
+    margin: auto;
+    text-align: center;
 }

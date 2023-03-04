@@ -26,7 +26,7 @@ import { PetsComponent } from './component/pets/pets.component';
 import { ProductsComponent } from './component/products/products.component';
 import { MarkerService } from './core/Services/marker.service';
 import { PopupService } from './core/Services/popup.service';
-import { PetDetailsComponent } from './component/pet-details/pet-details.component'; 
+import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AddPetComponent } from './component/add-pet/add-pet.component';
 
@@ -35,10 +35,18 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
 import { ChangePasswordComponent } from './component/change-password/change-password.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+
+
+import { NgxPaginationModule } from 'ngx-pagination';
 import { PaymentComponent } from './component/payment/payment.component';
+import { EditPetComponent } from './component/edit-pet/edit-pet.component';
+import { EditProductComponent } from './component/edit-product/edit-product.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PetDashComponent } from './component/pet-dash/pet-dash.component';
 import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.component';
+import { ProductDashComponent } from './component/product-dash/product-dash.component';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -74,9 +82,12 @@ import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.compone
     AddProductComponent,
     AddPetComponent,
     ClinicComponent,
+    EditPetComponent,
+    EditProductComponent,
     DashboardComponent,
     PetDashComponent,
     ClinicDashComponent,
+    ProductDashComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,9 +97,8 @@ import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.compone
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
-
-
+    ReactiveFormsModule,
+    NgxPaginationModule
 
   ],
   providers: [

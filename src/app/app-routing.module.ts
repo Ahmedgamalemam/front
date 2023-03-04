@@ -17,8 +17,14 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { PetDetailsComponent } from './component/pet-details/pet-details.component';
+import { ErrorComponent } from './component/error/error.component';
+import { ChangePasswordComponent } from './component/change-password/change-password.component';
+import { ContactUsComponent } from './component/contact-us/contact-us.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AddPetComponent } from './component/add-pet/add-pet.component';
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
+import { EditPetComponent } from './component/edit-pet/edit-pet.component';
+import { EditProductComponent } from './component/edit-product/edit-product.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PetDashComponent } from './component/pet-dash/pet-dash.component'; 
 import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.component';
@@ -47,9 +53,39 @@ const route: Routes = [
 {path:"pet-dash",component:PetDashComponent},
 {path:"clinic-dash",component:ClinicDashComponent}
 
+import { PetDashComponent } from './component/pet-dash/pet-dash.component';
+import { ProductDashComponent } from './component/product-dash/product-dash.component';
+const route: Routes = [
+  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
+  {path:'Login',component:LoginComponent},
+  {path:'Register',component:RegisterComponent},
+  {path:"SignUp",component:Register2Component},
+  {path:"Profile/:id",component:ProfileComponent},
+  {path:"Map",component:MapComponent},
+  {path:"Pets",component:PetsComponent},
+  {path:"Products",component:ProductsComponent},
+  {path:'Favourit',component:FavouritComponent},
+  {path:'Cart',component:CartComponent},
+  {path:'orders',component:OredrsComponent},
+  {path:"productDetails/:id",component:ProductDetailsComponent},
+  {path:"payment",component:PaymentComponent},
+  {path:"Clinic",component:ClinicComponent},
+  { path:'EditProfile', component: EditProfileComponent },
+  { path:"Aboutus", component: AboutUsComponent },
+  {path:"PetDetails/:id",component:PetDetailsComponent},
+  {path:"ChangePassword",component:ChangePasswordComponent},
+  {path:"ContactUs",component:ContactUsComponent},
+  {path:"AddProduct",component:AddProductComponent},
+  {path:"AddPet",component:AddPetComponent},
+  {path:"EditPet/:id",component:EditPetComponent},
+  {path:"EditProduct/:id",component:EditProductComponent},
+  {path:"Dashboard",component:DashboardComponent},
+  {path:"AdminPet",component:PetDashComponent},
+  {path:"AdminProduct",component:ProductDashComponent},
 
-
-];
+  {path:'**',component:ErrorComponent},
+  ];
 
 
 @NgModule({

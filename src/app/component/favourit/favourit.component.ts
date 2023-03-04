@@ -19,13 +19,22 @@ export class FavouritComponent {
   constructor(private SharedService:PetSService,public search:SearchService) {
 
     // this.products=this.SharedService.getItem();
-    this.products = [{Name:'Marvelous Spatuletail',Image:"assets/images/cardcat.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
-    {Name:'Marvelous Spatuletail',Image:"assets/images/cartfood.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
-    {Name:'Marvelous Spatuletail',Image:"assets/images/cartdog.png",discription:"beautiful pets", Price:"200$" ,Counter:1 },
-    {Name:'Marvelous Spatuletail',Image:"assets/images/cartfish.png",discription:"beautiful pets", Price:"200$" ,Counter:1 }]
+    this.products = this.SharedService.getfav()
+    console.log(this.products)
   }
-   removefromcard(element:any){
-    var remove = this.products.indexOf(element)
-    this.products.splice(remove, 1);
+  removefromfavourit(element:any){
+      var i = 0;
+      while (i < this.products.length) {
+        console.log(this.products[i])
+        console.log(element)
+
+        if (this.products[i].name == element) {
+          this.products.splice(i, 1);
+          console.log(this.products[i])
+        } else {
+          ++i;
+        }
+      }
+      }
    }
-}
+

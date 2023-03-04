@@ -1,12 +1,9 @@
-
 <!-- card for pets -->
-<div class=" pt-5">
+<div class="pt-5">
+<div class="pt-5">
   <div class="card-title">
     <a class="nav-link btn button" routerLink="/Pets">
-      <img
-        style="height: 4rem"
-        src="assets/images/Pets.png"
-      />
+      <img style="height: 4rem" src="assets/images/Pets.png" />
     </a>
   </div>
   <div class="container slide" #container>
@@ -28,8 +25,8 @@
           *ngFor="let i of arr_pets; let index = index"
           [ngStyle]="{ width: cardWidth_pets }"
         >
-          <a >
-            <img class="card-img" src="{{ i }}" />
+          <a (click)="petcategory($event)">
+            <img class="card-img" src="{{ i }}" alt="{{index+1}}" />
           </a>
         </div>
       </div>
@@ -44,14 +41,20 @@
     </div>
   </div>
 </div>
+
 <div class="card-title">
   <a class="nav-link btn button" routerLink="/Pets">
-    <img  style="height: 4rem" src="assets/images/Pets.png" />
+    <img style="height: 4rem" src="assets/images/All Pets.png" />
   </a>
 </div>
 
-
-<section  style="background-color: white" *ngFor="let item of FilteredPets">
+<section
+  style="background-color: white"
+  *ngFor="
+    let item of FilteredPets
+      | paginate : { itemsPerPage: 5, currentPage: pages }
+  "
+>
   <div class="container py-2 pt-2">
     <div class="row justify-content-center mb-3">
       <div class="col-md-8 col-sm-9 col-xl-10">
@@ -60,10 +63,7 @@
             <div class="row">
               <div class="col-md-12 col-lg-3 col-xl-3 mb-1 mb-lg-0">
                 <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                  <img
-                    src="{{item.image}}"
-                    class="w-100"
-                  />
+                  <img src="{{ item.image }}" class="w-100" />
                   <a href="#!">
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: #50402c"></div>
@@ -72,27 +72,26 @@
                 </div>
               </div>
               <div class="col-md-6 col-lg-6 col-xl-6">
-                <h5>{{item.name}}</h5>
+                <h5>{{ item.name }}</h5>
 
                 <div class="mt-1 mb-0 text-muted small">
-                  <span>{{item.type}}</span><br>
+                  <span>{{ item.type }}</span
+                  ><br />
 
-                  <span>{{item.age}}</span>
+                  <span>{{ item.age }}</span>
                   <span class="text-primary"> • </span>
-                  <span>{{item.sex}}<br /></span>
-
+                  <span>{{ item.sex }}<br /></span>
                 </div>
 
                 <p class="text-truncate mb-0 mb-md-0 mt-3">
-                  {{item.description}}
+                  {{ item.description }}
                 </p>
               </div>
               <div
                 class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
               >
                 <div class="d-flex flex-row align-items-center mb-0">
-                  <h4 class="mb-1 me-5">{{item.price}}L.E</h4>
-                  <span class="ms-5 me-5"></span>
+                  <h4 class="mb-1 me-5">{{ item.price }}L.E</h4>
                   <lord-icon
                     src="https://cdn.lordicon.com/xryjrepg.json"
                     trigger="morph"
@@ -102,14 +101,19 @@
                     style="width: 50px; height: 50px"
                     class="ms-5"
                   >
+                  <a (click)="addtofavourite(item)"></a>
                   </lord-icon>
                 </div>
                 <h6 class="text-success">Free shipping</h6>
                 <div class="d-flex flex-column mt-4">
-                  <button class="btn Details btn-sm" type="button">
+                  <button
+                    class="btn Details btn-sm"
+                    type="button"
+                    routerLink="/PetDetails/{{ item.id }}"
+                  >
                     Details
                   </button>
-                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addtocard(item)">
+                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addpetcart(item)">
                     Add to Cart
                   </button>
                 </div>
@@ -121,3 +125,10 @@
     </div>
   </div>
 </section>
+<div style="text-align: center">
+  <pagination-controls
+    class="my-pagination"
+    style="color: #50402c"
+    (pageChange)="pages = $event"
+  ></pagination-controls>
+</div>

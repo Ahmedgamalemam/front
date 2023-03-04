@@ -33,11 +33,11 @@ ngDoCheck(){
   }
   productcategory(item:Event){
     let inputsearch = (item.target as HTMLInputElement).value;
-    this.searchservice.setsearch(inputsearch);
+    this.searchservice.setsearchByCatogry(inputsearch);
   }
   petcategory(item:Event){
     let inputsearch = (item.target as HTMLInputElement).value;
-    this.searchservice.setsearch(inputsearch);
+    this.searchservice.setsearchByCatogry(inputsearch);
   }
 
   sidebar() {

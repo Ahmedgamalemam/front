@@ -1,7 +1,8 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
+import { PetSService } from 'src/app/core/pet-s.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
-import { ProductsService } from 'src/app/core/Services/products.service';
+import { ProductsService } from 'src/app/core/Services/ModelServices/products.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { SearchService } from 'src/app/core/Services/search.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
+  pages: number = 1;
   Products: Product[] = [];
 
   FilteredProduct = new Array();
@@ -17,26 +19,52 @@ export class ProductsComponent {
     public search: SearchService,
     public Productservice: ProductsService,
     public searchservice: NavBarService,
-
+    public petservice:PetSService
   ) {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
         this.Products.push(element);
-        console.log(element);
       });
       this.FilteredProduct = this.Products;
     });
   }
+  productcategory(item: any) {
+    let inputsearch = (item.target as HTMLImageElement).alt;
+    this.searchservice.setsearchByID(inputsearch);
+    console.log(inputsearch);
+  }
+  searchtext(text: any) {
+    this.FilteredProduct = this.Products.filter((Product: any) =>
+      Product.name.toLowerCase().includes(text.toLowerCase())
+    );
+  }
+  searchCatogry(catogry: any) {
+    this.FilteredProduct = this.Products.filter((Product: any) =>
+      Product.category_Name.toLowerCase().includes(catogry.toLowerCase())
+    );
+  }
+  searchID(Id: any) {
+    this.FilteredProduct = this.Products.filter(
+      (Product: any) => Product.category_ID == Id
+    );
+  }
 
   ngDoCheck() {
     let filterValue = this.searchservice.getsearch();
-    this.FilteredProduct = this.Products.filter((Pharmicay: any) =>
-      Pharmicay.name.toLowerCase().includes(filterValue.toLowerCase())||
-      Pharmicay.category_Name.toLowerCase().includes(filterValue.toLowerCase())
-    );
+    let filterValue2 = this.searchservice.getsearchBYID();
+    let filterValue3 = this.searchservice.getsearchBYCatogry();
+    if (filterValue == '' && filterValue2 == '' && filterValue3 == '') {
+      this.FilteredProduct = this.Products;
+    } else if (filterValue != '') {
+      this.searchtext(filterValue);
+    } else if (filterValue2 != '') {
+      this.searchID(Number(filterValue2));
+    } else if (filterValue3 != '') {
+      this.searchCatogry(filterValue3);
+    }
 
+    //console.log(this.FilteredProduct.length);
   }
-
 
   ngOnInit() {
     this.cardsPerPage_products = this.getCardsPerPage_products();
@@ -115,4 +143,12 @@ export class ProductsComponent {
       }% - ${10 * (this.currentPage_products - 1)}px)`;
     }
   }
+  addtocardpro(item:any){
+    this.petservice.setItem(item);
+  }
+
+// addtofavourite
+addtofavourite(item:any){
+  this.petservice.setfav(item)
+}
 }

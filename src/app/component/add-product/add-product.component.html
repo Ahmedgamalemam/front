@@ -3,68 +3,79 @@
         <h1>Add Product</h1>
        <div class="row">
             <div class="col-md-6">
-                <div class="form-floating">
-                    <input type="text" class="form-control"id="productName" placeholder="Product Name"formControlName="productName">
-                    <label for="productName">Product Name</label>
+                <div class="form-group m-2">
+                  <label for="productName">Product Name</label>
+                    <input type="text" class="form-control"id="productName" placeholder="Product Name"
+                    formControlName="productName">
+
                 </div>
-                <div *ngIf="addform.controls.productName.errors && addform.controls.productName.touched" class="text-danger">
+                <div *ngIf="productName.errors && productName.touched" class="text-danger">
                     <i class="fas fa-exclamation-triangle"></i>
                      Name Must be at least 3 characters
                 </div>
-                
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="productPrice" placeholder="Product Price">
-                    <label for="productPrice">Price</label>
+
+                <div class="form-group m-2">
+                   <label for="productPrice">Price</label>
+                    <input type="number" class="form-control" id="productPrice" placeholder="Product Price"
+                     formControlName="productPrice">
                 </div>
-                <div *ngIf="addform.controls.productPrice.errors && addform.controls.productPrice.touched" class="text-danger">
+                <div *ngIf="productPrice.errors && productPrice.touched" class="text-danger">
                     <i class="fas fa-exclamation-triangle"></i>
-                     Area is required
+                     Price is required
                 </div>
-                
-                <div class="form-floating">
-                    <input type="number" class="form-control" id="productQuantity" placeholder="Product Quantity">
-                    <label for="productQuantity">Quantity</label>
+
+                <div class="form-group m-2">
+                  <label for="productQuantity">Quantity</label>
+                    <input type="number" class="form-control" id="productQuantity" placeholder="Product Quantity"
+                     formControlName="productQuantity">
                 </div>
                 <div *ngIf="addform.controls.productQuantity.errors && addform.controls.productQuantity.touched" class="text-danger">
                     <i class="fas fa-exclamation-triangle"></i>
-                     Area is required
+                     Quantity is required
                 </div>
-                <div class="form-floating">
-                    <select class="form-select" id="selectCategory" >
-                      <option selected>Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                <div class="form-group m-2">
+                  <label for="selectCategory">Select Category</label>
+                    <select class="form-select" id="selectCategory" formControlName="Category">
+                      <option selected >---Category---</option>
+                      <option value="6">Food</option>
+                      <option value="7">Medicine</option>
+                      <option value="8">Kennels & cages</option>
+                      <option value="9">Toy</option>
+                      <option value="10">Accessories</option>
+                      <option value="11">Grooming</option>
                     </select>
-                    <label for="selectCategory">Select Category</label>
                 </div>
+                <div *ngIf="addform.controls.productQuantity.errors && addform.controls.productQuantity.touched" class="text-danger">
+                  <i class="fas fa-exclamation-triangle"></i>
+                   Category is required
+              </div>
 
-                <div class="container col-md-">
-                    <div class="mb-5">
-                        <label for="Image" class="form-label">Upload Product's Image</label>
-                        <input class="form-control" type="file" id="formFile" onchange="preview()">
-                    </div>
-                    <img id="frame" src="" class="img-fluid" />
-                </div>
-                <div *ngIf="addform.controls.formFile.errors && addform.controls.formFile.touched" class="text-danger">
-                    <i class="fas fa-exclamation-triangle"></i>
-                     Area is required
-                </div>
+
+
 
             </div>
             <div class="col-md-6">
-                <div class="form-floating">
-                    <textarea name="txtDescription" id="txtDescription" class="form-control" 
-                    placeholder="Product Description *" style="width: 100%; height: 150px;"></textarea>
-                    <label for="txtDescription">Description</label>
+                <div class="form-group m-2">
+                    <textarea name="txtDescription" id="txtDescription" class="form-control mt-4"
+                    placeholder="Product Description *" style="width: 100%; height: 150px;" formControlName="Description"></textarea>
                 </div>
-                <br><br>
-                <div class="form-floating" style="float: right;">
-                    <input type="button" name="btnSubmit" class="here" value="Add Product" />
+                <div class="container col-md-">
+                  <div class="mb-5">
+                      <label for="Image" class="form-label">Upload Product's Image</label>
+                      <input id="ProfileName" class="form-control" type="file" (change)="onFileSelected()" formControlName="formFile" />
+                      <img id="frame" src="{{profile}}" class="img-fluid" />
+                   <div *ngIf="addform.controls.formFile.errors " class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Image is required
+                   </div>
+                  </div>
+
+              </div>
+                <div class="form-group m-2" style="float: right;">
+                    <input type="button" name="btnSubmit" class="btn btn-primary here" value="Add Product" (click)="add()" />
                 </div>
             </div>
         </div>
-    
     </form>
 </div>
 

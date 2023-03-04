@@ -45,6 +45,7 @@ export class Register2Component {
 
   userData(): User {
     return this.user = {
+      id:0,
       fname:this.getdata.fname,
       lname:this.getdata.lname,
       type:"user",

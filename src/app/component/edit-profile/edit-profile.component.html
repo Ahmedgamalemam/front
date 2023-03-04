@@ -1,24 +1,24 @@
 <div class="container-xl px-4 mt-5 pt-5">
-    <!-- Account page navigation-->
-
-
     <div class="row">
         <div class="col-xl-4">
-            <!-- Profile picture card-->
             <div class="card mb-4 mb-xl-0">
                 <div style="background-color:rgb(247,227,172) ;" class="card-header">Profile Picture</div>
+
                 <div class="card-body text-center">
-                    <!-- Profile picture image-->
+
                     <img class="img-account-profile rounded-circle mb-2" id="ProfileImg"
                         src="{{Profile.image}}" alt="">
-                    <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <!-- Profile picture upload button-->
-                    <!-- <button class="btn btn-primary" type="button">Upload new image</button> -->
-                    <input id="ProfileName" value="Upload new image" type="file" (change)="onFileSelected()" />
+
+                      <label action="" class="profilechange">
+                        <input id="ProfileName" type="file" (change)="onFileSelected()" />
+                        <i class="fas fa-camera profileicon"></i>
+                      </label>
+
                 </div>
             </div>
         </div>
+
+
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
@@ -34,15 +34,25 @@
                                 <label class="small mb-1" for="inputFirstName">First name</label>
                                 <input class="form-control" id="inputFirstName" type="text"
                                     placeholder="Enter your first name"  formControlName="Fname">
-                                <!-- <input  class="form-control" type="text" placeholder="Enter your first name" [(ngModel)]="userFirstName" /> -->
-                                <!-- <label for="first-name">First Name: </label>
-                                    <input id="first-name" type="text" formControlName="firstName" required> -->
+                                    <div
+                                    *ngIf="Fname.errors && Fname.touched"
+                                    class="text-danger"
+                                  >
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Name Must be at least 4 character
+                                  </div>
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Last name</label>
                                 <input class="form-control" id="inputLastName" type="text"
                                     placeholder="Enter your last name"  formControlName="Lname">
+                                    <div
+                                      *ngIf="Lname.errors && Lname.touched"
+                                        class="text-danger" >
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                      Name Must be at least 4 character
+                                    </div>
                             </div>
                         </div>
                         <!-- Form Row        -->
@@ -54,21 +64,43 @@
                                 <label class="small mb-1" for="inputLocation">City</label>
                                 <input class="form-control" id="inputLocation" type="text"
                                     placeholder="Enter your location" formControlName="City">
+                                    <div
+                                      *ngIf="!City.valid && City.touched"
+                                        class="text-danger" >
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                       City must be at least 4 character
+                                    </div>
                             </div>
                             <div class="col-md-6">
                               <label class="small mb-1" for="inputLocation">Area</label>
                               <input class="form-control" id="inputLocation" type="text"
                                   placeholder="Enter your location"  formControlName="Area">
+                                  <div
+                                      *ngIf="!Area.valid && Area.touched"
+                                        class="text-danger" >
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                       Area must be at least 4 character
+                                    </div>
                           </div>
                           <div class="col-md-6">
                             <label class="small mb-1" for="inputLocation">Building Number</label>
                             <input class="form-control" id="inputLocation" type="text"
                                 placeholder="Enter your location"  formControlName="buildingNumber">
+                                <div
+                                      *ngIf="!buildingNumber.valid && buildingNumber.touched"
+                                        class="text-danger" >
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                      Building Number is Required
+                                    </div>
                         </div>
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
                                 <input class="form-control" id="inputEmailAddress" type="email"
                                     placeholder="Enter your email address"  formControlName="Email">
+                                    <div *ngIf="Email.errors && Email.touched" class="text-danger">
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                      Enter Valid Email like <span>(example@gmail.com)</span>
+                                    </div>
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
@@ -80,20 +112,34 @@
                                 <label class="small mb-1" for="inputPhone">Phone number</label>
                                 <input class="form-control" id="inputPhone" type="tel"
                                     placeholder="Enter your phone number"  formControlName="Phone">
+                                    <div
+                                    *ngIf="Phone.errors &&Phone.touched"
+                                      class="text-danger"
+                                        >
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                        Enter Valid Phone
+                                        </div>
                             </div>
                             <!-- Form Group (birthday)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputBirthday">Age</label>
                                 <input class="form-control" id="inputBirthday" type="text" name="birthday"
                                     placeholder="Enter your birthday"  formControlName="Age">
+                                    <div
+                                     *ngIf="!Age.valid && Age.touched"
+                                      class="text-danger"
+                                        >
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                       Age Must be bigger than 11
+                                     </div>
                             </div>
                         </div>
                         <!-- Save changes button-->
                         <!-- <button class="btn btn-primary" type="button">Save changes</button> -->
-                        <input style="background-color:rgb(247,227,172) ;" class="btn btn-primary" type="submit"
-                            value="Save changes" (click)="SaveChanges()" />
-                        <button style="float: right; " class="btn btn-secondary" type="button"
-                            routerLink="/ChangePassword">Change Password</button>
+                        <input  class="btn btn-danger" type="submit"
+                            value="Change Password"  routerLink="/ChangePassword"/>
+                        <button style="float: right; background-color:#50402c" class="btn btn-secondary" type="submit"
+                        (click)="SaveChanges()">Save Changes</button>
                     </form>
                 </div>
             </div>
