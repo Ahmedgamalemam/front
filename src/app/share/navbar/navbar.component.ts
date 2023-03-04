@@ -10,13 +10,14 @@ import { SearchService } from 'src/app/core/Services/search.service';
 export class NavbarComponent {
 id!:number;
 textsearch: string = "";
-
+Type:any;
 constructor(public nav:NavBarService,public search:SearchService,public searchservice: NavBarService,
   ) {
 console.log(localStorage.getItem("id"))
 }
 ngDoCheck(){
   this.id=Number(localStorage.getItem("id"))
+  this.Type= localStorage.getItem("Type");
 }
 
   // sidebar(){

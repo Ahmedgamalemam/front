@@ -18,7 +18,9 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <!-- home & clinic -->
-
+          <li class="nav-item" *ngIf="Type=='Admin'">
+            <a class="nav-link btn button" routerLink="/Dashboard">DashBoard</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link btn button" routerLink="/home">Home</a>
           </li>
@@ -346,6 +348,9 @@
 
   <!-- home & clinic -->
   <br />
+  <div class="nav-item" *ngIf="Type=='Admin'">
+    <a class="nav-link btn button side-home" routerLink="/DashBoard">DashBoard</a>
+  </div>
   <div class="nav-item">
     <a class="nav-link btn button side-home" routerLink="/home">Home</a>
   </div>

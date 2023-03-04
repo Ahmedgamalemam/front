@@ -33,9 +33,10 @@ export class LoginComponent {
    this.userService.LoginCheck(this.Password.value,this.Email.value)
    .subscribe((response: any) => {
 
-    if(response!=0){
-      localStorage.setItem("id",response)
-
+    if(response!=null){
+      localStorage.setItem("id",response.id)
+      localStorage.setItem("Type",response.type)
+      console.log(response)
       this.route.navigate(["/home"])
       this.alertify.success('Congrats, you are successfully Logged In');
 
