@@ -2,7 +2,7 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
 import { PetSService } from 'src/app/core/pet-s.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
-import { ProductsService } from 'src/app/core/Services/products.service';
+import { ProductsService } from 'src/app/core/Services/ModelServices/products.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({

@@ -22,6 +22,9 @@ import { ChangePasswordComponent } from './component/change-password/change-pass
 import { ContactUsComponent } from './component/contact-us/contact-us.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AddPetComponent } from './component/add-pet/add-pet.component';
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
+import { EditPetComponent } from './component/edit-pet/edit-pet.component';
+import { EditProductComponent } from './component/edit-product/edit-product.component';
 const route: Routes = [
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
@@ -45,6 +48,8 @@ const route: Routes = [
   {path:"ContactUs",component:ContactUsComponent},
   {path:"AddProduct",component:AddProductComponent},
   {path:"AddPet",component:AddPetComponent},
+  {path:"EditPet/:id",component:EditPetComponent},
+  {path:"EditProduct/:id",component:EditProductComponent},
   {path:'**',component:ErrorComponent},
   ];
 

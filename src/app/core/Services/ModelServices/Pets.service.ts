@@ -21,4 +21,10 @@ getPetByID(id:number){
 postPets(pet:Pets){
   return this.myClient.post(this.Url_DB,pet);
 }
+EditPet(pet:Pets,id:number){
+  return this.myClient.put(this.Url_DB+"?id="+id,pet);
+}
+DeleteProduct(id:number){
+  return this.myClient.delete(this.Url_DB+"/"+id)
+}
 }

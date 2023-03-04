@@ -41,6 +41,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaymentComponent } from './component/payment/payment.component';
+import { EditPetComponent } from './component/edit-pet/edit-pet.component';
+import { EditProductComponent } from './component/edit-product/edit-product.component';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -76,6 +78,8 @@ import { PaymentComponent } from './component/payment/payment.component';
     AddProductComponent,
     AddPetComponent,
     ClinicComponent,
+    EditPetComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
