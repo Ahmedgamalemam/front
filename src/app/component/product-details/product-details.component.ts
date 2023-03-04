@@ -11,8 +11,7 @@ import { ProductsService } from 'src/app/core/Services/products.service';
 })
 export class ProductDetailsComponent {
   product!: Product;
-  Quant:number=0;
-
+  Quant: number = 0;
   id: number = 0;
   constructor(
     public Productservice: ProductsService,
@@ -21,15 +20,15 @@ export class ProductDetailsComponent {
     this.id = myActive.snapshot.params['id'];
     Productservice.GetProductByID(this.id).subscribe((responce: any) => {
       this.product = responce;
-      this.Quant=responce.quantity
-      console.log(this.Quant);
+      this.Quant = Number(responce.quantity);
+      this.form.controls.Quantity.addValidators(Validators.max(this.Quant));
+      //console.log(this.Quant);
+      //console.log(responce.quantity)
     });
-    console.log(this.form)
-
+    //console.log(this.form)
   }
 
-  form= new FormGroup({
-    Quantity:new FormControl(1,Validators.max(10))
-  })
-
+  form = new FormGroup({
+    Quantity: new FormControl(1),
+  });
 }

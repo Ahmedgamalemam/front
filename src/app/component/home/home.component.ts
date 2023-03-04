@@ -124,9 +124,10 @@ export class HomeComponent {
   arr_products: string[] = [
     'assets/images/cartfood.png',
     'assets/images/cartmedicines.png',
-    'assets/images/carclothes.png',
-    'assets/images/cartcages.png',
-    'assets/images/carttools.png',
+    'assets/images/Kennels.png',
+    'assets/images/toys.png',
+    'assets/images/Accessories.png',
+    'assets/images/Grooming.png'
   ];
   totalCards_products: number = this.arr_products.length;
 
@@ -162,25 +163,26 @@ export class HomeComponent {
   }
 
   populatePagePosition_products() {
-    if (window.innerWidth <= 1305 && window.innerWidth > 922) {
+    if (window.innerWidth <= 1400 && window.innerWidth > 1182) {
+      this.pagePosition_products = `calc(${
+        -19 * (this.currentPage_products - 1)
+      }% - ${10 * (this.currentPage_products - 1)}px)`;
+    } else if (window.innerWidth <= 1182 && window.innerWidth > 975) {
       this.pagePosition_products = `calc(${
         -24 * (this.currentPage_products - 1)
       }% - ${10 * (this.currentPage_products - 1)}px)`;
-    } else if (window.innerWidth <= 922 && window.innerWidth > 767) {
+      this.totalPages_products = 3;
+    } else if (window.innerWidth <= 975 && window.innerWidth > 751) {
       this.pagePosition_products = `calc(${
         -32 * (this.currentPage_products - 1)
       }% - ${10 * (this.currentPage_products - 1)}px)`;
-      this.totalPages_products = 3;
-    } else if (window.innerWidth <= 767 && window.innerWidth > 415) {
+
+      this.totalPages_products = 4;
+    } else if (window.innerWidth <= 751) {
       this.pagePosition_products = `calc(${
         -49 * (this.currentPage_products - 1)
       }% - ${10 * (this.currentPage_products - 1)}px)`;
-
-      this.totalPages_products = 4;
-    } else if (window.innerWidth <= 415) {
-      this.pagePosition_products = `calc(${
-        -100 * (this.currentPage_products - 1)
-      }% - ${10 * (this.currentPage_products - 1)}px)`;
+      this.totalPages_products = 5;
     }
   }
 }
