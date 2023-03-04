@@ -1,0 +1,83 @@
+<div class="cont container" >
+    <form method="post" [formGroup]="addingform" (ngSubmit)="add()">
+        <h1>Add Pet</h1>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control"id="petName" name="petName" placeholder="Pet Name"formControlName="petName">
+                    <label for="petName">Pet Name</label>
+                </div>
+                <div *ngIf="addingform.controls.petName.errors && addingform.controls.petName.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Name Must be at least 3 characters
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="petAge" placeholder="pet Age" formControlName="petAge"/>
+                    <label for="petAge">Age</label>
+                </div>
+                <div *ngIf="addingform.controls.petAge.errors && addingform.controls.petAge.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Area is required
+                </div>
+                <div class="gender">
+                    <p class="card-description" id="petGender">Choose pet's gender</p>
+                    <div >
+                        <input type="radio" name="petGender" value="male" id="male" checked="true" formControlName="petGender"/>
+                        <label class="male" for="male">male</label>
+                        <input type="radio" name="petGender"  value="female" id="female" formControlName="petGender"/>
+                        <label for="female">female</label>
+                    </div>
+            
+                </div>
+               
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="petPrice" placeholder="Pet Price" formControlName="petPrice">
+                    <label for="petPrice">Price</label>
+                </div>
+                <div *ngIf="addingform.controls.petPrice.errors && addingform.controls.petPrice.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Area is required
+                </div>
+                
+                <div class="form-floating">
+                    <select class="form-select" id="selectType" formControlName="Category" >
+                      <option value="1">Cat</option>
+                      <option value="2">Dog</option>
+                      <option value="3">Fish</option>
+                      <option value="4">Birds</option>
+                      <option value="5">Hamesters</option>
+
+                    </select>
+                    <label for="selectType">Select type</label>
+                </div>
+
+                <div class="container col-md-">
+                    <div class="mb-5">
+                        <label for="Image" class="form-label">Upload Pet's Image</label>
+                        <input class="form-control" type="file" id="formFile" onchange="preview()">
+                    </div>
+                    <img id="frame" src="" class="img-fluid" />
+                </div>
+                <div *ngIf="addingform.controls.formFile.errors && addingform.controls.formFile.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Area is required
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <textarea name="petDescription" id="petDescription" class="form-control" 
+                    placeholder="pet Description *" style="width: 100%; height: 150px;"></textarea>
+                    <label for="petDescription">Description</label>
+                </div>
+                <br><br>
+                <div class="form-floating" style="float: right;">
+                    <button 
+                    (click)="add()" type="submit" name="btnSubmit" class="here" >add pet</button>
+                </div>
+            </div>
+        </div>
+    
+    </form>
+</div>
+

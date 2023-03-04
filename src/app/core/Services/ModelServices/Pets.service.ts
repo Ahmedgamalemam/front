@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { share } from 'rxjs';
+import { Pets } from '../../models/Pets';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,8 @@ getpets(){
 }
 getPetByID(id:number){
   return this.myClient.get(this.Url_DB+"/"+id);
+}
+postPets(pet:Pets){
+  return this.myClient.post(this.Url_DB,pet);
 }
 }
