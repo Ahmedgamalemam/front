@@ -24,7 +24,7 @@ export class PetSService {
 
   // add to favourit
   setfav(Item: any): void {
-    var name = this.Item.some(i=>i.name ==Item.name)
+    var name = this.favourit.some(i=>i.name ==Item.name)
     if(name == false){
       this.favourit.push(Item);
     }

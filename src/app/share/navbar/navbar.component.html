@@ -187,9 +187,16 @@
         </button>
       </form>
       <!-- <div *ngIf="id!=null"> -->
+
+        <li class="nav-item" *ngIf="id == 0">
+          <a class="nav-link btn button" routerLink="/Login">SIGN IN</a>
+        </li>
+        <li class="nav-item" *ngIf="id == 0">
+          <a class="nav-link btn button" routerLink="/Register">SIGN UP</a>
+        </li>
       <!-- icons -->
       <!-- profile icon -->
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="id > 0">
         <button
           type="button"
           style="background-color: transparent; border: none"
@@ -228,7 +235,7 @@
       </div>
 
       <!-- favourit icon -->
-      <a routerLink="/Favourit">
+      <a routerLink="/Favourit" *ngIf="id > 0">
         <lord-icon
           src="https://cdn.lordicon.com/xryjrepg.json"
           trigger="morph"
@@ -241,7 +248,7 @@
       ></a>
 
       <!-- cart icon -->
-      <a routerLink="/Cart">
+      <a routerLink="/Cart" *ngIf="id > 0">
         <lord-icon
           src="https://cdn.lordicon.com/udbbfuld.json"
           trigger="hover"
@@ -496,6 +503,13 @@
 
   <hr style="margin-top: 5rem" />
 
+  <li class="nav-item" *ngIf="id == 0" style="margin-top: 2rem;">
+    <a class="nav-link btn button" routerLink="/Login">SIGN IN</a>
+  </li>
+  <li class="nav-item" *ngIf="id == 0" style="margin-top: 2rem;">
+    <a class="nav-link btn button" routerLink="/Register">SIGN UP</a>
+  </li>
+
   <!-- icons -->
   <div fxLayout="row" fxLayoutAlign="center center">
     <!-- profile icon -->
@@ -505,6 +519,7 @@
         style="background-color: transparent; border: none"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        *ngIf="id > 0"
       >
         <div style="display: inline-block">
           <a>
@@ -536,7 +551,7 @@
     </div>
 
     <!-- favourit icon -->
-    <a routerLink="/Favourit">
+    <a routerLink="/Favourit" *ngIf="id > 0">
       <lord-icon
         src="https://cdn.lordicon.com/xryjrepg.json"
         trigger="morph"
@@ -549,7 +564,7 @@
     ></a>
 
     <!-- cart icon -->
-    <a routerLink="/Cart">
+    <a routerLink="/Cart" *ngIf="id > 0">
       <lord-icon
         src="https://cdn.lordicon.com/udbbfuld.json"
         trigger="hover"
