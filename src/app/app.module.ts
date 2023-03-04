@@ -70,7 +70,7 @@ import { PaymentComponent } from './component/payment/payment.component';
     PetDetailsComponent,
     AddProductComponent,
     AddPetComponent,
-    ClinicComponent
+    ClinicComponent,
   ],
   imports: [
     BrowserModule,
