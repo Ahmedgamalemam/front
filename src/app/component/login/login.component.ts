@@ -9,16 +9,24 @@ import { UserService } from 'src/app/core/Services/ModelServices/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  form= new FormGroup({
-    Email:new FormControl(null,[Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),Validators.required]),
-    Password:new FormControl(null,Validators.required)
-  })
-  constructor(public nav:NavBarService,public route:Router,private userService:UserService,
-    private alertify: AlertService,public PassIcon:PasswordIconService){}
-  ngOnInit(){
+  form = new FormGroup({
+    Password: new FormControl(null, Validators.required),
+    Email: new FormControl(null, [
+      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      Validators.required,
+    ]),
+  });
+  constructor(
+    public nav: NavBarService,
+    public route: Router,
+    private userService: UserService,
+    private alertify: AlertService,
+    public PassIcon: PasswordIconService
+  ) {}
+  ngOnInit() {
     this.nav.hide();
   }
   get Password() {
@@ -28,27 +36,25 @@ export class LoginComponent {
     return this.form.get('Email') as FormControl;
   }
 
-  Login(){
-    console.log(this.Password.value)
-   this.userService.LoginCheck(this.Password.value,this.Email.value)
-   .subscribe((response: any) => {
+  Login() {
+    console.log(this.form.value);
+    this.userService.LoginCheck(this.Password.value,this.Email.value).subscribe({
+      next: (response: any): void => {
+        console.log(response)
 
-    if(response!=0){
-      localStorage.setItem("id",response)
-
-      this.route.navigate(["/home"])
-      this.alertify.success('Congrats, you are successfully Logged In');
-
-    }else{
-      this.alertify.error('Please enter valid Email and Password');
-    }
+        // if (response) {
+        //   this.route.navigate(['/home']);
+        //   this.alertify.success('Congrats, you are successfully Logged In');
+        // } else {
+        //   this.alertify.error('Please enter valid Email and Password');
+        // }
+      },
     });
   }
-  getIcon(){
-    this.PassIcon.Show()
-
+  getIcon() {
+    this.PassIcon.Show();
   }
-  disableIcon(){
-    this.PassIcon.hide()
+  disableIcon() {
+    this.PassIcon.hide();
   }
 }

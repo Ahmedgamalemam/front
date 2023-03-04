@@ -6,6 +6,7 @@ import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { SharedService } from 'src/app/core/Services/Shared.service';
 import { PetSService } from 'src/app/core/pet-s.service';
 import { SearchService } from 'src/app/core/Services/search.service';
+import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class PetsComponent {
     public search: SearchService,
     private Services: PetsService,
     public searchservice: NavBarService,
-    private petservice:PetSService
+    private local:LocalStorageService
   ) {
     Services.getpets().subscribe((response: any) => {
       response.forEach((element: Pets) => {
@@ -156,14 +157,37 @@ export class PetsComponent {
       pet.category_Name.toLowerCase().includes(category.toLowerCase())
     );
   }
+  // Carts: any = new Array();
+  // Favourits: any = new Array();
+  f: number = 0;
+  i: number = 0;
+  // add to cart
+  addpetcart(item: any) {
+    //localStorage.clear();
 
-  addpetcart(item:any){
-    this.petservice.setItem(item);
+    var name = JSON.parse(localStorage['Carts']).some(
+      (c: any) => c.name == item.name
+    );
+    if (name == false) {
+      this.local.Carts.push(item);
+    }
+    localStorage.setItem('Carts', JSON.stringify(this.local.Carts));
+    this.i++;
   }
 
-  addtofavourite(item:any){
-    this.petservice.setfav(item)
+  // addtofavourite
+  addtofavourite(item: any) {
+    var name = JSON.parse(localStorage['Favourits']).some(
+      (c: any) => c.name == item.name
+    );
+    if (name == false) {
+      this.local.Favourits.push(item);
+    }
+
+    localStorage.setItem('Favourits', JSON.stringify(this.local.Favourits));
+    this.f++;
   }
+
 
 }
 

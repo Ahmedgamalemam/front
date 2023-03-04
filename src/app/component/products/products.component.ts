@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
 import { PetSService } from 'src/app/core/pet-s.service';
+import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { ProductsService } from 'src/app/core/Services/products.service';
 import { SearchService } from 'src/app/core/Services/search.service';
@@ -19,7 +20,7 @@ export class ProductsComponent {
     public search: SearchService,
     public Productservice: ProductsService,
     public searchservice: NavBarService,
-    public petservice:PetSService
+    public local: LocalStorageService
   ) {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
@@ -77,7 +78,7 @@ export class ProductsComponent {
     'assets/images/Kennels.png',
     'assets/images/toys.png',
     'assets/images/Accessories.png',
-    'assets/images/Grooming.png'
+    'assets/images/Grooming.png',
   ];
   totalCards_products: number = this.arr_products.length;
 
@@ -145,12 +146,34 @@ export class ProductsComponent {
       this.totalPages_products = 5;
     }
   }
-  addtocardpro(item:any){
-    this.petservice.setItem(item);
+  // Carts: any = new Array();
+  // Favourits: any = new Array();
+  f: number = 0;
+  i: number = 0;
+  // add to cart
+  addtocardpro(item: any) {
+    //localStorage.clear();
+
+    var name = JSON.parse(localStorage['Carts']).some(
+      (c: any) => c.name == item.name
+    );
+    if (name == false) {
+      this.local.Carts.push(item);
+    }
+    localStorage.setItem('Carts', JSON.stringify(this.local.Carts));
+    this.i++;
   }
 
-// addtofavourite
-addtofavourite(item:any){
-  this.petservice.setfav(item)
-}
+  // addtofavourite
+  addtofavourite(item: any) {
+    var name = JSON.parse(localStorage['Favourits']).some(
+      (c: any) => c.name == item.name
+    );
+    if (name == false) {
+      this.local.Favourits.push(item);
+    }
+
+    localStorage.setItem('Favourits', JSON.stringify(this.local.Favourits));
+    this.f++;
+  }
 }
