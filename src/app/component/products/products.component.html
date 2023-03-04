@@ -8,41 +8,26 @@
   </div>
 
   <div class="container slide" #container>
-    <div
-      class="left"
-      *ngIf="totalPages_products > 1"
-      (click)="currentPage_products != 1 && changePage_products(-1)"
-      [ngClass]="{ disabled: currentPage_products === 1 }"
-    >
+    <div class="left" *ngIf="totalPages_products > 1" (click)="currentPage_products != 1 && changePage_products(-1)"
+      [ngClass]="{ disabled: currentPage_products === 1 }">
       &#10094;
     </div>
     <div class="cards" [ngClass]="{ 'w-100': totalPages_products === 1 }">
-      <div
-        class="overflow"
-        [ngStyle]="{
+      <div class="overflow" [ngStyle]="{
           width: overflowWidth_products,
           left: pagePosition_products
-        }"
-      >
-        <div
-          class="card1 card"
-          *ngFor="let i of arr_products; let index = index"
-          [ngStyle]="{ width: cardWidth_products }"
-        >
+        }">
+        <div class="card1 card" *ngFor="let i of arr_products; let index = index"
+          [ngStyle]="{ width: cardWidth_products }">
           <a href="">
             <img class="card-img" src="{{ i }}" />
           </a>
         </div>
       </div>
     </div>
-    <div
-      class="right"
-      *ngIf="totalPages_products > 1"
-      (click)="
+    <div class="right" *ngIf="totalPages_products > 1" (click)="
         currentPage_products != totalPages_products && changePage_products(+1)
-      "
-      [ngClass]="{ disabled: currentPage_products === totalPages_products }"
-    >
+      " [ngClass]="{ disabled: currentPage_products === totalPages_products }">
       &#10095;
     </div>
   </div>
@@ -54,11 +39,7 @@
 </div>
 
 
-<section
-  class="pt-0"
-  style="background-color: white"
-  *ngFor="let item of FilteredProduct"
->
+<section class="pt-0" style="background-color: white" *ngFor="let item of FilteredProduct">
   <div class="container py-2 pt-5">
     <div class="row justify-content-center mb-3">
       <div class="col-md-8 col-sm-9 col-xs-7 col-xl-10">
@@ -84,21 +65,12 @@
                   <span>{{ item.quantity }} Quantity</span>
                 </div>
               </div>
-              <div
-                class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
-              >
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                 <div class="d-flex flex-row align-items-center mb-0">
                   <h4 class="mb-1 me-5">{{ item.price }}L.E</h4>
 
-                  <lord-icon
-                  src="https://cdn.lordicon.com/xryjrepg.json"
-                  trigger="morph"
-                  colors="primary:#50402c"
-                  scale="40"
-                  state="morph"
-                  style="width: 50px; height: 50px"
-                  class="ms-5"
-                  >
+                  <lord-icon src="https://cdn.lordicon.com/xryjrepg.json" trigger="morph" colors="primary:#50402c"
+                    scale="40" state="morph" style="width: 50px; height: 50px" class="ms-5">
                   </lord-icon>
                 </div>
                 <h6 class="text-success">Free shipping</h6>

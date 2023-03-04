@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './component/about-us/about-us.component';
-import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -17,7 +17,7 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { PaymentComponent } from './component/payment/payment.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
-import { AboutUsComponent } from './component/about-us/about-us.component';
+
 import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 
 const route: Routes = [
