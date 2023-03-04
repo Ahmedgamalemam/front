@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Clinic } from 'src/app/core/models/clinic';
-import { ClinicService } from 'src/app/core/Services/clinic.service';
+import { ClinicService } from 'src/app/core/Services/ModelServices/clinic.service'; 
 
 @Component({
   selector: 'app-clinic-dash',

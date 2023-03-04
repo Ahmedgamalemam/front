@@ -45,7 +45,7 @@ import { EditPetComponent } from './component/edit-pet/edit-pet.component';
 import { EditProductComponent } from './component/edit-product/edit-product.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PetDashComponent } from './component/pet-dash/pet-dash.component';
-import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.component';
+import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.component'; 
 import { ProductDashComponent } from './component/product-dash/product-dash.component';
 
 
@@ -86,8 +86,8 @@ import { ProductDashComponent } from './component/product-dash/product-dash.comp
     EditProductComponent,
     DashboardComponent,
     PetDashComponent,
-    ClinicDashComponent,
     ProductDashComponent,
+    ClinicDashComponent
   ],
   imports: [
     BrowserModule,

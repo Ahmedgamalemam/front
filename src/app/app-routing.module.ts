@@ -28,33 +28,9 @@ import { EditProductComponent } from './component/edit-product/edit-product.comp
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PetDashComponent } from './component/pet-dash/pet-dash.component'; 
 import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.component';
-
-
-const route: Routes = [
-{path:'',component:HomeComponent},
-{path:'home',component:HomeComponent},
-{path:'Login',component:LoginComponent},
-{path:'Register',component:RegisterComponent},
-{path:"SignUp",component:Register2Component},
-{path:"profile/:id",component:ProfileComponent},
-{path:"Map",component:MapComponent},
-{path:"Pets",component:PetsComponent},
-{path:"Products",component:ProductsComponent},
-{path:'Favourit',component:FavouritComponent},
-{path:'Cart',component:CartComponent},
-{path:'orders',component:OredrsComponent},
-{path:"productDetails",component:ProductDetailsComponent},
-{path:"payment",component:PaymentComponent},
-{path:"clinic",component:ClinicComponent},
-{path:"petDetails",component:PetDetailsComponent},
-{path:"addProduct",component:AddProductComponent},
-{path:"addPet",component:AddPetComponent},
-{path:"dashboard",component:DashboardComponent},
-{path:"pet-dash",component:PetDashComponent},
-{path:"clinic-dash",component:ClinicDashComponent}
-
-import { PetDashComponent } from './component/pet-dash/pet-dash.component';
 import { ProductDashComponent } from './component/product-dash/product-dash.component';
+
+
 const route: Routes = [
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
@@ -80,10 +56,10 @@ const route: Routes = [
   {path:"AddPet",component:AddPetComponent},
   {path:"EditPet/:id",component:EditPetComponent},
   {path:"EditProduct/:id",component:EditProductComponent},
-  {path:"Dashboard",component:DashboardComponent},
+  {path:"dashboard",component:DashboardComponent},
   {path:"AdminPet",component:PetDashComponent},
   {path:"AdminProduct",component:ProductDashComponent},
-
+  {path:"clinic-dash",component:ClinicDashComponent},
   {path:'**',component:ErrorComponent},
   ];
 

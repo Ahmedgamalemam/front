@@ -426,7 +426,11 @@ body {
 
 .imagee{
 	width: 28px;
-	height: 28px	;
+	height: 28px;
+}
+.imaging{
+	width: 88px;
+	height: 88px;
 }
 						
 					
