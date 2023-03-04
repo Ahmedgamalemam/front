@@ -1,20 +1,17 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pets } from 'src/app/core/models/pets';
+import { PetSService } from 'src/app/core/pet-s.service';
 import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
-import { SharedService } from 'src/app/core/Services/Shared.service';
-import { PetSService } from 'src/app/core/pet-s.service';
 import { SearchService } from 'src/app/core/Services/search.service';
-import { Pets } from 'src/app/core/models/pets';
-
-
-
+import { SharedService } from 'src/app/core/Services/Shared.service';
 @Component({
-  selector: 'app-pets',
-  templateUrl: './pets.component.html',
-  styleUrls: ['./pets.component.css'],
+  selector: 'app-pet-dash',
+  templateUrl: './pet-dash.component.html',
+  styleUrls: ['./pet-dash.component.css']
 })
-export class PetsComponent {
+export class PetDashComponent {
   pages: number = 1;
   pets: Pets[] = [];
   FilteredPets: Pets[] = [];
@@ -23,7 +20,8 @@ export class PetsComponent {
     public search: SearchService,
     private Services: PetsService,
     public searchservice: NavBarService,
-    private petservice:PetSService
+    private petservice:PetSService,
+    private route: Router
   ) {
     Services.getpets().subscribe((response: any) => {
       response.forEach((element: Pets) => {
@@ -158,15 +156,10 @@ export class PetsComponent {
     );
   }
 
-  addpetcart(item:any){
-    this.petservice.setItem(item);
-  }
-
-  addtofavourite(item:any){
-    this.petservice.setfav(item)
+  Delete(id:number)
+  {
+    this.Services.DeleteProduct(id).subscribe((data:any)=>{console.log()});
+    this.route.navigate(["/AdminPet"])
   }
 
 }
-
-
-

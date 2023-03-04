@@ -1,4 +1,45 @@
 <div class=" pt-5">
+  <div class="pt-5">
+    <div class="card-title">
+      <a class="nav-link btn button" routerLink="/Pets">
+        <img style="height: 4rem" src="assets/images/Pets.png" />
+      </a>
+    </div>
+    <div class="container slide" #container>
+      <div
+        class="left"
+        *ngIf="totalPages_pets > 1"
+        (click)="currentPage_pets != 1 && changePage_pets(-1)"
+        [ngClass]="{ disabled: currentPage_pets === 1 }"
+      >
+        &#10094;
+      </div>
+      <div class="cards" [ngClass]="{ 'w-100': totalPages_pets === 1 }">
+        <div
+          class="overflow"
+          [ngStyle]="{ width: overflowWidth_pets, left: pagePosition_pets }"
+        >
+          <div
+            class="card1 card"
+            *ngFor="let i of arr_pets; let index = index"
+            [ngStyle]="{ width: cardWidth_pets }"
+          >
+            <a (click)="petcategory($event)">
+              <img class="card-img" src="{{ i }}" alt="{{index+1}}" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="right"
+        *ngIf="totalPages_pets > 1"
+        (click)="currentPage_pets != totalPages_pets && changePage_pets(+1)"
+        [ngClass]="{ disabled: currentPage_pets === totalPages_pets }"
+      >
+        &#10095;
+      </div>
+    </div>
+  </div>
     <div class="card-title">
       <a class="nav-link btn button" routerLink="/Pets">
         <img
@@ -8,8 +49,11 @@
       </a>
     </div>
 
+    <div style="text-align: center;">
+      <button class="btn Cart " type="button" routerLink="/AddPet">Add Product</button>
+    </div>
 
-<section  style="background-color: white" *ngFor="let item of FilteredPets">
+<section  style="background-color: white" *ngFor="let item of FilteredPets |paginate : { itemsPerPage: 5, currentPage: pages }">
     <div class="container py-2 pt-2">
       <div class="row justify-content-center mb-3">
         <div class="col-md-8 col-sm-9 col-xl-10">
@@ -31,16 +75,16 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6">
                   <h5>{{item.name}}</h5>
-  
+
                   <div class="mt-1 mb-0 text-muted small">
                     <span>{{item.type}}</span><br>
-  
+
                     <span>{{item.age}}</span>
                     <span class="text-primary"> • </span>
                     <span>{{item.sex}}<br /></span>
-  
+
                   </div>
-  
+
                   <p class="text-truncate mb-0 mb-md-0 mt-3">
                     {{item.description}}
                   </p>
@@ -63,10 +107,10 @@
                     </lord-icon>
                   </div>
                   <div class="d-flex flex-column mt-4">
-                    <button class="btn Details btn-sm" type="button" (click)="edit()">
+                    <button class="btn Details btn-sm" type="button" routerLink="/EditPet/{{ item.id }}" >
                       edit
                     </button>
-                    <button class="btn Cart btn-sm mt-2" type="button" (click)="delete()">
+                    <button class="btn btn-danger  btn-sm mt-2" type="button"  (click)="Delete(item.id)">
                       delete
                     </button>
                   </div>
@@ -78,3 +122,11 @@
       </div>
     </div>
   </section>
+  <div style="text-align: center">
+    <pagination-controls
+      class="my-pagination"
+      style="color: #50402c"
+      (pageChange)="pages = $event"
+    ></pagination-controls>
+  </div>
+</div>

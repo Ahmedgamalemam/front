@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators,FormBuilder } from '@angular/forms';
-import { Pets } from 'src/app/core/models/Pets';
 import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
 import { SharedService } from 'src/app/core/Services/Shared.service';
 import { AlertService } from 'src/app/core/Services/alert.service';
 import { PetSService } from 'src/app/core/pet-s.service';
+import { Pets } from 'src/app/core/models/pets';
 
 
 @Component({

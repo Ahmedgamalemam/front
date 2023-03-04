@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { share } from 'rxjs';
-import { Pets } from '../../models/Pets';
+import { Pets } from '../../models/pets';
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,6 @@ EditPet(pet:Pets,id:number){
   return this.myClient.put(this.Url_DB+"?id="+id,pet);
 }
 DeleteProduct(id:number){
-  return this.myClient.delete(this.Url_DB+"/"+id)
+  return this.myClient.delete(this.Url_DB+"?id="+id)
 }
 }

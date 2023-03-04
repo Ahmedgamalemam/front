@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Pets } from 'src/app/core/models/Pets';
+import { Pets } from 'src/app/core/models/pets';
 import { AlertService } from 'src/app/core/Services/alert.service';
 import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
 
