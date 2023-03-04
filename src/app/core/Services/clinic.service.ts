@@ -14,5 +14,8 @@ export class ClinicService {
     return this.myclient.get(this.Url_DB);
   }
   
+  public delete(item:any){
+    return this.myclient.delete(this.Url_DB+"/"+item)
+  }
 
 }

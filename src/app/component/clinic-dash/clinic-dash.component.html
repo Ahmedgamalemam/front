@@ -1,4 +1,7 @@
-<div class=" container mt-5 mb-5" *ngFor="let c of clinik">
+<div style="margin-top: 100px;" class="container ">
+    <button class="btn Details btn-sm">add Clinic</button>
+</div>
+<div class=" container mb-5" *ngFor="let c of clinik">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10 mt-5">
             <div class="row p-2 bg-white border rounded">
@@ -24,7 +27,7 @@
                         <button class="btn Details btn-sm" type="button" (click)="edit()">
                           edit
                         </button>
-                        <button class="btn Cart btn-sm mt-2" type="button" (click)="delete()">
+                        <button class="btn Cart btn-sm mt-2" type="button" (click)="delete(c.name,c.id)">
                           delete
                         </button>
                       </div>

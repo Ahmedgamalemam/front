@@ -9,7 +9,7 @@ import { ClinicService } from 'src/app/core/Services/clinic.service';
 })
 export class ClinicDashComponent {
   clinik:Clinic[]=[];
-  constructor(myservice:ClinicService){
+  constructor(public myservice:ClinicService){
     myservice.getAll().subscribe(
       (res:any)=>{
         res.forEach((element:any) => {
@@ -24,5 +24,16 @@ export class ClinicDashComponent {
     console.log(this.clinik)
   }
   edit(){}
-  delete(){}
+  delete(item:any,id:any){
+    var d = 0;
+    while (d<this.clinik.length){
+      if (this.clinik[d].name==item) {
+        this.clinik.splice(d,1)
+        this.myservice.delete(id).subscribe((data:any)=>{console.log(data)});
+      }
+        ++d;
+      
+      
+    }
+  }
 }
