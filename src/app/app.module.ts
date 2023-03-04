@@ -36,6 +36,8 @@ import { ChangePasswordComponent } from './component/change-password/change-pass
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { PetDashComponent } from './Dashboard/pet-dash/pet-dash.component';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -71,6 +73,8 @@ import { PaymentComponent } from './component/payment/payment.component';
     AddProductComponent,
     AddPetComponent,
     ClinicComponent,
+    DashboardComponent,
+    PetDashComponent,
   ],
   imports: [
     BrowserModule,

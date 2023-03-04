@@ -19,6 +19,8 @@ import { ClinicComponent } from './component/clinic/clinic.component';
 import { PetDetailsComponent } from './component/pet-details/pet-details.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
 import { AddPetComponent } from './component/add-pet/add-pet.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { PetDashComponent } from './Dashboard/pet-dash/pet-dash.component';
 
 
 const route: Routes = [
@@ -39,7 +41,11 @@ const route: Routes = [
 {path:"clinic",component:ClinicComponent},
 {path:"petDetails",component:PetDetailsComponent},
 {path:"addProduct",component:AddProductComponent},
-{path:"addPet",component:AddPetComponent}
+{path:"addPet",component:AddPetComponent},
+{path:"dashboard",component:DashboardComponent},
+{path:"pet-dash",component:PetDashComponent}
+
+
 ];
 
 
