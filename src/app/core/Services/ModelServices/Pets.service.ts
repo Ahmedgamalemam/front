@@ -21,7 +21,7 @@ getPetByID(id:number){
 postPets(pet:Pets){
   return this.myClient.post(this.Url_DB,pet);
 }
-deletePets(pet:Pets){
+deletePets(){
   return this.myClient.delete(this.Url_DB)
 }
 }

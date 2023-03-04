@@ -1,7 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pets } from 'src/app/core/models/Pets';
-import { PetSService } from 'src/app/core/pet-s.service';
 import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { SearchService } from 'src/app/core/Services/search.service';
@@ -22,15 +21,15 @@ export class PetDashComponent {
         this.pets.push(element);
         console.log(element.category_Name)
         console.log(element)
+       
       })
-
 
       this.FilteredPets = this.pets;
 
   })
   }
   delete(){
-    this.Services.deletePets(this.pets.).subscribe((data:any)=>{data.delete});
+    this.Services.deletePets().subscribe((data:any)=>{data.delete});
 
   }
   edit(){}

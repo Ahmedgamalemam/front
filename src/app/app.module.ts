@@ -37,7 +37,8 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { ClinicComponent } from './component/clinic/clinic.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { PetDashComponent } from './Dashboard/pet-dash/pet-dash.component';
+import { PetDashComponent } from './component/pet-dash/pet-dash.component';
+import { ClinicDashComponent } from './component/clinic-dash/clinic-dash.component';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -75,6 +76,7 @@ import { PetDashComponent } from './Dashboard/pet-dash/pet-dash.component';
     ClinicComponent,
     DashboardComponent,
     PetDashComponent,
+    ClinicDashComponent,
   ],
   imports: [
     BrowserModule,
