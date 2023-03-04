@@ -43,6 +43,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaymentComponent } from './component/payment/payment.component';
 import { EditPetComponent } from './component/edit-pet/edit-pet.component';
 import { EditProductComponent } from './component/edit-product/edit-product.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { PetDashComponent } from './Dashboard/pet-dash/pet-dash.component';
 
 
 // var route:Routes = [{path:"home",component:HomeComponent},
@@ -79,7 +81,9 @@ import { EditProductComponent } from './component/edit-product/edit-product.comp
     AddPetComponent,
     ClinicComponent,
     EditPetComponent,
-    EditProductComponent
+    EditProductComponent,
+    DashboardComponent,
+    PetDashComponent,
   ],
   imports: [
     BrowserModule,
