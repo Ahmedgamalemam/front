@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PetSService } from 'src/app/core/pet-s.service';
+import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class CartComponent {
 
   constructor(
     private SharedService: PetSService,
-    public search: SearchService
+    public search: SearchService,
+    public local: LocalStorageService
   ) {
     this.products = JSON.parse(
       localStorage['Carts'] || this.SharedService.getItem()
@@ -53,28 +55,45 @@ export class CartComponent {
       }
     }
   }
-  close(name: any) {
-    var i = 0;
-    while (i < this.products.length) {
-      if (this.products[i].name == name) {
-        this.products.splice(i, 1);
-      } else {
-        ++i;
+  close(Id: number) {
+    var items = JSON.parse(localStorage['Carts']);
+    var arr = new Array();
+    console.log(items);
+    for (var i = 0; i < items.length; i++) {
+      console.log(items[i].id);
+      if (items[i].id == Id) {
+        console.log(items);
+        delete items[i]; // slice doesn't work not sure why
+        console.log(items);
+      }
+      if (items[i] != null) {
+        console.log(arr);
+        arr.push(items[i]); // slice doesn't work not sure why
+        // console.log("Arr"+arr[i]+"");
       }
     }
-    }
 
-   buy_now() {
+    var item = JSON.stringify(arr);
+    console.log(item);
+
+    localStorage.setItem('Carts', item);
+    window.location.href='/Cart'
+  }
+  buy_now() {
     var i = 0;
     var total_price = 0;
 
     while (i < this.products.length) {
       console.log(this.products[i].quantity);
       total_price =
-        total_price + this.products[i].price * (this.products[i].quantity==undefined?1:this.products[i].quantity);
+        total_price +
+        this.products[i].price *
+          (this.products[i].quantity == undefined
+            ? 1
+            : this.products[i].quantity);
       ++i;
     }
-    console.log(total_price)
+    console.log(total_price);
     this.SharedService.setbuy_now(this.products);
     this.SharedService.settotal_price(total_price);
   }
