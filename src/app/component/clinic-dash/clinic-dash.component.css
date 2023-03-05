@@ -45,7 +45,7 @@ body{background:#eee;
     }
     .cont{
         margin-top: 50px;
- 
+
     }
     .Details {
         background-color: #50402c;
@@ -53,4 +53,13 @@ body{background:#eee;
       }
       .Cart {
         background-color: #f7e3ac;
+      }
+      .card-title {
+        max-width: 20rem;
+        max-height: 6rem;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        margin-top: 2rem;
+        transform: translate3d(2px, 2px, 10em);
       }
