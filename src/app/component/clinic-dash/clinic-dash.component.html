@@ -1,5 +1,5 @@
 <div style="margin-top: 100px;" class="container ">
-    <button class="btn Details btn-sm">add Clinic</button>
+    <button class="btn Details btn-sm" routerLink="/AddClinic">add Clinic</button>
 </div>
 <div class=" container mb-5" *ngFor="let c of clinik">
     <div class="d-flex justify-content-center row">
@@ -13,7 +13,7 @@
                         <p>mobile: {{c.phone}}</p>
                         <p>Address: {{c.address}}</p>
                     </div>
-  
+
                     <p class="text-justify para mb-0 d-flex flex-wrap">Jungle pet clinic was established in 2005 with the aim of providing high quality veterinary care for your pets.
                          We offer a comprehensive range of medical, surgical and laboratory services.<br></p>
                 </div>
@@ -21,7 +21,7 @@
                     <div class="d-flex flex-column mt-4">
                         <button
                         class="bttn btn-primary btn-sm" type="button"><img class="location" src="../../../assets/images/locationgoogle.jfif" alt=""></button></div>
-                
+
                     </div>
                     <div class="d-flex flex-column mt-4">
                         <button class="btn Details btn-sm" type="button" (click)="edit()">
@@ -32,8 +32,7 @@
                         </button>
                       </div>
             </div>
-  
+
             </div>
         </div>
     </div>
-  

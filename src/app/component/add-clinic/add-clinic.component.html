@@ -1,0 +1,96 @@
+<div class="cont container">
+  <form method="post" [formGroup]="addform">
+    <h1>Add Clinic</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group m-2">
+          <label for="productName">Clinic Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productName"
+            placeholder="Clinic Name"
+            formControlName="clinicName"
+          />
+        </div>
+        <div
+          *ngIf="clinicName.errors && clinicName.touched"
+          class="text-danger"
+        >
+          <i class="fas fa-exclamation-triangle"></i>
+          Name Must be at least 3 characters
+        </div>
+
+        <div class="form-group m-2">
+          <label for="clinicAddress">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="clinicAddress"
+            placeholder="Clinic Address"
+            formControlName="clinicAddress"
+          />
+        </div>
+        <div
+          *ngIf="clinicAddress.errors && clinicAddress.touched"
+          class="text-danger"
+        >
+          <i class="fas fa-exclamation-triangle"></i>
+          Address is required
+        </div>
+
+        <div class="form-group m-2">
+          <label for="clinicPhone">Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productQuantity"
+            placeholder="Clinic Phone"
+            formControlName="clinicPhone"
+          />
+        </div>
+        <div
+          *ngIf="clinicPhone.errors && clinicPhone.touched"
+          class="text-danger"
+        >
+          <i class="fas fa-exclamation-triangle"></i>
+          Phone is required
+        </div>
+        <div class="container col-md-">
+          <div class="mb-5">
+            <label for="Image" class="form-label">Upload Clinic Image</label>
+            <input
+              id="ProfileName"
+              class="form-control"
+              type="file"
+              (change)="onFileSelected()"
+              formControlName="formFile"
+            />
+            <img id="frame" src="{{ profile }}" class="img-fluid" />
+            <div *ngIf="profile == ''" class="text-danger">
+              <i class="fas fa-exclamation-triangle"></i>
+              Image is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="map-container">
+          <div class="map-frame">
+            <div id="map"></div>
+          </div>
+        </div>
+
+        <div class="form-group m-2" style="float: right">
+          <input
+            type="button"
+            name="btnSubmit"
+            class="btn btn-primary here"
+            value="Add Clinic"
+            (click)="add()"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

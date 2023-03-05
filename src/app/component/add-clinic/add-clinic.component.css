@@ -1,0 +1,29 @@
+.form-floating{
+  margin: 10px;
+}
+.here{
+  background-color: rgb(247,227,172);
+  color: #50402c;
+  width: 150px;
+  height: 30px;
+}
+.cont{
+  margin-top: 90px;
+}
+.map-container {
+  margin: 30px;
+  height: 70%;
+  position: relative;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+  z-index: 1;
+}
+
+

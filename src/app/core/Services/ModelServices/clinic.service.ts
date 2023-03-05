@@ -19,5 +19,8 @@ export class ClinicService {
   public delete(item:any){
     return this.myclient.delete(this.Url_DB+"/"+item)
   }
+  AddClinic(clinic:Clinic){
+    return this.myclient.post(this.Url_DB,clinic);
+  }
 
 }

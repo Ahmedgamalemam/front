@@ -46,26 +46,7 @@ export class MapComponent implements AfterViewInit {
     );
 
     tiles.addTo(this.map);
-    var marker: any;
-    this.map.on('click', (e: any) => {
-      const iconRetinaUrl = 'assets/icon.png';
-      const iconUrl = 'assets/icon.png';
-      const shadowUrl = 'assets/marker-shadow.png';
-      const iconDefault = L.icon({
-        iconRetinaUrl,
-        iconUrl,
-        shadowUrl,
-        iconSize: [35, 40],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        tooltipAnchor: [16, -28],
-        shadowSize: [41, 41],
-      });
-      L.Marker.prototype.options.icon = iconDefault;
-      if (marker) this.map.removeLayer(marker);
-      console.log(e.latlng.lat, e.latlng.lng); // e is an event object (MouseEvent in this case)
-      marker = L.marker(e.latlng).addTo(this.map);
-    });
+
   }
 
   constructor(
