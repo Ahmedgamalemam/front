@@ -1,7 +1,8 @@
 <section
   class="pt-5"
   style="background-color: white"
-  *ngFor="let item of products"
+  *ngFor="let item of products|
+  paginate: { itemsPerPage: 5, currentPage: pages }"
 >
   <div class="container py-2 pt-5">
     <div class="row justify-content-center mb-3">
@@ -68,4 +69,10 @@
 
 <div class="empty" *ngIf="products.length == 0">
   <h1>FAVOURITE IS EMPTY</h1>
+</div>
+<div style="text-align: center">
+  <pagination-controls
+    style="color: #50402c"
+    (pageChange)="pages = $event"
+  ></pagination-controls>
 </div>

@@ -9,6 +9,7 @@ import { SearchService } from 'src/app/core/Services/search.service';
 })
 export class FavouritComponent {
   products = new Array();
+  pages=1;
 
   ngOnInit() {
     this.search.hide();
