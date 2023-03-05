@@ -22,7 +22,7 @@ export class CartComponent {
   constructor(
     private SharedService: PetSService,
     public search: SearchService,
-    public local:LocalStorageService
+    public local: LocalStorageService
   ) {
     this.products = JSON.parse(
       localStorage['Carts'] || this.SharedService.getItem()
@@ -56,20 +56,36 @@ export class CartComponent {
     }
   }
   close(Id: number) {
-
     var items = JSON.parse(localStorage['Carts']);
-    console.log(items)
+    console.log(items);
     for (var i = 0; i < items.length; i++) {
-
-      console.log(items[i].id)
-       if(items[i].id== Id){
-         console.log(items)
-         delete( items[i]) // slice doesn't work not sure why
-         console.log(items)
-       }
+      console.log(items[i].id);
+      if (items[i].id == Id) {
+        console.log(items);
+        delete items[i]; // slice doesn't work not sure why
+        console.log(items);
+      }
     }
-    var item=JSON.stringify(items)
+    var item = JSON.stringify(items);
 
-     localStorage.setItem('Carts',item)
+    localStorage.setItem('Carts', item);
+  }
+  buy_now() {
+    var i = 0;
+    var total_price = 0;
+
+    while (i < this.products.length) {
+      console.log(this.products[i].quantity);
+      total_price =
+        total_price +
+        this.products[i].price *
+          (this.products[i].quantity == undefined
+            ? 1
+            : this.products[i].quantity);
+      ++i;
+    }
+    console.log(total_price);
+    this.SharedService.setbuy_now(this.products);
+    this.SharedService.settotal_price(total_price);
   }
 }
