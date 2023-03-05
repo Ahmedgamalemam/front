@@ -67,8 +67,13 @@
                 <div class="mt-1 mb-0 text-muted small">
                   <span>{{ item.description }}</span>
                   <span class="text-primary"></span>
-                  <span>{{ item.quantity }} Quantity</span>
-                </div>
+                  <span *ngIf="item.category_Type!='Pet'" style="margin-left: 3rem">Total Quantity</span>
+                  <span *ngIf="item.category_Type!='Pet'" >{{ item.quantity }}</span>
+                  <div *ngIf="item.category_Type!='Pet'">
+                    <h5>Quantity</h5>
+                    <input id="quantity_input" type="number" value="1" />
+                  </div>
+                  </div>
               </div>
               <div
                 class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
@@ -81,31 +86,6 @@
                   <button class="btn Details btn-sm" type="button">
                     Details
                   </button>
-
-                  <div fxLayout="row" style="margin-top: 26px">
-                    <button
-                      type="button"
-                      class="button btn"
-                      (click)="counter_mins(item.name)"
-                    >
-                      <img src="assets/images/mins.png" class="plus" />
-                    </button>
-
-                    <h3
-                      class="card-text inline cart-count"
-                      style="margin-top: 13px"
-                    >
-                      {{ item.quantity }}
-                    </h3>
-
-                    <button
-                      type="button"
-                      class="button btn"
-                      (click)="counter_plus(item.name)"
-                    >
-                      <img src="assets/images/plus.png" class="plus" />
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>

@@ -9,4 +9,6 @@ export interface Pets {
   image:string,
   category_ID:number
   category_Name:string
+  category_Type:string
+
 }

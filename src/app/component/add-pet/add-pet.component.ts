@@ -81,7 +81,8 @@ export class AddPetComponent {
       image:this.profile.toString(),
       category_ID:this.Categoery.value,
       category_Name:"",
-      name:this.petName.value
+      name:this.petName.value,
+      category_Type:""
     }
   }
   add(){

@@ -27,6 +27,7 @@ export class CartComponent {
     this.products = JSON.parse(
       localStorage['Carts'] || this.SharedService.getItem()
     );
+    console.log(this.products)
   }
   counter_plus(count: any) {
     var name = this.products.filter((meal) => meal.name.includes(count));

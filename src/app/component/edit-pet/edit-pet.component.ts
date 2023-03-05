@@ -95,7 +95,8 @@ export class EditPetComponent implements OnInit {
       image:this.profile==""?this.Pet.image:this.profile,
       category_ID:this.Categoery.value,
       category_Name:"",
-      name:this.petName.value
+      name:this.petName.value,
+      category_Type:""
     }
   }
   EditPet(){
