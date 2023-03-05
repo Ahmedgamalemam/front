@@ -1,7 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as L from 'leaflet';
-import { ClinicService } from 'src/app/core/Services/clinic.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 import { MarkerService } from '../../core/Services/marker.service';
 

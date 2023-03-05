@@ -2,7 +2,7 @@
   class="pt-5"
   style="background-color: white"
   *ngFor="
-    let item of products;
+    let item of products|
     paginate: { itemsPerPage: 5, currentPage: pages }
   "
 >
