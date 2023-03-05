@@ -1,31 +1,27 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pets } from 'src/app/core/models/pets';
+import { PetSService } from 'src/app/core/pet-s.service';
 import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
-import { SharedService } from 'src/app/core/Services/Shared.service';
-import { PetSService } from 'src/app/core/pet-s.service';
 import { SearchService } from 'src/app/core/Services/search.service';
-import { Pets } from 'src/app/core/models/pets';
-
-import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
-
-
+import { SharedService } from 'src/app/core/Services/Shared.service';
 @Component({
-  selector: 'app-pets',
-  templateUrl: './pets.component.html',
-  styleUrls: ['./pets.component.css'],
+  selector: 'app-pet-dash',
+  templateUrl: './pet-dash.component.html',
+  styleUrls: ['./pet-dash.component.css']
 })
-export class PetsComponent {
+export class PetDashComponent {
   pages: number = 1;
   pets: Pets[] = [];
   FilteredPets: Pets[] = [];
   card: any;
-  id:any;
   constructor(
     public search: SearchService,
     private Services: PetsService,
     public searchservice: NavBarService,
-    private local:LocalStorageService
+    private petservice:PetSService,
+    private route: Router
   ) {
     Services.getpets().subscribe((response: any) => {
       response.forEach((element: Pets) => {
@@ -37,7 +33,6 @@ export class PetsComponent {
       this.FilteredPets = this.pets;
     });
   }
-
   petcategory(item: any) {
     let inputsearch = (item.target as HTMLImageElement).alt;
     this.searchservice.setsearchByID(inputsearch);
@@ -60,8 +55,6 @@ export class PetsComponent {
   }
 
   ngDoCheck() {
-    this.id=Number(localStorage.getItem("id"))
-
     let filterValue = this.searchservice.getsearch();
     let filterValue2 = this.searchservice.getsearchBYID();
     let filterValue3 = this.searchservice.getsearchBYCatogry();
@@ -162,39 +155,11 @@ export class PetsComponent {
       pet.category_Name.toLowerCase().includes(category.toLowerCase())
     );
   }
-  // Carts: any = new Array();
-  // Favourits: any = new Array();
-  f: number = 0;
-  i: number = 0;
-  // add to cart
-  addpetcart(item: any) {
-    //localStorage.clear();
 
-    var name = JSON.parse(localStorage['Carts']).some(
-      (c: any) => c.name == item.name
-    );
-    if (name == false) {
-      this.local.Carts.push(item);
-    }
-    localStorage.setItem('Carts', JSON.stringify(this.local.Carts));
-    this.i++;
+  Delete(id:number)
+  {
+    this.Services.DeleteProduct(id).subscribe((data:any)=>{console.log()});
+    this.route.navigate(["/AdminPet"])
   }
-
-  // addtofavourite
-  addtofavourite(item: any) {
-    var name = JSON.parse(localStorage['Favourits']).some(
-      (c: any) => c.name == item.name
-    );
-    if (name == false) {
-      this.local.Favourits.push(item);
-    }
-
-    localStorage.setItem('Favourits', JSON.stringify(this.local.Favourits));
-    this.f++;
-  }
-
 
 }
-
-
-

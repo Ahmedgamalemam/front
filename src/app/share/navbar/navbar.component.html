@@ -18,11 +18,13 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <!-- home & clinic -->
-
+          <li class="nav-item" *ngIf="Type=='Admin'">
+            <a class="nav-link btn button" routerLink="/Dashboard">DashBoard</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link btn button" routerLink="/home">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="id > 0">
             <a class="nav-link btn button" routerLink="/Clinic">Clinic</a>
           </li>
 
@@ -187,9 +189,16 @@
         </button>
       </form>
       <!-- <div *ngIf="id!=null"> -->
+
+        <li class="nav-item" *ngIf="id == 0">
+          <a class="nav-link btn button" routerLink="/Login">SIGN IN</a>
+        </li>
+        <li class="nav-item" *ngIf="id == 0">
+          <a class="nav-link btn button" routerLink="/Register">SIGN UP</a>
+        </li>
       <!-- icons -->
       <!-- profile icon -->
-      <div class="btn-group">
+      <div class="btn-group" *ngIf="id > 0">
         <button
           type="button"
           style="background-color: transparent; border: none"
@@ -228,7 +237,7 @@
       </div>
 
       <!-- favourit icon -->
-      <a routerLink="/Favourit">
+      <a routerLink="/Favourit" *ngIf="id > 0">
         <lord-icon
           src="https://cdn.lordicon.com/xryjrepg.json"
           trigger="morph"
@@ -241,7 +250,7 @@
       ></a>
 
       <!-- cart icon -->
-      <a routerLink="/Cart">
+      <a routerLink="/Cart" *ngIf="id > 0">
         <lord-icon
           src="https://cdn.lordicon.com/udbbfuld.json"
           trigger="hover"
@@ -339,10 +348,13 @@
 
   <!-- home & clinic -->
   <br />
+  <div class="nav-item" *ngIf="Type=='Admin'">
+    <a class="nav-link btn button side-home" routerLink="/DashBoard">DashBoard</a>
+  </div>
   <div class="nav-item">
     <a class="nav-link btn button side-home" routerLink="/home">Home</a>
   </div>
-  <div class="nav-item">
+  <div class="nav-item" *ngIf="id > 0">
     <a class="nav-link btn button" routerLink="/Clinic">Clinic</a>
   </div>
   <hr />
@@ -496,6 +508,13 @@
 
   <hr style="margin-top: 5rem" />
 
+  <li class="nav-item" *ngIf="id == 0" style="margin-top: 2rem;">
+    <a class="nav-link btn button" routerLink="/Login">SIGN IN</a>
+  </li>
+  <li class="nav-item" *ngIf="id == 0" style="margin-top: 2rem;">
+    <a class="nav-link btn button" routerLink="/Register">SIGN UP</a>
+  </li>
+
   <!-- icons -->
   <div fxLayout="row" fxLayoutAlign="center center">
     <!-- profile icon -->
@@ -505,6 +524,7 @@
         style="background-color: transparent; border: none"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        *ngIf="id > 0"
       >
         <div style="display: inline-block">
           <a>
@@ -536,7 +556,7 @@
     </div>
 
     <!-- favourit icon -->
-    <a routerLink="/Favourit">
+    <a routerLink="/Favourit" *ngIf="id > 0">
       <lord-icon
         src="https://cdn.lordicon.com/xryjrepg.json"
         trigger="morph"
@@ -549,7 +569,7 @@
     ></a>
 
     <!-- cart icon -->
-    <a routerLink="/Cart">
+    <a routerLink="/Cart" *ngIf="id > 0">
       <lord-icon
         src="https://cdn.lordicon.com/udbbfuld.json"
         trigger="hover"

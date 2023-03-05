@@ -1,63 +1,71 @@
-<!-- card for pets -->
-<div class="pt-5">
+<!-- card for products -->
+
 <div class="pt-5">
   <div class="card-title">
-    <a class="nav-link btn button" routerLink="/Pets">
-      <img style="height: 4rem" src="assets/images/Pets.png" />
+    <a class="nav-link btn button" routerLink="/Products">
+      <img style="height: 4rem" src="assets/images/Products.png" />
     </a>
   </div>
+
   <div class="container slide" #container>
     <div
       class="left"
-      *ngIf="totalPages_pets > 1"
-      (click)="currentPage_pets != 1 && changePage_pets(-1)"
-      [ngClass]="{ disabled: currentPage_pets === 1 }"
+      *ngIf="totalPages_products > 1"
+      (click)="currentPage_products != 1 && changePage_products(-1)"
+      [ngClass]="{ disabled: currentPage_products === 1 }"
     >
       &#10094;
     </div>
-    <div class="cards" [ngClass]="{ 'w-100': totalPages_pets === 1 }">
+    <div class="cards" [ngClass]="{ 'w-100': totalPages_products === 1 }">
       <div
         class="overflow"
-        [ngStyle]="{ width: overflowWidth_pets, left: pagePosition_pets }"
+        [ngStyle]="{
+          width: overflowWidth_products,
+          left: pagePosition_products
+        }"
       >
         <div
           class="card1 card"
-          *ngFor="let i of arr_pets; let index = index"
-          [ngStyle]="{ width: cardWidth_pets }"
+          *ngFor="let i of arr_products; let index = index"
+          [ngStyle]="{ width: cardWidth_products }"
         >
-          <a (click)="petcategory($event)">
-            <img class="card-img" src="{{ i }}" alt="{{index+1}}" />
+          <a  (click)="productcategory($event)">
+            <img class="card-img" src="{{ i }}" alt="{{index+6}}" />
           </a>
         </div>
       </div>
     </div>
     <div
       class="right"
-      *ngIf="totalPages_pets > 1"
-      (click)="currentPage_pets != totalPages_pets && changePage_pets(+1)"
-      [ngClass]="{ disabled: currentPage_pets === totalPages_pets }"
+      *ngIf="totalPages_products > 1"
+      (click)="
+        currentPage_products != totalPages_products && changePage_products(+1)
+      "
+      [ngClass]="{ disabled: currentPage_products === totalPages_products }"
     >
       &#10095;
     </div>
   </div>
 </div>
-
 <div class="card-title">
-  <a class="nav-link btn button" routerLink="/Pets">
-    <img style="height: 4rem" src="assets/images/All Pets.png" />
+  <a class="nav-link btn button" routerLink="/Products">
+    <img style="height: 4rem" src="assets/images/Products.png" />
   </a>
 </div>
-
+<div style="text-align: center;">
+  <button class="btn Cart " type="button" routerLink="/AddProduct">Add Product</button>
+</div>
 <section
+  class="pt-0"
   style="background-color: white"
   *ngFor="
-    let item of FilteredPets
+    let item of FilteredProduct
       | paginate : { itemsPerPage: 5, currentPage: pages }
   "
 >
-  <div class="container py-2 pt-2">
+  <div class="container py-2 pt-5">
     <div class="row justify-content-center mb-3">
-      <div class="col-md-8 col-sm-9 col-xl-10">
+      <div class="col-md-8 col-sm-9 col-xs-7 col-xl-10">
         <div class="card rounded-3">
           <div class="card-body">
             <div class="row">
@@ -75,47 +83,28 @@
                 <h5>{{ item.name }}</h5>
 
                 <div class="mt-1 mb-0 text-muted small">
-                  <span>{{ item.type }}</span
-                  ><br />
-
-                  <span>{{ item.age }}</span>
+                  <span>{{ item.description }}</span>
                   <span class="text-primary"> • </span>
-                  <span>{{ item.sex }}<br /></span>
+                  <span>{{ item.quantity }} Quantity</span>
                 </div>
-
-                <p class="text-truncate mb-0 mb-md-0 mt-3">
-                  {{ item.description }}
-                </p>
               </div>
               <div
                 class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
               >
                 <div class="d-flex flex-row align-items-center mb-0">
                   <h4 class="mb-1 me-5">{{ item.price }}L.E</h4>
-                  <a (click)="addtofavourite(item)" *ngIf="id > 0">
-                  <lord-icon
-                    src="https://cdn.lordicon.com/xryjrepg.json"
-                    trigger="morph"
-                    colors="primary:#50402c"
-                    scale="40"
-                    state="morph"
-                    style="width: 50px; height: 50px; margin-left: -2rem;"
-                    class="ms-5"
-                  >
-                  </lord-icon>
-                </a>
                 </div>
                 <h6 class="text-success">Free shipping</h6>
                 <div class="d-flex flex-column mt-4">
                   <button
                     class="btn Details btn-sm"
                     type="button"
-                    routerLink="/PetDetails/{{ item.id }}"
+                    routerLink="/EditProduct/{{ item.id }}"
                   >
-                    Details
+                    Edit
                   </button>
-                  <button class="btn Cart btn-sm mt-2" type="button" (click)="addpetcart(item)" *ngIf="id > 0">
-                    Add to Cart
+                  <button class="btn btn-danger btn-sm mt-2" type="button" (click)="DeletePro(item.id)">
+                    Delete
                   </button>
                 </div>
               </div>
@@ -128,7 +117,6 @@
 </section>
 <div style="text-align: center">
   <pagination-controls
-    class="my-pagination"
     style="color: #50402c"
     (pageChange)="pages = $event"
   ></pagination-controls>

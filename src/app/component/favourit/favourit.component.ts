@@ -5,36 +5,47 @@ import { SearchService } from 'src/app/core/Services/search.service';
 @Component({
   selector: 'app-favourit',
   templateUrl: './favourit.component.html',
-  styleUrls: ['./favourit.component.css']
+  styleUrls: ['./favourit.component.css'],
 })
 export class FavouritComponent {
-
-  products =new Array();
+  products = new Array();
 
   ngOnInit() {
-    this.search.hide()
+    this.search.hide();
   }
 
-
-  constructor(private SharedService:PetSService,public search:SearchService) {
-
+  constructor(
+    private SharedService: PetSService,
+    public search: SearchService
+  ) {
     // this.products=this.SharedService.getItem();
-    this.products =JSON.parse(localStorage['Favourits']|| this.SharedService.getfav())
-    console.log(this.products)
+    this.products = JSON.parse(
+      localStorage['Favourits'] || this.SharedService.getfav()
+    );
+    console.log(this.products);
   }
-  removefromfavourit(element:any){
-      var i = 0;
-      while (i < this.products.length) {
-        console.log(this.products[i])
-        console.log(element)
-
-        if (this.products[i].name == element) {
-          this.products.splice(i, 1);
-          console.log(this.products[i])
-        } else {
-          ++i;
-        }
+  removefromfavourit(Id: any) {
+    var items = JSON.parse(localStorage['Favourits']);
+    var arr = new Array();
+    console.log(items);
+    for (var i = 0; i < items.length; i++) {
+      console.log(items[i].id);
+      if (items[i].id == Id) {
+        console.log(items);
+        delete items[i]; // slice doesn't work not sure why
+        console.log(items);
       }
+      if (items[i] != null) {
+        console.log(arr);
+        arr.push(items[i]); // slice doesn't work not sure why
+        // console.log("Arr"+arr[i]+"");
       }
-   }
+    }
 
+    var item = JSON.stringify(arr);
+    console.log(item);
+
+    localStorage.setItem('Favourits', item);
+    window.location.href = '/Favourit';
+  }
+}

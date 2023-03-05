@@ -32,5 +32,9 @@ public GetUserById(ID:number){
 EditProfile(user:User,id:number){
   return this.myClient.put(this.Url_DB+"?id="+id,user);
 }
-
+public getAll(){
+  // if (User.type=="Admin") {
+    return this.myClient.get(this.Url_DB);
+  }
 }
+

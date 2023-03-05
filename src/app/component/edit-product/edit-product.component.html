@@ -1,0 +1,81 @@
+<div class="cont container" >
+  <form method="post" [formGroup]="Edit">
+      <h1>Edit Product</h1>
+     <div class="row">
+          <div class="col-md-6">
+              <div class="form-group m-2">
+                <label for="productName">Product Name</label>
+                  <input type="text" class="form-control"id="productName" placeholder="Product Name"
+                  formControlName="productName">
+
+              </div>
+              <div *ngIf="productName.errors && productName.touched" class="text-danger">
+                  <i class="fas fa-exclamation-triangle"></i>
+                   Name Must be at least 3 characters
+              </div>
+
+              <div class="form-group m-2">
+                 <label for="productPrice">Price</label>
+                  <input type="number" class="form-control" id="productPrice" placeholder="Product Price"
+                   formControlName="productPrice">
+              </div>
+              <div *ngIf="productPrice.errors && productPrice.touched" class="text-danger">
+                  <i class="fas fa-exclamation-triangle"></i>
+                   Price is required
+              </div>
+
+              <div class="form-group m-2">
+                <label for="productQuantity">Quantity</label>
+                  <input type="number" class="form-control" id="productQuantity" placeholder="Product Quantity"
+                   formControlName="productQuantity">
+              </div>
+              <div *ngIf="Edit.controls.productQuantity.errors && Edit.controls.productQuantity.touched" class="text-danger">
+                  <i class="fas fa-exclamation-triangle"></i>
+                   Quantity is required
+              </div>
+              <div class="form-group m-2">
+                <label for="selectCategory">Select Category</label>
+                  <select class="form-select" id="selectCategory" formControlName="Category">
+                    <option selected >---Category---</option>
+                    <option value="6">Food</option>
+                    <option value="7">Medicine</option>
+                    <option value="8">Kennels & cages</option>
+                    <option value="9">Toy</option>
+                    <option value="10">Accessories</option>
+                    <option value="11">Grooming</option>
+                  </select>
+              </div>
+              <div *ngIf="Edit.controls.productQuantity.errors && Edit.controls.productQuantity.touched" class="text-danger">
+                <i class="fas fa-exclamation-triangle"></i>
+                 Category is required
+            </div>
+
+
+
+
+          </div>
+          <div class="col-md-6">
+              <div class="form-group m-2">
+                  <textarea name="txtDescription" id="txtDescription" class="form-control mt-4"
+                  placeholder="Product Description *" style="width: 100%; height: 150px;" formControlName="Description"></textarea>
+              </div>
+              <div class="container col-md-">
+                <div class="mb-5">
+                    <label for="Image" class="form-label">Upload Product's Image</label>
+                    <input id="ProfileName" class="form-control" type="file" (change)="onFileSelected()" formControlName="formFile" />
+                    <img *ngIf="profile!=''" id="frame" src="{{profile}}" class="img-fluid" />
+                    <img *ngIf="profile==''" id="frame" src="{{Product.image}}" class="img-fluid" />
+                 <div *ngIf="profile=='' " class="text-danger">
+                  <i class="fas fa-exclamation-triangle"></i>
+                   Image is required
+                 </div>
+                </div>
+            </div>
+              <div class="form-group m-2" style="float: right;">
+                  <input type="button" name="btnSubmit" class="btn btn-primary here" value="Edit Product" (click)="EditProduct()" />
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+

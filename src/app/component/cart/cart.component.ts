@@ -57,6 +57,7 @@ export class CartComponent {
   }
   close(Id: number) {
     var items = JSON.parse(localStorage['Carts']);
+    var arr = new Array();
     console.log(items);
     for (var i = 0; i < items.length; i++) {
       console.log(items[i].id);
@@ -65,10 +66,18 @@ export class CartComponent {
         delete items[i]; // slice doesn't work not sure why
         console.log(items);
       }
+      if (items[i] != null) {
+        console.log(arr);
+        arr.push(items[i]); // slice doesn't work not sure why
+        // console.log("Arr"+arr[i]+"");
+      }
     }
-    var item = JSON.stringify(items);
+
+    var item = JSON.stringify(arr);
+    console.log(item);
 
     localStorage.setItem('Carts', item);
+    window.location.href='/Cart'
   }
   buy_now() {
     var i = 0;

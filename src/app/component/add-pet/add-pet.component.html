@@ -1,0 +1,98 @@
+<div class="cont container" >
+    <form method="post" [formGroup]="addingform" (ngSubmit)="add()">
+        <h1>Add Pet</h1>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group m-2">
+                  <label for="petName">Pet Name</label>
+                    <input type="text" class="form-control"id="petName" name="petName" placeholder="Pet Name"formControlName="petName">
+                </div>
+                <div *ngIf="addingform.controls.petName.errors && addingform.controls.petName.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Name Must be at least 3 characters
+                </div>
+                <div class="form-group m-2">
+                  <label for="petAge">Age</label>
+                    <input type="text" class="form-control" id="petAge" placeholder="pet Age" formControlName="petAge"/>
+                </div>
+                <div *ngIf="petAge.errors && petAge.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Age is required
+                </div>
+
+                <div class="form-group m-2">
+                  <label for="petPrice">Price</label>
+                    <input type="number" class="form-control" id="petPrice" placeholder="Pet Price" formControlName="petPrice">
+                </div>
+                <div *ngIf="petPrice.errors && petPrice.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Price is required
+                </div>
+
+                <div class="form-group m-2">
+                  <label for="selectType">Select Type of Pet</label>
+
+                    <select class="form-select" id="selectType" formControlName="Category" >
+                      <option selected>---Category---</option>
+                      <option value="1">Cat</option>
+                      <option value="2">Dog</option>
+                      <option value="3">Fish</option>
+                      <option value="4">Birds</option>
+                      <option value="5">Hamesters</option>
+                    </select>
+                </div>
+                <div class="container ">
+                  <div>
+                      <label for="Image" class="form-label">Pet Type</label>
+                      <input class="form-control" type="text" id="Type" formControlName="Type" placeholder="Pet Type">
+                  </div>
+                  <div *ngIf="Type.errors && Type.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Type is required
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group m-2 mt-4">
+                    <textarea name="petDescription" id="petDescription" class="form-control"
+                    placeholder="pet Description *" style="width: 100%; height: 150px;" formControlName="Description"></textarea>
+                </div>
+
+                <div class="container">
+                  <p class="card-description" id="petGender">Choose pet's gender</p>
+                  <div class="mb-3">
+                      <input type="radio" name="petGender" value="Male" class="p-1"  id="male" checked="true" formControlName="petGender"/>
+                      <label class="m-2" for="male">Male</label>
+                      <input type="radio" name="petGender"  value="Female" id="female"  formControlName="petGender"/>
+                      <label for="female" class="m-2">Female</label>
+                  </div>
+                  <div *ngIf="petGender.errors && petGender.touched" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Gender is required
+                </div>
+
+              </div>
+
+                <div class="container col-md-">
+                  <div class="">
+                      <label for="Image" class="form-label">Upload Pet's Image</label>
+                      <input id="ProfileName" class="form-control" type="file" (change)="onFileSelected()" formControlName="formFile" />
+                    </div>
+                  <img id="frame" src="{{profile}}" class="img-fluid" />
+                  <div *ngIf="profile==''" class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                     Image is required
+                   </div>
+              </div>
+
+                <div class="form-floating" style="float: right;">
+                    <button
+                    (click)="add()" type="button"  class="btn btn-primary here" [disabled]="!addingform.valid" >Add Pet</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
