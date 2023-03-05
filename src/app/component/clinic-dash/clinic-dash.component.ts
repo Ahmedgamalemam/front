@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Clinic } from 'src/app/core/models/clinic';
-import { ClinicService } from 'src/app/core/Services/ModelServices/clinic.service'; 
+import { ClinicService } from 'src/app/core/Services/ModelServices/clinic.service';
 
 @Component({
   selector: 'app-clinic-dash',
@@ -9,6 +9,7 @@ import { ClinicService } from 'src/app/core/Services/ModelServices/clinic.servic
 })
 export class ClinicDashComponent {
   clinik:Clinic[]=[];
+  pages=1;
   constructor(public myservice:ClinicService){
     myservice.getAll().subscribe(
       (res:any)=>{
@@ -32,8 +33,8 @@ export class ClinicDashComponent {
         this.myservice.delete(id).subscribe((data:any)=>{console.log(data)});
       }
         ++d;
-      
-      
+
+
     }
   }
 }
