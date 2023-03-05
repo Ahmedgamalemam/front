@@ -54,13 +54,13 @@
                             </div>
                             <div
                               *ngIf="
-                                form.controls.Quantity.errors&&
+                                form.controls.Quantity.errors||
                                 form.controls.Quantity.touched
                               "
                               class="text-danger"
                             >
                               <i class="fas fa-exclamation-triangle"></i>
-                              Name Must be less than {{ product.quantity }}
+                              Quantity Must be less than or Equal {{ product.quantity }}
                             </div>
 
                             <div class="col-xs-6">

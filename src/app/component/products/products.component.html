@@ -29,8 +29,8 @@
           *ngFor="let i of arr_products; let index = index"
           [ngStyle]="{ width: cardWidth_products }"
         >
-          <a  (click)="productcategory($event)">
-            <img class="card-img" src="{{ i }}" alt="{{index+6}}" />
+          <a (click)="productcategory($event)">
+            <img class="card-img" src="{{ i }}" alt="{{ index + 6 }}" />
           </a>
         </div>
       </div>

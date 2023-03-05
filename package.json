@@ -28,6 +28,7 @@
     "bootstrap-icons": "^1.10.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.3",
+    "jwt-decode": "^3.1.2",
     "leaflet": "^1.7.1",
     "lord-icon-element": "^4.0.3",
     "lottie-web": "^5.10.2",

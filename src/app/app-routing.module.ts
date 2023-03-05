@@ -36,6 +36,7 @@ const route: Routes = [
   {path:"SignUp",component:Register2Component},
   {path:"Profile/:id",component:ProfileComponent},
   {path:"Map",component:MapComponent},
+  {path:"Map/:id",component:MapComponent},
   {path:"Pets",component:PetsComponent},
   {path:"Products",component:ProductsComponent},
   {path:'Favourit',component:FavouritComponent},

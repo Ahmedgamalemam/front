@@ -13,5 +13,8 @@ export class ClinicService {
   public getAll(){
     return this.myclient.get(this.Url_DB);
   }
+  public getByID(ID:number){
+    return this.myclient.get(this.Url_DB+"/"+ID);
+  }
 
 }

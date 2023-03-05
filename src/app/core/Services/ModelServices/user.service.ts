@@ -17,6 +17,8 @@ public addUser(user:User){
 }
 public LoginCheck(Password:string,Email:string)
 {
+  //console.log( this.myClient.get(this.Url_DB+"/"+Password+","+Email)  )
+
 return this.myClient.get(this.Url_DB+"/"+Password+","+Email)
 }
 

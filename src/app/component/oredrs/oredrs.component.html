@@ -1,64 +1,104 @@
 <div class="mt-5 pt-5">
-<section   style="background-color: white;" *ngFor="let item of Orders.reverse() ; let i = index">
-  <div class="container py-2 pt-2">
-    <div class="row justify-content-center mb-3">
-      <div class="col-md-8 col-sm-9 col-xl-10">
-        <div class="card rounded-3">
-          <div class="card-body">
-            <div class="row">
+  <section
+    style="background-color: white"
+    *ngFor="
+      let item of Orders.reverse()
+        | paginate : { itemsPerPage: 5, currentPage: pages };
+      let i = index
+    "
+  >
+    <div class="container py-2 pt-2">
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-8 col-sm-9 col-xl-10">
+          <div class="card rounded-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 col-lg-9 col-xl-9">
+                  <h5 style="text-align: center">Order: {{ Length - i }}</h5>
 
-              <div class="col-md-6 col-lg-9 col-xl-9">
-                <h5 style="text-align: center;">Order: {{Length-i}}</h5>
-
-                <div class=" mt-1 mb-0 ">
-                  <div class="row">
-                  <div class="col-md-6 col-lg-3 col-xl-3" *ngIf="!(item.pets.length==0)">
-                    <span class="text-primary"> • </span>
-                    <span>Pets</span><br>
-                    <div class="text-muted small" *ngFor="let PetName of item.pets">
-                    <span>{{PetName}}</span>
+                  <div class="mt-1 mb-0">
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-lg-3 col-xl-3"
+                        *ngIf="!(item.pets.length == 0)"
+                      >
+                        <span class="text-primary"> • </span>
+                        <span>Pets</span><br />
+                        <div
+                          class="text-muted small"
+                          *ngFor="let PetName of item.pets"
+                        >
+                          <span>{{ PetName }}</span>
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-6 col-lg-9 col-xl-9"
+                        *ngIf="!(item.products.length == 0)"
+                      >
+                        <span class="text-primary"> • </span>
+                        <span>Products</span><br />
+                        <div
+                          class="text-muted small ml-5"
+                          *ngFor="let PetName of item.products"
+                        >
+                          <span>{{ PetName }}</span>
+                        </div>
+                      </div>
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <span class="mt-3">Order items: {{ item.count }}</span>
+                        <span class="mt-3">{{
+                          item.date | date : "fullDate"
+                        }}</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-6 col-lg-9 col-xl-9" *ngIf="!(item.products.length==0)">
-                  <span class="text-primary"> • </span>
-                  <span>Products</span><br>
-                  <div class="text-muted small ml-5" *ngFor="let PetName of item.products">
-                  <span>{{PetName}}</span>
-                </div>
-              </div>
-              <div style="display: flex; justify-content: space-between;">
-              <span class="mt-3" >Order items: {{item.count}}</span>
-              <span class="mt-3" >{{item.date | date:'fullDate'}}</span>
-            </div>
-            </div>
 
-                </div>
-
-                <!-- <p class="text-truncate mb-0 mb-md-0 mt-3">
+                  <!-- <p class="text-truncate mb-0 mb-md-0 mt-3">
                   {{item.description}}
                 </p> -->
-              </div>
-              <div
-                class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
-              >
-                <div class="d-flex flex-row align-items-center mb-0">
-                  <h4 class="mb-1 me-5">Total: {{item.money}}L.E</h4>
-
                 </div>
-                <h6 class="text-success pt-4" *ngIf="item.payment_State!='Empty'">{{item.payment_State}}</h6>
-                <h6 class="text-danger pt-4" *ngIf="item.payment_State=='Empty'">Not Deliverd</h6>
+                <div
+                  class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start"
+                >
+                  <div class="d-flex flex-row align-items-center mb-0">
+                    <h4 class="mb-1 me-5">Total: {{ item.money }}L.E</h4>
+                  </div>
+                  <h6
+                    class="text-success pt-4"
+                    *ngIf="item.payment_State != 'Empty'"
+                  >
+                    {{ item.payment_State }}
+                  </h6>
+                  <h6
+                    class="text-danger pt-4"
+                    *ngIf="item.payment_State == 'Empty'"
+                  >
+                    Not Deliverd
+                  </h6>
 
-                <h6 class="text-success pt-4" *ngIf="item.payment_Method!='Empty'">{{item.payment_Method}}</h6>
-
+                  <h6
+                    class="text-success pt-4"
+                    *ngIf="item.payment_Method != 'Empty'"
+                  >
+                    {{ item.payment_Method }}
+                  </h6>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </div>
 <div class="empty" *ngIf="Orders.length == 0">
   <h1>You didn't Order Anything Yet</h1>
+</div>
+<div style="text-align: center">
+  <pagination-controls
+    style="color: #50402c"
+    (pageChange)="pages = $event"
+  ></pagination-controls>
 </div>

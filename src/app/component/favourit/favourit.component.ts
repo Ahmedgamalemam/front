@@ -19,7 +19,7 @@ export class FavouritComponent {
   constructor(private SharedService:PetSService,public search:SearchService) {
 
     // this.products=this.SharedService.getItem();
-    this.products = this.SharedService.getfav()
+    this.products =JSON.parse(localStorage['Favourits']|| this.SharedService.getfav())
     console.log(this.products)
   }
   removefromfavourit(element:any){
