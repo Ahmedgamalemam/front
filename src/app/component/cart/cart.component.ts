@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PetSService } from 'src/app/core/pet-s.service';
+import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class CartComponent {
 
   constructor(
     private SharedService: PetSService,
-    public search: SearchService
+    public search: SearchService,
+    public local:LocalStorageService
   ) {
     this.products = JSON.parse(
       localStorage['Carts'] || this.SharedService.getItem()
@@ -53,14 +55,21 @@ export class CartComponent {
       }
     }
   }
-  close(name: any) {
-    var i = 0;
-    while (i < this.products.length) {
-      if (this.products[i].name == name) {
-        this.products.splice(i, 1);
-      } else {
-        ++i;
-      }
+  close(Id: number) {
+
+    var items = JSON.parse(localStorage['Carts']);
+    console.log(items)
+    for (var i = 0; i < items.length; i++) {
+
+      console.log(items[i].id)
+       if(items[i].id== Id){
+         console.log(items)
+         delete( items[i]) // slice doesn't work not sure why
+         console.log(items)
+       }
     }
+    var item=JSON.stringify(items)
+
+     localStorage.setItem('Carts',item)
   }
 }

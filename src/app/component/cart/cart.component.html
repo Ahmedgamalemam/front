@@ -2,7 +2,7 @@
   class="pt-5"
   style="background-color: white"
   *ngFor="
-    let item of products;
+    let item of products|
     paginate: { itemsPerPage: 5, currentPage: pages }
   "
 >
@@ -22,7 +22,7 @@
                   </a>
                 </div>
               </div>
-              <button class="close-side-btn" (click)="close(item.name)">
+              <button class="close-side-btn" (click)="close(item.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
