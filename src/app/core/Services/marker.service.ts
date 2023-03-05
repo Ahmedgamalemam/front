@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
 import { PopupService } from './popup.service';
 import { ActivatedRoute } from '@angular/router';
-import { ClinicService } from './clinic.service';
+import { ClinicService } from './ModelServices/clinic.service';
 
 @Injectable({
   providedIn: 'root',

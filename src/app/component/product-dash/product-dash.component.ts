@@ -1,26 +1,27 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product';
 import { PetSService } from 'src/app/core/pet-s.service';
-import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
-import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { ProductsService } from 'src/app/core/Services/ModelServices/products.service';
+import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { SearchService } from 'src/app/core/Services/search.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'],
+  selector: 'app-product-dash',
+  templateUrl: './product-dash.component.html',
+  styleUrls: ['./product-dash.component.css']
 })
-export class ProductsComponent {
+export class ProductDashComponent {
   pages: number = 1;
   Products: Product[] = [];
-  id:any;
+
   FilteredProduct = new Array();
   constructor(
     public search: SearchService,
     public Productservice: ProductsService,
     public searchservice: NavBarService,
-    public local: LocalStorageService
+    public petservice:PetSService,
+    private route: Router
   ) {
     Productservice.getProducts().subscribe((responce: any) => {
       responce.forEach((element: any) => {
@@ -51,8 +52,6 @@ export class ProductsComponent {
   }
 
   ngDoCheck() {
-    this.id=Number(localStorage.getItem("id"))
-
     let filterValue = this.searchservice.getsearch();
     let filterValue2 = this.searchservice.getsearchBYID();
     let filterValue3 = this.searchservice.getsearchBYCatogry();
@@ -77,10 +76,9 @@ export class ProductsComponent {
   arr_products: string[] = [
     'assets/images/cartfood.png',
     'assets/images/cartmedicines.png',
-    'assets/images/Kennels.png',
-    'assets/images/toys.png',
-    'assets/images/Accessories.png',
-    'assets/images/Grooming.png',
+    'assets/images/carclothes.png',
+    'assets/images/cartcages.png',
+    'assets/images/carttools.png',
   ];
   totalCards_products: number = this.arr_products.length;
 
@@ -126,56 +124,30 @@ export class ProductsComponent {
   }
 
   populatePagePosition_products() {
-    if (window.innerWidth <= 1400 && window.innerWidth > 1182) {
-      this.pagePosition_products = `calc(${
-        -19 * (this.currentPage_products - 1)
-      }% - ${10 * (this.currentPage_products - 1)}px)`;
-    } else if (window.innerWidth <= 1182 && window.innerWidth > 975) {
+    if (window.innerWidth <= 1199 && window.innerWidth > 922) {
       this.pagePosition_products = `calc(${
         -24 * (this.currentPage_products - 1)
       }% - ${10 * (this.currentPage_products - 1)}px)`;
-      this.totalPages_products = 3;
-    } else if (window.innerWidth <= 975 && window.innerWidth > 751) {
+    } else if (window.innerWidth <= 922 && window.innerWidth > 767) {
       this.pagePosition_products = `calc(${
         -32 * (this.currentPage_products - 1)
       }% - ${10 * (this.currentPage_products - 1)}px)`;
-
-      this.totalPages_products = 4;
-    } else if (window.innerWidth <= 751) {
+      this.totalPages_products = 3;
+    } else if (window.innerWidth <= 767 && window.innerWidth > 415) {
       this.pagePosition_products = `calc(${
         -49 * (this.currentPage_products - 1)
       }% - ${10 * (this.currentPage_products - 1)}px)`;
-      this.totalPages_products = 5;
+
+      this.totalPages_products = 4;
+    } else if (window.innerWidth <= 415) {
+      this.pagePosition_products = `calc(${
+        -100 * (this.currentPage_products - 1)
+      }% - ${10 * (this.currentPage_products - 1)}px)`;
     }
   }
-  // Carts: any = new Array();
-  // Favourits: any = new Array();
-  f: number = 0;
-  i: number = 0;
-  // add to cart
-  addtocardpro(item: any) {
-    //localStorage.clear();
 
-    var name = JSON.parse(localStorage['Carts']).some(
-      (c: any) => c.name == item.name
-    );
-    if (name == false) {
-      this.local.Carts.push(item);
-    }
-    localStorage.setItem('Carts', JSON.stringify(this.local.Carts));
-    this.i++;
-  }
-
-  // addtofavourite
-  addtofavourite(item: any) {
-    var name = JSON.parse(localStorage['Favourits']).some(
-      (c: any) => c.name == item.name
-    );
-    if (name == false) {
-      this.local.Favourits.push(item);
-    }
-
-    localStorage.setItem('Favourits', JSON.stringify(this.local.Favourits));
-    this.f++;
+  DeletePro(id:number){
+    this.Productservice.DeleteProduct(id).subscribe((data:any)=>{console.log()});
+    this.route.navigate(["/AdminProduct"])
   }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/core/models/product';
-import { ProductsService } from 'src/app/core/Services/products.service';
+import { ProductsService } from 'src/app/core/Services/ModelServices/products.service';
 
 @Component({
   selector: 'app-product-details',

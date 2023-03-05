@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PetSService {
-
+  private payment = new Array();
+  private total_price = 0;
   private Item = new Array();
   private favourit = new Array();
   private petcategory:string = ""
@@ -24,7 +25,7 @@ export class PetSService {
 
   // add to favourit
   setfav(Item: any): void {
-    var name = this.Item.some(i=>i.name ==Item.name)
+    var name = this.favourit.some(i=>i.name ==Item.name)
     if(name == false){
       this.favourit.push(Item);
     }
@@ -53,5 +54,19 @@ export class PetSService {
     }
     getsearch(): any {
       return this.search;
+  }
+  // set to payment
+  setbuy_now(Item: any): void {
+    this.payment = Item;
+  }
+  getbuy_now(): any {
+    return this.payment;
+  }
+
+  settotal_price(Item: any): void {
+    this.total_price = Item;
+  }
+  gettotal_price(): any {
+    return this.total_price;
   }
   }

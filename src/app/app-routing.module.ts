@@ -21,6 +21,13 @@ import { ErrorComponent } from './component/error/error.component';
 import { ChangePasswordComponent } from './component/change-password/change-password.component';
 import { ContactUsComponent } from './component/contact-us/contact-us.component';
 import { AddProductComponent } from './component/add-product/add-product.component';
+import { AddPetComponent } from './component/add-pet/add-pet.component';
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
+import { EditPetComponent } from './component/edit-pet/edit-pet.component';
+import { EditProductComponent } from './component/edit-product/edit-product.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { PetDashComponent } from './component/pet-dash/pet-dash.component';
+import { ProductDashComponent } from './component/product-dash/product-dash.component';
 const route: Routes = [
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
@@ -44,6 +51,13 @@ const route: Routes = [
   {path:"ChangePassword",component:ChangePasswordComponent},
   {path:"ContactUs",component:ContactUsComponent},
   {path:"AddProduct",component:AddProductComponent},
+  {path:"AddPet",component:AddPetComponent},
+  {path:"EditPet/:id",component:EditPetComponent},
+  {path:"EditProduct/:id",component:EditProductComponent},
+  {path:"Dashboard",component:DashboardComponent},
+  {path:"AdminPet",component:PetDashComponent},
+  {path:"AdminProduct",component:ProductDashComponent},
+
   {path:'**',component:ErrorComponent},
   ];
 
@@ -53,3 +67,4 @@ const route: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

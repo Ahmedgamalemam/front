@@ -5,6 +5,7 @@ import { AlertService } from 'src/app/core/Services/alert.service';
 import { NavBarService } from 'src/app/core/Services/nav-bar.service';
 import { PasswordIconService } from 'src/app/core/Services/password-icon.service';
 import { UserService } from 'src/app/core/Services/ModelServices/user.service';
+import { LocalStorageService } from 'src/app/core/Services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent {
     public route: Router,
     private userService: UserService,
     private alertify: AlertService,
-    public PassIcon: PasswordIconService
+    public PassIcon: PasswordIconService,
+    public local: LocalStorageService
   ) {}
   ngOnInit() {
     this.nav.hide();
@@ -38,18 +40,27 @@ export class LoginComponent {
 
   Login() {
     console.log(this.form.value);
-    this.userService.LoginCheck(this.Password.value,this.Email.value).subscribe({
-      next: (response: any): void => {
-        console.log(response)
+    this.userService
+      .LoginCheck(this.Password.value, this.Email.value)
+      .subscribe((response: any) => {
+        console.log(response);
 
-        // if (response) {
-        //   this.route.navigate(['/home']);
-        //   this.alertify.success('Congrats, you are successfully Logged In');
-        // } else {
-        //   this.alertify.error('Please enter valid Email and Password');
-        // }
-      },
-    });
+        if (response != null) {
+          localStorage.setItem('id', response.id);
+          localStorage.setItem('Type', response.type);
+          console.log(response);
+          localStorage.setItem(
+            'Favourits',
+            JSON.stringify(this.local.Favourits)
+          );
+          localStorage.setItem('Carts', JSON.stringify(this.local.Carts));
+
+          this.route.navigate(['/home']);
+          this.alertify.success('Congrats, you are successfully Logged In');
+        } else {
+          this.alertify.error('Please enter valid Email and Password');
+        }
+      });
   }
   getIcon() {
     this.PassIcon.Show();
