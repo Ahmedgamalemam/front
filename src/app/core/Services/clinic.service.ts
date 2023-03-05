@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Clinic } from '../../models/clinic';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +12,7 @@ export class ClinicService {
   public getAll(){
     return this.myclient.get(this.Url_DB);
   }
-  public getByID(ID:number){
-    return this.myclient.get(this.Url_DB+"/"+ID);
-  }
+  
   public delete(item:any){
     return this.myclient.delete(this.Url_DB+"/"+item)
   }

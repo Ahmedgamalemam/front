@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import { Pets } from 'src/app/core/models/pets';
+import { Product } from 'src/app/core/models/product';
 import { User } from 'src/app/core/models/User';
+import { PetsService } from 'src/app/core/Services/ModelServices/Pets.service';
+import { ProductsService } from 'src/app/core/Services/ModelServices/products.service';
 import { UserService } from 'src/app/core/Services/ModelServices/user.service';
 
 @Component({
@@ -9,17 +13,38 @@ import { UserService } from 'src/app/core/Services/ModelServices/user.service';
 })
 export class DashboardComponent {
 admins:User[]=[];
-constructor(myservice:UserService){
+Products: Product[] = [];
+pets: Pets[] = [];
+countUsers:any;
+countProducts:any;
+countPets:any;
+constructor(public myservice:UserService,public petService:PetsService,public productService:ProductsService){
+  this.countUsers=0;
   myservice.getAll().subscribe(
     (ad:any)=>{
       ad.forEach((element:User) => {
         if(element.type == "Admin"){
           this.admins.push(element)
         }
-        // console.log(this.admins)
+        this.countUsers ++;
+        // console.log(count);
+        
       });
-      // this.admins.filter(admins=>admins.type.toLowerCase().includes("Admin".toLowerCase()));
-
+      this.countProducts=0;
+      this.productService.getProducts().subscribe((responce: any) => {
+        responce.forEach((element: any) => {
+          this.Products.push(element);
+          this.countProducts ++;
+        });
+        this.countPets=0
+        this.petService.getpets().subscribe((response: any) => {
+          response.forEach((element: Pets) => {
+            this.pets.push(element);
+            this.countPets ++;
+          }
+          )
+          });
+      });
     }
   )
   
